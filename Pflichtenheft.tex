@@ -73,7 +73,7 @@
 %% ----------------
 %% |   Abstract   |
 %% ----------------
- 
+ This Document outlines the requirements (both functional and non-functional), environment, target audience, and use cases of the software described below.
 %% The text is included from the following files:
 %% - sections/abstract
 
@@ -94,6 +94,12 @@
 
 
 \section{Purpose}\label{sec:intro}
+The goal of this project is to create a software visualization tool for industrial network traffic to simplify the analysis of anomalous behaviour, both in realtime and from captured stored data.
+This software is part of the ADIN framework and is referered to as the "ADIN Inspector".
+One component to achieve this goal is a web interface built with modularity in mind so as to make it easily extendable.
+The Web view is able to display a series of diagrams and charts to easily identify the behaviour of the network.
+Within the Web view the user has the ability to zoom, select, highlight, and filter out data to better understand the aforementioned behaviour in different OSI layers, as well as visualize the flow rate between network nodes.
+To support this Web view a back-end messaging solution is needed. This allows the user to easily switch between multiple streams of captured data.
 \section{Overall Description}
 \section{Interfaces}
 \section{Functional Requirements}

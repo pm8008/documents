@@ -1,0 +1,117 @@
+%% LaTeX2e class for seminar theses
+%% seminar.tex
+%% 
+%% Karlsruhe Institute of Technology
+%% Institute for Program Structures and Data Organization
+%% Chair for Software Design and Quality (SDQ)
+%%
+%% Dr.-Ing. Erik Burger
+%% burger@kit.edu
+%%
+%% Version 1.0.1, 2018-04-16
+
+%% Available page modes: oneside, twoside
+%% Available languages: english, ngerman
+%% Available modes: draft, final (see README)
+\documentclass[twoside, english, draft]{Pflichtenheft}
+
+%% ---------------------------------
+%% | Information about the thesis  |
+%% ---------------------------------
+
+%% Name of the author
+\author{PSE GRUPPE}
+
+%% Title (and possibly subtitle) of the thesis
+\title{Anomaly Detection in Industrial Networks}
+
+%% Type of the thesis 
+% \thesistype{Seminar Thesis}
+
+%% Change the institute here, ``IPD'' is default
+ \myinstitute{ KOMPETENZZENTRUM FÜR ANGEWANDTE SICHERHEITSTECHNOLOGIE }
+
+%% The advisors are PhD Students or Postdocs
+\advisor{M.Sc. Ankush Meshram}
+
+\settitle
+
+%% --------------------------------
+%% | Settings for word separation |
+%% --------------------------------
+
+%% Describe separation hints here.
+%% For more details, see 
+%% http://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Hyphenation
+\hyphenation{
+% me-ta-mo-del
+}
+
+%% --------------------------------
+%% | Bibliography                 |
+%% --------------------------------
+
+%% Use biber instead of BibTeX, see README
+\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+\addbibresource{pflichtenheft.bib}
+
+%% ====================================
+%% ====================================
+%% ||                                ||
+%% || Beginning of the main document ||
+%% ||                                ||
+%% ====================================
+%% ====================================
+\begin{document}
+
+%% Set PDF metadata
+\setpdf
+
+%% Set the title
+\maketitle
+
+%% ----------------
+%% |   Abstract   |
+%% ----------------
+ 
+%% The text is included from the following files:
+%% - sections/abstract
+
+%\begin{abstract}
+%\%input{sections/abstract.tex}
+%\end{abstract}
+
+%% -----------------
+%% |   Main part   |
+%% -----------------
+
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\cleardoublepage
+\setcounter{page}{1}
+
+
+\section{Purpose}\label{sec:intro}
+\section{Overall Description}
+\section{Interfaces}
+\section{Functional Requirements}
+\section{Data Requiremets}
+\section{Non-Functional Requirements}
+\section{Essential Testcases}
+\section{Software Modelling}
+\subsection{Scenario}
+\subsection{Use cases}
+\subsection{Object Modelling}
+\subsection{Dynamic Modelling}
+\subsection{User Interface}
+\subsection{Glossary}
+
+%% |   Bibliography   |
+%% --------------------
+
+%% Add entry to the table of contents for the bibliography
+\printbibliography[heading=bibintoc]
+
+\end{document}

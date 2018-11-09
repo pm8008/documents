@@ -1,0 +1,22 @@
+1)
+- [user wants to see wether network nodes appeared or disappeared over the last day and when]
+- user opens the web page
+- login with password?
+- the user selects a timeline display
+- the user selects "show all nodes" or, respectively disables all filters
+- the user expects a display of 24 hours worth of data "where I don't have to scroll too much"
+- the user zooms into the display, e.g. time frame 07:00 - 08:00
+- the user scrolls to e.g. 09:00 - 10:00
+- the user zooms in to e.g. 09:00:00.000 to 09:00:00.010
+- the user zooms out to 24 hour display, shifted by 2 hours
+
+
+2)
+[user wants to look at flow rates between network nodes to see wether they change / their are trends]
+
+- user opens the web page
+- login with password?
+- user selects display
+
+
+

@@ -1,4 +1,5 @@
-Format of input data:
+1) Format of input data:
+
 Do all data streams that we will have to display consist of JSON objects?
 Does each object have a time stamp?
 
@@ -22,9 +23,26 @@ Or should our program go through the whole data stream to determine the maximum 
 Is each JSON object saved in the MongoDB as a single document? Or are multiple objects grouped together? Or some other format?
 
 
-Display:
+
+2) Data processing:
+Must/should/could the visualization program perform aggregation operations, e.g. count the number of network packets in a given time frame or compute a moving average?
+
+
+3) Display:
 Is it required that data from more than one dissector can be displayed in one diagram at the same time? (e.g. a line diagram with data from dissector_one in red and data from dissector_two in blue)
 
 Is it required that data from different time ranges of one data stream can be displayed together in one diagram? (e.g. a diagram with time from 00:00 to 23:59 on the x-axis, with monday's data in blue and tuesday's data in red)
 
+
+Being able to have two or more diagrams on the screen at the same time - must/should/could criterium?
+
+When selecting a data point with several atributes (in the form of name+value pairs), must/should/could it be possible for the user to select one of those atributes and the program would highlight all other data points with that attribute value?
+
+Must/should/could it be possible to have several different selections active at the same time? (e.g. first all data points representing packets with a certain sender-ip are selected and highlighted in red, then all data points representing packets with a certain size are selected and highlighted in orange)
+
+Must/should/could it be possible to extend selections ? (e.g. first all data points representing packets with a certain sender-ip are selected, then all data points representing packets with a certain size are selected, too)
+
+Must/should/could it be possible to invert a selection?
+
+Must/should/could it be possible to filter out (i.e. not display) selected data points?
 

@@ -112,7 +112,76 @@ To support this Web view a back-end messaging solution is needed. This allows th
 \section{Non-Functional Requirements}
 \section{Essential Testcases}
 \section{Software Modelling}
-\subsection{Scenario}
+\subsection{Scenarios}
+
+\begin{itemize}
+\item{
+/S100/ : An operator wants to check manually/visually whether network nodes appeared or disappeared over the last day
+\begin{itemize}
+\item{the operator opens the web page}
+\item{the operator selects the database as data source}
+\item{the operator selects a timeline-based display}
+\item{the operator selects node addresses as the data to be displayed}
+\item{the operator moves to or selects the last 24 hours as the range of data to display}
+\item{the operator closes the web page}
+  \end{itemize}
+}
+
+
+\item{
+/S200/: A security analyst wants to look at the current flow rates between network nodes to see whether they change / there are trends
+\begin{itemize}
+\item{the analyst opens the web page}
+\item{the analyst selects a source of live data}
+\item{the analyst selects an appropriate visualization type}
+\item{the analyst selects node adresses as the independent variable}
+\item{the analyst selects flow rates as the data to be displayed}
+\end{itemize}
+}
+
+
+\item{
+/S300/: A security analyst wants to examine a specific point of data
+\\
+Precondition: the analyst has already selected the relevant dataset and visualization type
+\begin{itemize}
+\item{the analyst selects a data point by right-clicking}
+\item{the GUI displays a small pop-up window with all the data of this data point}
+\item{the analyst right-clicks one of the attibutes in the pop-up window and selects "Display all corresponding types"}
+\item{the GUI marks all data points that have the same value in this attribute}
+\end{itemize}
+}
+
+
+\item{
+/400/: The user wants to look at [alarm/notifications]
+\begin{itemize}
+\item{the user opens the web page}
+\item{the user selects the database as data source}
+\item{the user selects the data stream from the relevant dissector}
+\item{the GUI diplays the notifications along a timeline, according to the time of the event}
+\item{the user right-clicks on the x-axis and selects "use record number"}
+\item{the GUI diplays the notifications along a timeline adjacently}
+\end{itemize}
+}
+
+
+\item{
+/500/: The user wants to look at normal data  and alarms/notifications
+\\
+Precondition: Scenario /S100/ apart from closing the web page
+\begin{itemize}
+\item{the user selects menu "data", entry "sources"}
+\item{the GUI displays a list of all known data sources with a checkbox in front of each}
+\item{the user selects the checkboxes for the data sources they want to examine}
+\item{the GUI displays data from all these data sources within the currently active visualization}
+\end{itemize}
+}
+
+\end{itemize}
+
+
+
 \subsection{Use cases}
 \subsection{Object Modelling}
 \subsection{Dynamic Modelling}

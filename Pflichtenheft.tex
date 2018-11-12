@@ -112,7 +112,31 @@ To support this Web view a back-end messaging solution is needed. This allows th
 \section{Non-Functional Requirements}
 \section{Essential Testcases}
 \section{Software Modelling}
-\subsection{Scenarios}
+
+
+
+\subsubsection{GUI}
+The basic data structure needed for graphs are a given set of nodes and a given set of edges, as they are often drawn
+as node-link diagrams. In the postal data set, nodes could represent the origins and destinations of postal flows. Edges represent the flows between the respective origins and destinations.In intelligence analysis, investigators use semantic graphs to organise concepts and relationships as
+graph nodes and links in hopes of discovering key trends, patterns, and insights.”
+
+
+A key issue in graph visualisation is the size of the graph, i.e. the size of the data to visualise. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst’s cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalisation.
+
+%%For example, Cui et al. (2008) investigate node-link diagrams for network visualisation.
+%Their study focuses on the problem of visual cluttering in graph visualisations,
+%as this is one of the main issues in the representation of relationships among
+%large data (Herman, Melancon, and Marshall, 2000). They introduce a framework
+%for geometry-based edge clustering to group edges into bundles and hence reduce
+%visual cluttering caused by the crossing of the high number of edges (see figure 2.1).
+
+\begin{figure}
+\centering
+\includegraphics{node.jpg}
+  \caption[ height=4cm, width=4cm]{Node-Link-Graph}
+\end{figure}
+
+\subsection{Scenario}
 
 \begin{itemize}
 \item{
@@ -154,7 +178,7 @@ Precondition: the analyst has already selected the relevant dataset and visualiz
 
 
 \item{
-/400/: The user wants to look at [alarm/notifications]
+/S400/: The user wants to look at alarms/notifications
 \begin{itemize}
 \item{the user opens the web page}
 \item{the user selects the database as data source}
@@ -167,7 +191,7 @@ Precondition: the analyst has already selected the relevant dataset and visualiz
 
 
 \item{
-/500/: The user wants to look at normal data  and alarms/notifications
+/S500/: The user wants to look at normal data together with alarms/notifications
 \\
 Precondition: Scenario /S100/ apart from closing the web page
 \begin{itemize}
@@ -180,9 +204,25 @@ Precondition: Scenario /S100/ apart from closing the web page
 
 \end{itemize}
 
-
-
 \subsection{Use cases}
+\subsubsection{Interactivity}
+
+
+Visual analytics methods combine interactive visualisations with automated analysis
+techniques. This allows the user to decide e.g. which part
+of the data he or she wants to explore in more detail.
+
+ A basic principle for visual data exploration was introduced by Shneiderman (1997) by what he called the “The
+Visual Information Seeking Mantra: 
+
+Overview first, zoom and filter, then details-ondemand”.
+This lets the data analyst define to a certain level what he or she wants
+to see and visualise. 
+
+Similar to this, Bertin (1983) specified three “levels of reading,”:
+The elementary level (allowing the analyst to look at the information about a
+single data record), the intermediate level (showing summarised information about a group of data records), and the global level (providing an overview of all data elements).
+
 \subsection{Object Modelling}
 \subsection{Dynamic Modelling}
 \subsection{User Interface}

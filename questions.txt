@@ -1,0 +1,7 @@
+input streams:
+- are they event-driven with each record containing a timestamp?
+- or do they hava a constant sample rate?
+
+is the output in different streams, one per dissector?
+or is there one data stream with all different alarms/notifications?
+

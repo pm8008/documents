@@ -111,23 +111,23 @@ To support this Web view a back-end messaging solution is needed. This allows th
 \section{Data Requirements}
 \section{Non-Functional Requirements}
 
-\begin{itemize}
-  \item{
+\begin{description}
+  \item[NF100]
   The web UI should be able to visualize the network topology and update the visualization based on real time data streams.
-  }
-  \item{
+  
+  \item[NF110]
   The rendering latency should be no longer than 2 seconds.
-  }
-  \item{
-  The framework should be able to handle data streamed from at least $\mathit{N}$ sensors.
-  }
-  \item{
-  The framework should be able to save data collected in a specified period of time.
-  }
-  \item{
+
+  \item[NF120]
   The web UI should be viewable on modern web browsers.
-  }
-\end{itemize}
+
+  \item[NF200]
+  The framework should be able to handle data streamed from at least $\mathit{N}$ sensors.
+
+  \item[NF210]
+  The framework should be able to save data collected in a specified period of time.
+
+\end{description}
 
 \section{Essential Testcases}
 \section{Software Modelling}
@@ -157,9 +157,8 @@ A key issue in graph visualisation is the size of the graph, i.e. the size of th
 
 \subsection{Scenario}
 
-\begin{itemize}
-\item{
-/S100/ : An operator wants to check manually/visually whether network nodes appeared or disappeared over the last day
+\begin{description}
+\item[S100:] An operator wants to check manually/visually whether network nodes appeared or disappeared over the last day
 \begin{itemize}
 \item{the operator opens the web page}
 \item{the operator selects the database as data source}
@@ -168,11 +167,10 @@ A key issue in graph visualisation is the size of the graph, i.e. the size of th
 \item{the operator moves to or selects the last 24 hours as the range of data to display}
 \item{the operator closes the web page}
   \end{itemize}
-}
 
 
-\item{
-/S200/: A security analyst wants to look at the current flow rates between network nodes to see whether they change / there are trends
+
+\item[S200:] A security analyst wants to look at the current flow rates between network nodes to see whether they change / there are trends
 \begin{itemize}
 \item{the analyst opens the web page}
 \item{the analyst selects a source of live data}
@@ -180,11 +178,10 @@ A key issue in graph visualisation is the size of the graph, i.e. the size of th
 \item{the analyst selects node adresses as the independent variable}
 \item{the analyst selects flow rates as the data to be displayed}
 \end{itemize}
-}
 
 
-\item{
-/S300/: A security analyst wants to examine a specific point of data
+
+\item[S300:] A security analyst wants to examine a specific point of data
 \\
 Precondition: the analyst has already selected the relevant dataset and visualization type
 \begin{itemize}
@@ -193,11 +190,10 @@ Precondition: the analyst has already selected the relevant dataset and visualiz
 \item{the analyst right-clicks one of the attibutes in the pop-up window and selects "Display all corresponding types"}
 \item{the GUI marks all data points that have the same value in this attribute}
 \end{itemize}
-}
 
 
-\item{
-/S400/: The user wants to look at alarms/notifications
+
+\item[S400:] The user wants to look at alarms/notifications
 \begin{itemize}
 \item{the user opens the web page}
 \item{the user selects the database as data source}
@@ -206,11 +202,10 @@ Precondition: the analyst has already selected the relevant dataset and visualiz
 \item{the user right-clicks on the x-axis and selects "use record number"}
 \item{the GUI diplays the notifications along a timeline adjacently}
 \end{itemize}
-}
 
 
-\item{
-/S500/: The user wants to look at normal data together with alarms/notifications
+
+\item[S500:] The user wants to look at normal data together with alarms/notifications
 \\
 Precondition: Scenario /S100/ apart from closing the web page
 \begin{itemize}
@@ -219,9 +214,9 @@ Precondition: Scenario /S100/ apart from closing the web page
 \item{the user selects the checkboxes for the data sources they want to examine}
 \item{the GUI displays data from all these data sources within the currently active visualization}
 \end{itemize}
-}
 
-\end{itemize}
+
+\end{description}
 
 \subsection{Use cases}
 \subsubsection{Interactivity}

@@ -50,6 +50,3 @@ The user has to be able to log out of the system.
 One of the user types has to be able to add new streams, right?
 17./AA /NOPE
 how do you add new users?
-
-18./M
-The user has the ability to get anomaly alarms and for them to be overlayed on the existing diagrams at the correspoding data points.

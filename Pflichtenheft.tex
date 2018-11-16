@@ -93,6 +93,13 @@
 	description={A diagram type is a specific style or method of drawing a diagram and visualizing its data points}
 }
 
+\newglossaryentry{role}
+{
+	name=role,
+	plural=roles,
+	description={A security role is a list of data sources and diagram types that a user who has this role is allowed to access.}
+}
+
 
 %% ====================================
 %% ====================================
@@ -166,6 +173,28 @@ To support this Web view a back-end messaging solution is needed. This allows th
   \item[NF210]
   The framework should be able to save data collected in a specified period of time.
 
+  \item[NF300]
+  The GUI should be easily extendable with more diagram types.
+
+  \item[NF301]
+  The GUI should be easily extendable with more filters and aggregations.
+
+  \item[NF302]
+  The GUI should be easily extendable with more data types for input data.
+
+  \item[NF400]
+  The system needs to provide access control that authenticates users by using user name and password.
+
+  \item[NF402]
+  Each users has one or more security \glspl{role}.
+
+  \item[NF404]
+  Multiple users can have the same role.
+
+  \item[NF406]
+  A role provides authorization to access certain \glspl{data source} and certain \glspl{diagram type}.
+
+  
 \end{description}
 
 \section{Essential Testcases}

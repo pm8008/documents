@@ -45,8 +45,11 @@ Within the slider the user is able to scroll through the timeline and the diagra
 There needs to be an auto scroll function (play button) which automatically scrolls through the selected time window and whose speed is adjustable
 15./M
 The user has to be able to log out of the system.
-16./AA
+
+16./AA /NOPE
 One of the user types has to be able to add new streams, right?
-17./AA
+17./AA /NOPE
 how do you add new users?
 
+18./M
+The user has the ability to get anomaly alarms and for them to be overlayed on the existing diagrams at the correspoding data points.

@@ -266,6 +266,55 @@ Visual Analytics is utilizing graphics to enhance human cognition to understand 
 \end{description}
 
 \section{Essential Testcases}
+
+\begin{description}
+  \item[T100] Successful login
+\begin{description}
+    \item[Precondition]
+    Open browser window.
+    \item[Action]
+    The user enters the URL for the ADIN webserver in the address bar and presses Enter.
+    \item[Reaction]
+    The browser loads the ADIN website and shows the login screen.
+
+    \item[Precondition]
+    ADIN website had been opened and show the login screen.
+    \item[Action]
+    The user enters a valid username and the corresponding password.
+    \item[Reaction]
+    Successfully logged in. The browser loads the ADIN main screen with one empty diagram.
+\end{description}
+
+  \item[T102] Failed login (wrong username or wrong password)
+\begin{description}
+    \item[Precondition]
+    Open browser window.
+    \item[Action]
+    The user enters the URL for the ADIN webserver in the address bar and presses Enter.
+    \item[Reaction]
+    The browser loads the ADIN website and shows the login screen.
+
+    \item[Precondition]
+    ADIN website has been opened and shows the login screen.
+    \item[Action]
+    The user enters either a valid username and a incorrect password or a nonexisting username and an arbitray password.
+    \item[Reaction]
+    The login screen shows an error message that the username or password is incorrect and the entry field for the password is cleared.
+\end{description}
+
+  \item[T200] Open multiple diagrams.
+\begin{description}
+    \item[Precondition]
+    The browser has been logged in to ADIN and shows the main screen with one empty diagram.
+    \item[Action]
+    The user presses the "New Diagram" button on the top right side of the screen three times.
+    \item[Reaction]
+    The browser opens three more diagrams and ends up showing a 2x2 field of four diagrams with the original diagram in the top left position, the second in the top right position, the third in the bottom left position and the fourth in the bottom right position.
+
+\end{description}
+
+\end{description}
+
 \section{Software Modelling}
 
 
@@ -311,7 +360,7 @@ A key issue in graph visualisation is the size of the graph, i.e. the size of th
 \item{the analyst opens the web page}
 \item{the analyst selects a source of live data}
 \item{the analyst selects an appropriate visualization type}
-\item{the analyst selects node adresses as the independent variable}
+\item{the analyst selects node addresses as the independent variable}
 \item{the analyst selects flow rates as the data to be displayed}
 \end{itemize}
 

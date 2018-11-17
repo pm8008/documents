@@ -18,7 +18,7 @@
       - `packets_count` (Not sure about this one though, is every packet gonna have its own event? If so then this is not needed)
 - Raw sensor event stream data to get buffered at Kafka
   - Datetime the event occurs
-  - The raw network packets that we will receive from Kushy
+  - The raw network packets that we will receive from Ankush
 
 Behold.
 
@@ -30,7 +30,7 @@ Notifications will be delivered like this... (Since we pull everything from Mong
   "type": "notification",
   "payload": {
     "severity_level": "high",
-    "content": "Instruction unclear, dongle stuck in CPU fan."
+    "content": "Delayed response from 192.168.1.11 to 192.168.1.10; 13.000ms"
   }
 }
 ```

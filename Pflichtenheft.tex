@@ -220,9 +220,42 @@ Visual Analytics is utilizing graphics to enhance human cognition to understand 
 
 \section{Functional Requirements}
 
-
-
 \section{Data Requirements}
+\subsection{User Data}
+\begin{description}
+	\begin{itemize}
+		\item User ID \textit{(Unique)}
+		\item User Name \textit{(Unique)}
+		\item User Password
+		\item User Privilege Level
+	\end{itemize}
+\end{description}
+
+\subsection{Event stream data for Web UI}
+\begin{description}
+	\begin{itemize}
+		\item Datetime: both types have this
+		\item 2 types of events: one is notification (warning etc.), one is actual data point
+			\begin{itemize}
+				\item Notification
+				\begin{itemize}
+					\item Severity level
+					\item Notification content
+				\end{itemize}
+				\item Data Point
+				\begin{itemize}
+					\item MAC source
+					\item MAC destination
+					\item Event type, eg. protocol or network layer
+				\end{itemize}
+			\end{itemize}
+	\end{itemize}
+\end{description}
+
+\subsection{Raw packet metadata}
+\begin{description}
+	Raw packet metadata include Packet number, Time, Source, Destination, Protocol and Packet Length.
+\end{description}
 
 \section{Non-Functional Requirements}
 

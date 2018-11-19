@@ -5,7 +5,7 @@ Basically based on the current one in the tex file.
 - The web UI should be able to visualize the network topology and update the visualization based on real time data streams.
 - The rendering latency should be no longer than 2 seconds.
 - The web UI should be viewable on modern web browsers.
-- The framework should be able to handle data streamed from at least *N* sensors. **(Have to ask Kushy lower bound of the sensors count we are going to handle)**
+- The framework should be able to handle data streamed from at least *N* sensors. **(Have to ask Ankush lower bound of the sensors count we are going to handle)**
 - The framework should be able to save data collected in a specified period of time.
 - The web UI should be modular and easily extendable with:
   - New diagram types.

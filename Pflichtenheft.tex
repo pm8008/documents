@@ -223,46 +223,36 @@ Visual Analytics is utilizing graphics to enhance human cognition to understand 
 
 
 \section{Data Requirements}
+
 \section{Non-Functional Requirements}
 
 \begin{description}
   \item[NF100]
   The web UI should be able to visualize the network topology and update the visualization based on real time data streams.
   
-  \item[NF110]
+  \item[NF200]
   The rendering latency should be no longer than 2 seconds.
 
-  \item[NF120]
+  \item[NF300]
   The web UI should be viewable on modern web browsers.
 
-  \item[NF200]
-  The framework should be able to handle data streamed from at least $\mathit{N}$ sensors.
-
-  \item[NF210]
-  The framework should be able to save data collected in a specified period of time.
-
-  \item[NF300]
-  The GUI should be easily extendable with more diagram types.
-
-  \item[NF301]
-  The GUI should be easily extendable with more filters and aggregations.
-
-  \item[NF302]
-  The GUI should be easily extendable with more data types for input data.
-
   \item[NF400]
-  The system needs to provide access control that authenticates users by using user name and password.
+  The framework should be able to handle data streamed from at least 500 nodes.
 
-  \item[NF402]
-  Each users has one or more security \glspl{role}.
+  \item[NF500]
+	The web UI should be modular and easily extendable with:
+	\begin{itemize}
+		\item[NF510]{New diagram types}
+		\item[NF520]{New filters and aggregation methods}
+		\item[NF530]{New data types for input data}
+	\end{itemize}
 
-  \item[NF404]
-  Multiple users can have the same role.
+  \item[NF600]
+  The system needs to provide access control that authenticates users.
 
-  \item[NF406]
-  A role provides authorization to access certain \glspl{data source} and certain \glspl{diagram type}.
-
-  
+  \item[NF701]
+	Users should be able to have different privilege/access levels.
+	  
 \end{description}
 
 \section{Essential Testcases}

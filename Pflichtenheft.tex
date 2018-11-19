@@ -216,8 +216,42 @@ Visual Analytics is utilizing graphics to enhance human cognition to understand 
 \end{itemize}
 
 \section{Functional Requirements}
+\subsection{Must Have}
 
+\begin{itemize}
+\item{When opening the Web view the user has to be greeted by a login screen.}
 
+\item{There needs to be at least two levels of access for different account types.
+Level of access is defined as: the specific set of data streams the user is able to view and select to be analyzed.}
+\item{Once logged in an user has to be able to select a data stream to be visualized.}
+\item{The user has to have the ability to select multiple diagrams to visualize the selected data stream.}
+\item{The user can use at least this diagram types:}
+\begin{itemize}
+\item{A timeline plot}
+\item{A scatter plot}
+\item{A Network diagram}
+\end{itemize}
+\item{The user is able to dynamically change which component of the data is used in both the X and Y axis of the diagram.}
+\item{The user should be able to add new diagrams to the GUI and configure them ( i.e. setting diagram type and axis) both at creation and at a later time.
+}
+\item{The GUI has to support a minimum of 4 different diagrams at once.}
+\item{Each diagram should be able to be maximised to take on the full size of the diagrams container.}
+\item{Each drawn diagram can be connected to a different data stream.}
+\item{The amount of data can be limited via a slider, effectively setting a limited time window, to which all diagram must update to.}
+\item{There needs to be an auto scroll function (play button) which automatically scrolls through the selected time window and whose speed is adjustable.}
+\item{The user has to be able to log out of the system.}
+
+\end{itemize}
+
+\subsection{Should Have}
+\begin{itemize}
+\item{The GUI should be able to support an undeterminate number of diagrams and scrollbar.??}
+\end{itemize}
+\subsection{Nice To Have}
+\begin{itemize}
+\item{Within the slider the user is able to scroll through the timeline and the diagrams need to react in real-time.
+}
+\end{itemize}
 
 \section{Data Requirements}
 \section{Non-Functional Requirements}

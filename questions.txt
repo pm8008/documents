@@ -99,3 +99,22 @@ Is
 -> unclear, it's our decision
 
 
+
+
+
+
+
+
+================================================================================
+NEW QUESTIONS FOR 20.11.2018
+================================================================================
+
+About the sample data:
+	Formatting?
+	Wich protocols should we analyze/care about
+The GUI should be able to support an undeterminate number of diagrams and scrollbar?
+NF500 Functional or Non-functional?
+How many nodes need to be handled?
+Filters
+How many diagrams
+What user roles can and cannot do what.

@@ -273,22 +273,20 @@ Level of access is defined as: the specific set of \glspl{data stream} the user 
 
 \section{Data Requirements}
 \subsection{User Data}
-\begin{description}
-\item{
+
 	\begin{itemize}
-		\item{User ID (Unique)}
-		\item{ User Name \textit{(Unique)}}
-		\item{ User Password}
-		\item{ User \gls{role}}
+		\item User ID \textit{(Unique)}
+		\item User Name \textit{(Unique)}
+		\item User Password
+		\item User \gls{role}
 	\end{itemize}
-}
-\end{description}
+
 
 \subsection{Event stream data for Web UI}
 
 	\begin{itemize}
 		\item Timestamp
-		\item 2 types of events: one is notification (warning etc.), one is actual data point
+		\item 2 types of events for both notifications (eg. warning or errors) and data points
 			\begin{itemize}
 				\item Notification
 				\begin{itemize}
@@ -297,10 +295,10 @@ Level of access is defined as: the specific set of \glspl{data stream} the user 
 				\end{itemize}
 				\item Data Point
 				\begin{itemize}
+					\item Packet type, eg. protocol or network layer
+					\item Packet summary (incl. packet length)
 					\item Source
 					\item Destination
-					\item Packet type, eg. protocol or network layer
-					\item Packet summary
 				\end{itemize}
 			\end{itemize}
 	\end{itemize}
@@ -315,27 +313,33 @@ Level of access is defined as: the specific set of \glspl{data stream} the user 
 
 \begin{description}
 
-  \item[NF200]
+  \item[NF100]
   The rendering latency should be no longer than 2 seconds.
 
-  \item[NF300]
+  \item[NF200]
   The web UI should be viewable on modern web browsers.
 
+  \item[NF300]
+	The web UI should not crash when network connection is unstable.
+	
   \item[NF400]
-  The framework should be able to handle \glspl{data stream} from at least 500 nodes.
+  The framework should be able to handle \glspl{data stream} from at least 100 physical nodes in the network.
+	
+	\item[NF500]
+	The system should have a mechanism in place that is able to deny access from unauthorized personnel.
 
-  \item[NF500]
-	The web UI should be modular and easily extendable with:
-	\begin{itemize}
-		\item[NF510]{New diagram types}
-		\item[NF520]{New filters and aggregation methods}
-		\item[NF530]{New data types for input data}
-	\end{itemize}
+	\item[NF600]
+	The system should be able to be recovered with ease from a crash.
 
-  \item[NF600]
-  The system needs to provide access control that authenticates users.
+	\item[NF700]
+	The data visualization should be easily understandable or learnable for non-professionals.
 
-	  
+	\item[NF800]
+	The web UI should be accessible to all user groups, including people with conditions like color blindness or myopia.
+
+	\item[NF900]
+	The system should not crash when malformed or incomplete data are received.
+
 \end{description}
 \subsection{Quality Requirements}
 

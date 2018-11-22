@@ -286,7 +286,7 @@ Level of access is defined as: the specific set of \glspl{data stream} the user 
 
 	\begin{itemize}
 		\item Timestamp
-		\item 2 types of events: one is notification (warning etc.), one is actual data point
+		\item 2 types of events for both notifications (eg. warning or errors) and data points
 			\begin{itemize}
 				\item Notification
 				\begin{itemize}
@@ -295,10 +295,10 @@ Level of access is defined as: the specific set of \glspl{data stream} the user 
 				\end{itemize}
 				\item Data Point
 				\begin{itemize}
+					\item Packet type, eg. protocol or network layer
+					\item Packet summary (incl. packet length)
 					\item Source
 					\item Destination
-					\item Packet type, eg. protocol or network layer
-					\item Packet summary
 				\end{itemize}
 			\end{itemize}
 	\end{itemize}

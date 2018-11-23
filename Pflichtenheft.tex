@@ -49,8 +49,12 @@
 %% --------------------------------
 
 %% Use biber instead of BibTeX, see README
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mwe}
+\usepackage{flafter}
 \usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
-\addbibresource{pflichtenheft.bib}
+\addbibresource{Pflichtenheft.bib}
 
 \usepackage[nonumberlist]{glossaries}
 \makeglossaries
@@ -767,12 +771,8 @@ Any diagrams created afterwards are spawned underneath the existing ones and the
 \clearpage
 
 \subsubsection{Diagram types}
-%line chart
-%https://beta.observablehq.com/@mbostock/d3-line-chart
-%spike raster plot
-%https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3306002/pdf/fnsys-06-00006.pdf
-%network graph
-%http://projects.flowingdata.com/tut/interactive_network_demo/
+
+
 %scatter plot
 %https://commons.wikimedia.org/wiki/File:Scatter_diagram_for_quality_characteristic_XXX.svg
 
@@ -790,43 +790,45 @@ Scatter plot: a way to visualize up to 4 dimensions of the data stream.(\autoref
 \\
 These are examples and since the user has the ability to chose what part of the data stream is used for each axis it does not convey the full ability of these diagrams, that is left to the end user.
 
+
+\begin{figure*}[!h]
+        \centering
+        \begin{subfigure}[h]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Images/line_chart.png}
+            \caption[Line Chart]%
+            {{\small Line Chart}}    
+            \label{fig:Diagram types}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[h]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{Images/net_diag.png}
+            \caption[]%
+            {{\small Net diagram}}    
+            \label{fig:Diagram types}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[h]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
+            \caption[]%
+            {{\small Scatterdiagram}}    
+            \label{fig:Diagram types}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[h]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
+            \caption[]%
+            {{\small Spike raster plot}}    
+            \label{fig:mean and std of net44}
+        \end{subfigure}
+        \caption[ Diagram types ]
+        {\small Diagram types} 
+        \label{fig:Diagram types}
+    \end{figure*}
 \vfill
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{Images/line_chart.png}
-	\caption{Line chart example}
-	\label{fig:linechart}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{Images/net_diag.png}
-	\caption{Network diagram example}
-	\label{fig:netdiaram}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
-	\caption{Scatter plot example}
-	\label{fig:scatterplot}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\label{fig:mainWindow4}
-	\includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
-	\caption{Spike raster plot example}
-	\label{fig:rasterplot}
-\end{figure}
-\vfill
-\clearpage
-
-%%For example, Cui et al. (2008) investigate node-link diagrams for network visualisation.
-%Their study focuses on the problem of visual cluttering in graph visualisations,
-%as this is one of the main issues in the representation of relationships among
-%large data (Herman, Melancon, and Marshall, 2000). They introduce a framework
-%for geometry-based edge clustering to group edges into bundles and hence reduce
-%visual cluttering caused by the crossing of the high number of edges (see figure 2.1).
-
-
 
 \subsection{Scenario}
 
@@ -894,7 +896,7 @@ These are examples and since the user has the ability to chose what part of the 
 \subsection{Use cases}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{Images/login.png}
+	\includegraphics[width=\textwidth]{Images/login.PNG}
 	\caption{User Login.}
 \end{figure}
   

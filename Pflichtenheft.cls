@@ -101,7 +101,7 @@
 %% variables for title page
 \newcommand{\theinstitute}{\ifcurrentbaselanguage{English}
     {Institute for Program Structures and Data Organization (IPD)}
-    {Institut für Programmstrukturen und Datenorganisation (IPD)}}
+    {Institut fï¿½r Programmstrukturen und Datenorganisation (IPD)}}
 \newcommand{\thethesistype}{}
 \newcommand{\theadvisor}{}
 

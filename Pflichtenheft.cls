@@ -18,7 +18,7 @@
 %% $HeadURL$
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sdqseminar}[2018/04/16 v1.0.1 Seminar thesis class]
+\ProvidesClass{Pflichtenheft}[2018/04/16 v1.0.1 Seminar thesis class]
 % Language options. German is also needed in English thesis for the abstract
 \DeclareOption{ngerman}{\PassOptionsToPackage{\CurrentOption}{babel}}
 \DeclareOption{english}{\PassOptionsToPackage{main=\CurrentOption,ngerman}{babel}}
@@ -101,7 +101,7 @@
 %% variables for title page
 \newcommand{\theinstitute}{\ifcurrentbaselanguage{English}
     {Institute for Program Structures and Data Organization (IPD)}
-    {Institut für Programmstrukturen und Datenorganisation (IPD)}}
+    {Institut fï¿½r Programmstrukturen und Datenorganisation (IPD)}}
 \newcommand{\thethesistype}{}
 \newcommand{\theadvisor}{}
 

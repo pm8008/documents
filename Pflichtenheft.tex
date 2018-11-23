@@ -73,7 +73,7 @@
 {
 	name=data stream,
 	plural=data streams,
-	description={A sequence of data points. A data stream may grow dynamically, in which case it will provide a kind of "read next" method}
+	description={A sequence of data points of the same type. A data stream may grow dynamically, in which case it will provide a kind of "read next" method}
 }
 
 \newglossaryentry{diagram}
@@ -342,6 +342,11 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[NF300]
 	      The web UI should not crash when network connection is unstable.
 
+	\item[NF310]
+	      The system should not crash when malformed or incomplete data are received.
+	\item[NF320]
+	      The system should be able to be recovered with ease from a crash.
+
 	\item[NF400]
 	      The framework should be able to handle \glspl{data stream} from at least 100 physical nodes in the network.
 
@@ -349,16 +354,11 @@ The environment of the project is a modern browser with LAN access. The project 
 	      The system should have a mechanism in place that is able to deny access from unauthorized personnel.
 
 	\item[NF600]
-	      The system should be able to be recovered with ease from a crash.
-
-	\item[NF700]
 	      The data visualization should be easily understandable or learnable for non-professionals.
 
-	\item[NF800]
+	\item[NF700]
 	      The web UI should be accessible to all user groups, including people with conditions like color blindness or myopia.
 
-	\item[NF900]
-	      The system should not crash when malformed or incomplete data are received.
 
 \end{description}
 \subsection{Quality Requirements}
@@ -421,11 +421,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The login screen shows an error message that the username or password is incorrect and the entry field for the password is cleared.
 	      \end{description}
 
-	      \begin{figure}
-		      \centering
-		      \includegraphics[width=\textwidth]{Images/firstcase.png}
-		      \caption{Log-in Cases}
-	      \end{figure}
+	    
 
 	\item[T200] Open second diagram.
 	      \begin{description}
@@ -439,13 +435,8 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The user presses the create button at the bottom left
 		      \item[Reaction]
 		            The browser opens a second diagram, splitting the diagram panel in to two.
-
-		            \begin{figure}
-			            \centering
-			            \includegraphics[width=\textwidth]{Images/second_diagram.png}
-			            \caption{Second Diagram}
-		            \end{figure}
-	      \end{description}
+ \end{description}
+	
 
 
 	\item[T210] Open multiple diagrams
@@ -456,14 +447,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The user repeats [T200] two more times.
 		      \item[Reaction]
 		            The diagrams grid now displays four diagrams in a 2 x 2 formation.
-
-	      \end{description}
-	      \begin{figure}
-		      \centering
-		      \includegraphics[width=\textwidth]{Images/filter.png}
-		      \caption{Enable/Disable Filter}
-	      \end{figure}
-
+ \end{description}
 
 	\item[T220] Configure a diagram. (Concrete case: timeline diagram of packet size)
 	      \begin{description}
@@ -908,8 +892,12 @@ These are examples and since the user has the ability to chose what part of the 
 \end{description}
 
 \subsection{Use cases}
-
-TBD
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Images/login.png}
+	\caption{User Login.}
+\end{figure}
+  
 
 \subsubsection{Interactivity}
 
@@ -928,6 +916,16 @@ The elementary level (allowing the analyst to look at the information about a
 single data record), the intermediate level (showing summarised information about a group of data records), and the global level (providing an overview of all data elements).
 
 \subsection{Object Modelling}
+
+The following diagram shows a high-level view of the components of the ADIN-Inspctor. The PSE group will develop the visualization component that runs in the web browser and a server side component called hub. The hub interfaces with the data sources and also implements the access control.
+
+\begin{center}
+\includegraphics[scale=0.8]{Images/adin-sys1d.eps}
+\captionof{figure}{General system layout. Components to be developed by the PSE group are marked blue.}
+\label{fig:adinsys1c}
+\end{center}
+
+
 \subsection{Dynamic Modelling}
 
 \section{Glossary}

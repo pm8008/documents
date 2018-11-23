@@ -278,11 +278,26 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[FR1210]
 	      ADIN Inspector has to offer a function to create a new diagram showing the selected data points.
 
+	\item[FR1300]
+	      ADIN Inspector has to offer a filter mechanism for global filters and per-diagram filters.
+
+	\item[FR1310]
+	      The user should be able to enable one or more global filters and one or more filters per diagram and disable them again.
+
+	\item[FR1320]
+	      ADIN Inspector should provide at least these filter types:
+	      \begin{itemize}
+		      \item{Passing only packets with a specific value for a specific key}
+		      \item{Filtering according to one of these comparison operators: <, <=, >, >=}
+		      \item{Computing a moving average}
+		      \item{Computing a data rate or flow rate}
+	      \end{itemize}
+
 \end{description}
 
 \subsection{Should Have}
 \begin{itemize}
-	\item{The GUI should be able to support an undeterminate number of diagrams and scrollbar.??}
+	\item{The GUI should be able to support an undeterminate number of diagrams and scrollbar.}
 \end{itemize}
 \subsection{Nice To Have}
 \begin{itemize}
@@ -292,7 +307,7 @@ The environment of the project is a modern browser with LAN access. The project 
 
 \end{itemize}
 \section{Data Requirements}
-\subsection{User Data}
+\subsection{User Data} (\textbf{DR100)}
 
 \begin{itemize}
 	\item User ID \textit{(Unique)}
@@ -302,7 +317,7 @@ The environment of the project is a modern browser with LAN access. The project 
 \end{itemize}
 
 
-\subsection{Event stream data for Web UI}
+\subsection{Event stream data for Web UI} (\textbf{DR200)}
 
 \begin{itemize}
 	\item Timestamp
@@ -323,7 +338,7 @@ The environment of the project is a modern browser with LAN access. The project 
 	      \end{itemize}
 \end{itemize}
 
-\subsection{Raw packet metadata}
+\subsection{Raw packet metadata}(\textbf{DR300)}
 \begin{description}
 	\item
 	      Raw packet metadata include Time, Source, Destination, Protocol and Packet Length.
@@ -357,7 +372,7 @@ The environment of the project is a modern browser with LAN access. The project 
 	      The data visualization should be easily understandable or learnable for non-professionals.
 
 	\item[NF700]
-	      The web UI should be accessible to all user groups, including people with conditions like color blindness or myopia.
+	      The web UI should be accessible to all user groups, including people with conditions like color blindness.
 
 
 \end{description}
@@ -894,7 +909,7 @@ These are examples and since the user has the ability to chose what part of the 
 
 	\item[S500:] The user wants to look at normal data together with alarms/notifications
 	      \\
-	      Precondition: Scenario /S100/ apart from closing the web page
+	      Precondition: Scenario S100 apart from closing the web page
 	      \begin{itemize}
 		      \item{the user selects menu "data", entry "sources"}
 		      \item{the GUI displays a list of all known data sources with a checkbox in front of each}

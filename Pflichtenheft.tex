@@ -80,7 +80,7 @@
 {
 	name=diagram,
 	plural=diagrams,
-	description={A graphical representation of \glspl{data point} as per a certain \gls{diagram type}. Each data point is represented by a symbol whose position, size, color, shape etc. represent values of the data point. The diagram has labeled axes and, for other properties of the symbol, a legend that allow the user to determine the values represented by each symbol}
+	description={A graphical representation of \glspl{data point} as per a certain \gls{diagram type}. Each data point is represented by a symbol whose position, size, color, shape etc. represent values of the data point. The diagram has labeled axes and, for other properties of the symbol, legends that allow the user to determine the values represented by each symbol}
 }
 
 \newglossaryentry{diagram container}
@@ -173,7 +173,7 @@ This software is part of the ADIN framework and is referered to as the "ADIN Ins
 One component to achieve this goal is a web interface built with modularity in mind so as to make it easily extendable.
 \newline
 \newline
-The Web view is able to display a series of diagrams and charts to easily identify the behaviour of the network.
+The Web view is able to display a series of \glspl{diagram} and charts to easily identify the behaviour of the network.
 Within the Web view the user has the ability to zoom, select, highlight, and filter out data to better understand the aforementioned behaviour in different OSI layers, as well as visualize the flow rate between network nodes.
 \newline
 \newline
@@ -233,31 +233,52 @@ The environment of the project is a modern browser with LAN access. The project 
 \section{Functional Requirements}
 \subsection{Must Have}
 
-\begin{itemize}
-	\item{When opening the Web view the user has to be greeted by a login screen.}
+\begin{description}
+	\item[FR100]
+	      When opening the Web view the user has to be greeted by a login screen.
+	\item[FR110]
+	      The user has to be able to log out of the system.
 
-	\item{There need to be at least two levels of access for different account types (aka security \glspl{role}).
-	      Level of access is defined as: the specific set of \glspl{data stream} the user is able to view and select to analyze.}
-	\item{Once logged in an user has to be able to select a data stream to be visualized.}
-	\item{The user has to have the ability to select multiple \glspl{diagram} to visualize the selected data stream.}
-	\item{The user can use at least these \glspl{diagram type}:}
+	\item[FR200]
+	      There need to be at least two levels of access for different account types (aka security \glspl{role}).
+	      Level of access is defined as: the specific set of \glspl{data stream} the user is able to view and select to analyze.
+	\item[FR300]
+	      Once logged in an user has to be able to select a data stream to be visualized.
+	\item[FR400]
+	      The user has to have the ability to select multiple \glspl{diagram} to visualize the selected \gls{data stream}.
+	\item[FR500]
+	      The user can use at least these \glspl{diagram type}:
 	      \begin{itemize}
 		      \item{A timeline plot}
 		      \item{A scatter plot}
 		      \item{A Network diagram}
 	      \end{itemize}
-	\item{The user is able to dynamically change which component of the data is used in both the X and Y axis of the diagram.}
-	\item{The user should be able to add new diagrams to the GUI and configure them ( i.e. setting diagram type and axis) both at creation and at a later time.
-	      }
-	\item{The GUI has to support a minimum of 4 different diagrams at once.}
-	\item{Each diagram should be able to be maximised to take on the full size of the diagrams container.}
-	\item{Each drawn diagram can be connected to a different data stream.}
-	\item{The amount of data can be limited via a slider, effectively setting a limited time window, to which all diagram must update to.}
-	\item{There needs to be an auto scroll function (play button) which automatically scrolls through the selected time window and whose speed is adjustable.}
-	\item{The user has to be able to log out of the system.}
-	\item{Within the slider the user is able to scroll through the timeline and the diagrams need to react in real-time.}
+	\item[FR600]
+	      The user is able to dynamically change which components of the data are used for the X and Y axis of the diagram.
+	\item[FR700]
+	      The user should be able to add new diagrams to the GUI and configure them (i.e. setting diagram type and axis) both at creation and at a later time.
+	\item[FR710]
+	      The GUI has to support a minimum of 4 different diagrams at once.
+	\item[FR720]
+	      Each diagram should be able to be maximised to take on the full size of the \gls{diagram container}.
+	\item[FR800]
+	      Each drawn diagram can be connected to a different data stream.
+	\item[FR900]
+	      The amount of data can be limited via a slider, effectively setting a limited time window, to which all diagram must update to.
+	\item[FR910]
+	      Within the slider the user is able to scroll through the timeline and the diagrams need to react in real-time.
+	\item[FR1000]
+	      There needs to be an auto scroll function (play button) which automatically scrolls through the selected time window and whose speed is adjustable.
+	\item[FR1100]
+	      ADIN Inspector has to have a function to pick any data point and show all its information.
+	\item[FR1110]
+	      ADIN Inspector has to support, for node-link diagrams, both picking of nodes and links
+	\item[FR1200]
+	      ADIN Inspector has to offer a function to select one or more data points.
+	\item[FR1210]
+	      ADIN Inspector has to offer a function to create a new diagram showing the selected data points.
 
-\end{itemize}
+\end{description}
 
 \subsection{Should Have}
 \begin{itemize}
@@ -266,7 +287,7 @@ The environment of the project is a modern browser with LAN access. The project 
 \subsection{Nice To Have}
 \begin{itemize}
 	\item{Interactive filter options (Sliders, drop down menus etc.)}
-	\item{Extended selection of diagram types (To be announced).}
+	\item{Extended selection of diagram types (e.g. temporal raster plot and scatterplot matrix).}
 	\item{Save the session state and display it in the user profile.}
 
 \end{itemize}
@@ -413,7 +434,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		      \item[Precondition]
 		            The browser has been logged in to ADIN and shows the main screen with one empty diagram.
 		      \item[Action]
-		            The user presses the "New Diagram" button on the top right side of the screen three times.
+		            The user presses the "New Diagram" button on the top right side of the screen.
 		      \item[Reaction]
 		            The browser opens a modal with diagram settings
 		      \item[Action]
@@ -446,6 +467,20 @@ The environment of the project is a modern browser with LAN access. The project 
 	      \end{figure}
 
 
+	\item[T220] Configure a diagram. (Concrete case: timeline diagram of packet size)
+	      \begin{description}
+		      \item[Precondition]
+			    The browser has been logged in to ADIN and shows the main screen with one u
+		      \item[Action]
+			    The user selects "Timeline Diagram" from the Diagram selection box.
+		      \item[Reaction]
+		            The diagram changes to a timeline diagram. The x-axis is labeled with "time [s]".
+		      \item[Action]
+		            The user selects "Packet size" in the "Y-Axis" selection box.
+		      \item[Reaction]
+		            The diagram's y-axis is labeled with "size [bytes]".
+	      \end{description}
+
 	\item[T300] Filtering
 	      \begin{description}
 		      \item[Precondition]
@@ -460,7 +495,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The diagram shows original data again
 	      \end{description}
 
-	\item[T301] Filter chaining
+	\item[T310] Filter chaining
 	      \begin{description}
 		      \item[Precondition]
 		            Logged in to ADIN and at least one diagram and one global filter is active
@@ -477,7 +512,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		      \item[Action]
 		            The user presses the full screen button on the top right corner of the diagram
 		      \item[Reaction]
-		            The diagrams window is maximized to the diagram's container of the web page.
+		            The diagram's window is maximized to the \gls{diagram container} of the web page.
 	      \end{description}
 
 	\item[T450] Full screen and exit Full screen
@@ -556,6 +591,62 @@ The environment of the project is a modern browser with LAN access. The project 
 		            Unable to drag and drop not highlighted keyframes
 	      \end{description}
 
+	\item[T600] Investigate a data point
+	      \begin{description}
+		      \item[Precondition]
+		            A diagram showing data points.
+		      \item[Action]
+		            The user hovers with the cursor over a data point.
+		      \item[Reaction]
+		            ADIN Inspector opens a tooltip which shows all values or key-value pairs of this data point.
+	      \end{description}
+
+	\item[T610] Investigate nodes and links in a node-link diagram
+	      \begin{description}
+		      \item[Precondition]
+		            A node-link diagram showing data points.
+		      \item[Action]
+		            The user hovers with the cursor over a node.
+		      \item[Reaction]
+		            ADIN Inspector opens a tooltip which shows information about this node.
+		      \item[Action]
+		            The user hovers with the cursor over a node.
+		      \item[Reaction]
+		            ADIN Inspector opens a tooltip which shows all values or key-value pairs of the data point that this line represents.
+
+	      \end{description}
+
+	\item[T620] Select data points
+	      \begin{description}
+		      \item[Precondition]
+		            A diagram showing data points.
+		      \item[Action]
+		            The user clicks on a data point.
+		      \item[Reaction]
+		            ADIN Inspector marks this data point, e.g. by highlighting.
+		      \item[Action]
+		            The user clicks on a different data point.
+		      \item[Reaction]
+		            ADIN Inspector marks this second data point, e.g. by highlighting, and unmarks the first data point.
+	      \end{description}
+
+	\item[T630] Create a new diagram based on a selection, where the new diagram has a different type than the first diagram
+	      \begin{description}
+		      \item[Precondition]
+			    A diagram showing data points.
+		      \item[Action]
+		            The user selects one or more data points. \\
+		            The user right-clicks the selection. \\
+			    In the pop-up menu the user selects "create new diagram from selection"
+				
+		      \item[Reaction]
+			    ADIN Inspector opens a new diagram.
+		      \item[Action]
+		            The user selects a diagram type.
+		      \item[Reaction]
+		            ADIN Inspector displays the selected data points in the new diagram.
+	      \end{description}
+
 
 \end{description}
 
@@ -611,10 +702,10 @@ To discuss in depth this interface it has been divided into subsections labeled 
 	\item Here are the filters that can further restrict the data being shown in the selected diagram.
 	\item By clicking this button the user can create a new diagram shown in number 5. The creation workflow is shown in \autoref{fig:mainWindow1} to \autoref{fig:mainWindow5}.
 	\item Here is the currently logged in user, by clicking the button to the right of his name the user can log out.
-	\item This is the diagrams container, inside are all diagrams the user has created with all the set constraints. At most 4 diagrams are shown on the container, and more can be made visible via the slider on the right of the container.
+	\item This is the \gls{diagram container}, inside are all diagrams the user has created with all the set constraints. At most 4 diagrams are shown in the container, and more can be made visible via the slider on the right of the container.
 	\item This is a diagram.
 	\item By hovering with the mouse over a data point a tooltip is shown with all data associated with this data point.
-	\item These buttons control whether a diagram is fullscreen and the diagram settings. By clicking the button labeled F the diagram grows to take on all available space on the container, like shown in \autoref{fig:mainWindow0}.
+	\item These buttons control whether a diagram is fullscreen and the diagram settings. By clicking the button labeled F the diagram grows to take on all available space in the container, like shown in \autoref{fig:mainWindow0}.
 	      \\
 	      Clicking on the button labeled "S" replaces the diagram with the Settings for this diagram like shown in \autoref{fig:mainWindow1}
 	\item The play button auto scroll along the selected time frame

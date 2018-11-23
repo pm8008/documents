@@ -269,6 +269,14 @@ The environment of the project is a modern browser with LAN access. The project 
 	      Within the slider the user is able to scroll through the timeline and the diagrams need to react in real-time.
 	\item[FR1000]
 	      There needs to be an auto scroll function (play button) which automatically scrolls through the selected time window and whose speed is adjustable.
+	\item[FR1100]
+	      ADIN Inspector has to have a function to pick any data point and show all its information.
+	\item[FR1110]
+	      ADIN Inspector has to support, for node-link diagrams, both picking of nodes and links
+	\item[FR1200]
+	      ADIN Inspector has to offer a function to select one or more data points.
+	\item[FR1210]
+	      ADIN Inspector has to offer a function to create a new diagram showing the selected data points.
 
 \end{description}
 
@@ -426,7 +434,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		      \item[Precondition]
 		            The browser has been logged in to ADIN and shows the main screen with one empty diagram.
 		      \item[Action]
-		            The user presses the "New Diagram" button on the top right side of the screen three times.
+		            The user presses the "New Diagram" button on the top right side of the screen.
 		      \item[Reaction]
 		            The browser opens a modal with diagram settings
 		      \item[Action]
@@ -459,6 +467,20 @@ The environment of the project is a modern browser with LAN access. The project 
 	      \end{figure}
 
 
+	\item[T220] Configure a diagram. (Concrete case: timeline diagram of packet size)
+	      \begin{description}
+		      \item[Precondition]
+			    The browser has been logged in to ADIN and shows the main screen with one u
+		      \item[Action]
+			    The user selects "Timeline Diagram" from the Diagram selection box.
+		      \item[Reaction]
+		            The diagram changes to a timeline diagram. The x-axis is labeled with "time [s]".
+		      \item[Action]
+		            The user selects "Packet size" in the "Y-Axis" selection box.
+		      \item[Reaction]
+		            The diagram's y-axis is labeled with "size [bytes]".
+	      \end{description}
+
 	\item[T300] Filtering
 	      \begin{description}
 		      \item[Precondition]
@@ -473,7 +495,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The diagram shows original data again
 	      \end{description}
 
-	\item[T301] Filter chaining
+	\item[T310] Filter chaining
 	      \begin{description}
 		      \item[Precondition]
 		            Logged in to ADIN and at least one diagram and one global filter is active
@@ -567,6 +589,62 @@ The environment of the project is a modern browser with LAN access. The project 
 		            User tries to drag a not highlighted keyframe from the timeline
 		      \item[Reaction]
 		            Unable to drag and drop not highlighted keyframes
+	      \end{description}
+
+	\item[T600] Investigate a data point
+	      \begin{description}
+		      \item[Precondition]
+		            A diagram showing data points.
+		      \item[Action]
+		            The user hovers with the cursor over a data point.
+		      \item[Reaction]
+		            ADIN Inspector opens a tooltip which shows all values or key-value pairs of this data point.
+	      \end{description}
+
+	\item[T610] Investigate nodes and links in a node-link diagram
+	      \begin{description}
+		      \item[Precondition]
+		            A node-link diagram showing data points.
+		      \item[Action]
+		            The user hovers with the cursor over a node.
+		      \item[Reaction]
+		            ADIN Inspector opens a tooltip which shows information about this node.
+		      \item[Action]
+		            The user hovers with the cursor over a node.
+		      \item[Reaction]
+		            ADIN Inspector opens a tooltip which shows all values or key-value pairs of the data point that this line represents.
+
+	      \end{description}
+
+	\item[T620] Select data points
+	      \begin{description}
+		      \item[Precondition]
+		            A diagram showing data points.
+		      \item[Action]
+		            The user clicks on a data point.
+		      \item[Reaction]
+		            ADIN Inspector marks this data point, e.g. by highlighting.
+		      \item[Action]
+		            The user clicks on a different data point.
+		      \item[Reaction]
+		            ADIN Inspector marks this second data point, e.g. by highlighting, and unmarks the first data point.
+	      \end{description}
+
+	\item[T630] Create a new diagram based on a selection, where the new diagram has a different type than the first diagram
+	      \begin{description}
+		      \item[Precondition]
+			    A diagram showing data points.
+		      \item[Action]
+		            The user selects one or more data points. \\
+		            The user right-clicks the selection. \\
+			    In the pop-up menu the user selects "create new diagram from selection"
+				
+		      \item[Reaction]
+			    ADIN Inspector opens a new diagram.
+		      \item[Action]
+		            The user selects a diagram type.
+		      \item[Reaction]
+		            ADIN Inspector displays the selected data points in the new diagram.
 	      \end{description}
 
 

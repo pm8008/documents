@@ -49,8 +49,12 @@
 %% --------------------------------
 
 %% Use biber instead of BibTeX, see README
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mwe}
+\usepackage{flafter}
 \usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
-\addbibresource{pflichtenheft.bib}
+\addbibresource{Pflichtenheft.bib}
 
 \usepackage[nonumberlist]{glossaries}
 \makeglossaries
@@ -658,6 +662,11 @@ The environment of the project is a modern browser with LAN access. The project 
 
 %%A key issue in graph visualization is the size of the graph, i.e. the size of the data to visualize. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst's cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalization.
 
+The basic data structure needed for graphs are a given set of nodes and a given set of edges, as they are often drawn
+as node-link diagrams. In the postal data set, nodes could represent the origins and destinations of postal flows. Edges represent the flows between the respective origins and destinations.In intelligence analysis, investigators use semantic graphs to organise concepts and relationships as graph nodes and links in hopes of discovering key trends, patterns, and insights.” A key issue in graph visualisation is the size of the graph, i.e. the size of the data to visualise. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst’s cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalisation.
+\\
+In this subsection we'll discuss the GUI, it's components and the workflow of a typical user.
+
 %%For example, Cui et al. (2008) investigate node-link diagrams for network visualisation.
 %Their study focuses on the problem of visual cluttering in graph visualisations,
 %as this is one of the main issues in the representation of relationships among
@@ -665,11 +674,6 @@ The environment of the project is a modern browser with LAN access. The project 
 %for geometry-based edge clustering to group edges into bundles and hence reduce
 %visual cluttering caused by the crossing of the high number of edges (see figure 2.1).
 \subsubsection{Main Window}
-The basic data structure needed for graphs are a given set of nodes and a given set of edges, as they are often drawn
-as node-link diagrams. In the postal data set, nodes could represent the origins and destinations of postal flows. Edges represent the flows between the respective origins and destinations.In intelligence analysis, investigators use semantic graphs to organise concepts and relationships as graph nodes and links in hopes of discovering key trends, patterns, and insights.” A key issue in graph visualisation is the size of the graph, i.e. the size of the data to visualise. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst’s cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalisation.
-\\
-In this subsection we'll discuss the GUI, it's components and the workflow of a typical user.
-\\
 As the programm is opened the user is greeted with a login screen shown in \autoref{fig:loginWindow}. After the user has entered it's credentials and clicked on the login button he is shown \autoref{fig:mainWindow0}.
 \\
 \vfill
@@ -695,8 +699,8 @@ To discuss in depth this interface it has been divided into subsections labeled 
 \\
 \begin{enumerate}
 	\item The Data stream drop down menu allows the user to select which stream he is currently listening to. This dropdown menu shows the selected diagram's selected data stream and by default is set to real-time.
-	\item Here the user can set filters affecting all diagrams, namely limiting which layers and protocols are currently being shown.
-	\item Here are the filters that can further restrict the data being shown in the selected diagram.
+	\item Here the user can set filters affecting all diagrams, namely limiting which layers and protocols are currently being shown. To add a new filter a user would click on the add filter button, select which part of the data stream is to be used in the filter, any optional comparators, and set a parameter in the text-box.
+	\item This button opens the diagram filter list, this list contains filters specific to each diagram.
 	\item By clicking this button the user can create a new diagram shown in number 5. The creation workflow is shown in \autoref{fig:mainWindow1} to \autoref{fig:mainWindow5}.
 	\item Here is the currently logged in user, by clicking the button to the right of his name the user can log out.
 	\item This is the \gls{diagram container}, inside are all diagrams the user has created with all the set constraints. At most 4 diagrams are shown in the container, and more can be made visible via the slider on the right of the container.
@@ -739,6 +743,8 @@ Afterwards, the screen looks like \autoref{fig:mainWindow2}, the \gls{diagram co
 \\
 Any diagrams created afterwards are spawned underneath the existing ones and the user can scroll up and down to view all of them (shown in \autoref{fig:mainWindow4}) (TBD)
 
+
+
 \vfill
 
 \begin{figure}[h]
@@ -750,7 +756,6 @@ Any diagrams created afterwards are spawned underneath the existing ones and the
 
 
 \vfill
-\clearpage
 
 \begin{figure}[h]
 	\centering
@@ -800,12 +805,6 @@ In order to set a new filter that applies to only one diagram the user would ope
 \clearpage
 
 \subsubsection{Diagram types}
-%line chart
-%https://beta.observablehq.com/@mbostock/d3-line-chart
-%spike raster plot
-%https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3306002/pdf/fnsys-06-00006.pdf
-%network graph
-%http://projects.flowingdata.com/tut/interactive_network_demo/
 %scatter plot
 %https://commons.wikimedia.org/wiki/File:Scatter_diagram_for_quality_characteristic_XXX.svg
 
@@ -823,45 +822,47 @@ Scatter plot: a way to visualize up to 4 dimensions of the data stream.(\autoref
 \\
 These are examples and since the user has the ability to chose what part of the data stream is used for each axis it does not convey the full ability of these diagrams, that is left to the end user.
 
+
+\begin{figure*}[!h]
+        \centering
+        \begin{subfigure}[h]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Images/line_chart.png}
+            \caption[Line Chart]%
+            {{\small Line Chart}}    
+            \label{fig:Diagram types}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[h]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{Images/net_diag.png}
+            \caption[]%
+            {{\small Net diagram}}    
+            \label{fig:Diagram types}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[h]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
+            \caption[]%
+            {{\small Scatterdiagram}}    
+            \label{fig:Diagram types}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[h]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
+            \caption[]%
+            {{\small Spike raster plot}}    
+            \label{fig:mean and std of net44}
+        \end{subfigure}
+        \caption[ Diagram types ]
+        {\small Diagram types} 
+        \label{fig:Diagram types}
+    \end{figure*}
 \vfill
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{Images/line_chart.png}
-	\caption{Line chart example}
-	\label{fig:linechart}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{Images/net_diag.png}
-	\caption{Network diagram example}
-	\label{fig:netdiaram}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
-	\caption{Scatter plot example}
-	\label{fig:scatterplot}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\label{fig:mainWindow4}
-	\includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
-	\caption{Spike raster plot example}
-	\label{fig:rasterplot}
-\end{figure}
-\vfill
-\clearpage
 
-%%For example, Cui et al. (2008) investigate node-link diagrams for network visualisation.
-%Their study focuses on the problem of visual cluttering in graph visualisations,
-%as this is one of the main issues in the representation of relationships among
-%large data (Herman, Melancon, and Marshall, 2000). They introduce a framework
-%for geometry-based edge clustering to group edges into bundles and hence reduce
-%visual cluttering caused by the crossing of the high number of edges (see figure 2.1).
-
-
-
-\subsection{Scenarios}
+\subsection{Scenario}
 
 \begin{description}
 	\item[S100:] An operator wants to check manually/visually whether network nodes appeared or disappeared over the last day
@@ -927,10 +928,10 @@ These are examples and since the user has the ability to chose what part of the 
 \subsection{Use cases}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{Images/login.png}
+	\includegraphics[width=\textwidth]{Images/login.PNG}
 	\caption{User Login.}
 \end{figure}
-
+  
 \begin{description}
 \item[Use Case UC1: Login]
 \hfill
@@ -972,6 +973,7 @@ These are examples and since the user has the ability to chose what part of the 
 \end{itemize}
 \end{description}
 \end{description}
+
 
 \subsubsection{Interactivity}
 

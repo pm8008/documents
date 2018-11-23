@@ -932,6 +932,48 @@ These are examples and since the user has the ability to chose what part of the 
 	\caption{User Login.}
 \end{figure}
   
+\begin{description}
+\item[Use Case UC1: Login]
+\hfill
+\begin{description}
+\item[Scope:] ADIN Inspector and hub
+\item[Level:] user goal
+\item[Stakeholders and Interests:]
+\hfill
+\begin{itemize}
+\item{User: Wants to login quickly and easily}
+\item{System administrator: Wants to ensure that only authorized persons access the system. Wants few user support requests.}
+\item{Manager: Wants protection of data. Wants no obstacle to the user's work.}
+\end{itemize}
+\item[Preconditions:] An account for the user has been created.
+\item[Postconditions:] User is loged in.
+\item[Main Success Scenario:]
+\hfill
+\begin{enumerate}
+\item{Customer opens the ADIN website in the browser}
+\item{Customer enters his/her username and password}
+\item{The ADIN system checks the entered password and loads the access permissions for the user.}
+\item{The sytem presents the ADIN main screen.}
+\item{User begins to use the ADIN Inspector.}
+\end{enumerate}
+
+\item[Extensions:]
+\hfill
+\begin{itemize}
+\item[]*a. At any time, the network connection to the server fails or the server crashes:
+\begin{enumerate}
+\item{the user reloads the web site which takes him/her to the ADIN login screen}
+\end{enumerate}
+
+\item[]3a. Wrong username or password:
+\begin{enumerate}
+\item{System produces an error message and stays on the login screen.}
+\end{enumerate}
+
+\end{itemize}
+\end{description}
+\end{description}
+
 
 \subsubsection{Interactivity}
 

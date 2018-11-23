@@ -73,7 +73,7 @@
 {
 	name=data stream,
 	plural=data streams,
-	description={A sequence of data points. A data stream may grow dynamically, in which case it will provide a kind of "read next" method}
+	description={A sequence of data points of the same type. A data stream may grow dynamically, in which case it will provide a kind of "read next" method}
 }
 
 \newglossaryentry{diagram}
@@ -916,6 +916,16 @@ The elementary level (allowing the analyst to look at the information about a
 single data record), the intermediate level (showing summarised information about a group of data records), and the global level (providing an overview of all data elements).
 
 \subsection{Object Modelling}
+
+The following diagram shows a high-level view of the components of the ADIN-Inspctor. The PSE group will develop the visualization component that runs in the web browser and a server side component called hub. The hub interfaces with the data sources and also implements the access control.
+
+\begin{center}
+\includegraphics[scale=0.8]{Images/adin-sys1d.eps}
+\captionof{figure}{General system layout. Components to be developed by the PSE group are marked blue.}
+\label{fig:adinsys1c}
+\end{center}
+
+
 \subsection{Dynamic Modelling}
 
 \section{Glossary}

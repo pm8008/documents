@@ -710,7 +710,7 @@ To discuss in depth this interface it has been divided into subsections labeled 
 	      \\
 	      Clicking on the button labeled "S" replaces the diagram with the Settings for this diagram like shown in \autoref{fig:mainWindow1}
 	\item The play button auto scroll along the selected time frame
-	\item This timeline shows on the left and right bottom labels the beginning and end of all data streams, the labels on top show the currently selected time window and are movable to increase,decrease the time window, the middle shield icon shows the current time while being played, and is also movable to scroll by data manually. (TBD)
+	\item This timeline shows on the left and right bottom labels the beginning and end of all data streams, the labels on top show the currently selected time window and are movable to increase,decrease the time window, the middle shield icon shows the current time while being played, and is also movable to scroll by data manually.
 
 \end{enumerate}
 
@@ -785,9 +785,14 @@ Any diagrams created afterwards are spawned underneath the existing ones and the
 
 Another activity the user will use frequently is the filtering system.
 \\
-int he previous section we took a look at the Main window and it's different sections, there we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when you want to create a filter that only affects one diagram?
+In he previous section we took a look at the Main window and it's different sections, there we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when you want to create a filter that only affects one diagram?
 \\
 For that, the user would click on the Diagram filter (see previous section), an overlay would cover the whole window and a new set of containers, similar to the global filter, would appear. As seen on \autoref{fig:mainWindow6}
+\\
+On the top we see the global filter list, below it we see the filter list corresponding to the first diagram (diagram numbering is done left to right and top to bottom).
+\\
+In order to set a new filter that applies to only one diagram the user would open this screen, search for the corresponding diagram number and click on the "add filter button" at which point the button get's moved down to make space for a drop down menu containing all types of data from a data stream. The user selects one, and depending on which one, if appropriate, another drop down menu appears, with contextual relational symbols (i.e. less than (<), equals, etc.) and next to it a text box where the user can input the matching string to which to filter.
+
 
 \begin{figure}[h]
 	\centering

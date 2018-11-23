@@ -643,6 +643,11 @@ The environment of the project is a modern browser with LAN access. The project 
 
 %%A key issue in graph visualization is the size of the graph, i.e. the size of the data to visualize. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst's cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalization.
 
+The basic data structure needed for graphs are a given set of nodes and a given set of edges, as they are often drawn
+as node-link diagrams. In the postal data set, nodes could represent the origins and destinations of postal flows. Edges represent the flows between the respective origins and destinations.In intelligence analysis, investigators use semantic graphs to organise concepts and relationships as graph nodes and links in hopes of discovering key trends, patterns, and insights.” A key issue in graph visualisation is the size of the graph, i.e. the size of the data to visualise. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst’s cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalisation.
+\\
+In this subsection we'll discuss the GUI, it's components and the workflow of a typical user.
+
 %%For example, Cui et al. (2008) investigate node-link diagrams for network visualisation.
 %Their study focuses on the problem of visual cluttering in graph visualisations,
 %as this is one of the main issues in the representation of relationships among
@@ -650,11 +655,6 @@ The environment of the project is a modern browser with LAN access. The project 
 %for geometry-based edge clustering to group edges into bundles and hence reduce
 %visual cluttering caused by the crossing of the high number of edges (see figure 2.1).
 \subsubsection{Main Window}
-The basic data structure needed for graphs are a given set of nodes and a given set of edges, as they are often drawn
-as node-link diagrams. In the postal data set, nodes could represent the origins and destinations of postal flows. Edges represent the flows between the respective origins and destinations.In intelligence analysis, investigators use semantic graphs to organise concepts and relationships as graph nodes and links in hopes of discovering key trends, patterns, and insights.” A key issue in graph visualisation is the size of the graph, i.e. the size of the data to visualise. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst’s cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalisation.
-\\
-In this subsection we'll discuss the GUI, it's components and the workflow of a typical user.
-\\
 As the programm is opened the user is greeted with a login screen shown in \autoref{fig:loginWindow}. After the user has entered it's credentials and clicked on the login button he is shown \autoref{fig:mainWindow0}.
 \\
 \vfill
@@ -680,8 +680,8 @@ To discuss in depth this interface it has been divided into subsections labeled 
 \\
 \begin{enumerate}
 	\item The Data stream drop down menu allows the user to select which stream he is currently listening to. This dropdown menu shows the selected diagram's selected data stream and by default is set to real-time.
-	\item Here the user can set filters affecting all diagrams, namely limiting which layers and protocols are currently being shown.
-	\item Here are the filters that can further restrict the data being shown in the selected diagram.
+	\item Here the user can set filters affecting all diagrams, namely limiting which layers and protocols are currently being shown. To add a new filter a user would click on the add filter button, select which part of the data stream is to be used in the filter, any optional comparators, and set a parameter in the text-box.
+	\item This button opens the diagram filter list, this list contains filters specific to each diagram.
 	\item By clicking this button the user can create a new diagram shown in number 5. The creation workflow is shown in \autoref{fig:mainWindow1} to \autoref{fig:mainWindow5}.
 	\item Here is the currently logged in user, by clicking the button to the right of his name the user can log out.
 	\item This is the \gls{diagram container}, inside are all diagrams the user has created with all the set constraints. At most 4 diagrams are shown in the container, and more can be made visible via the slider on the right of the container.
@@ -724,6 +724,8 @@ Afterwards, the screen looks like \autoref{fig:mainWindow2}, the \gls{diagram co
 \\
 Any diagrams created afterwards are spawned underneath the existing ones and the user can scroll up and down to view all of them (shown in \autoref{fig:mainWindow4}) (TBD)
 
+
+
 \vfill
 
 \begin{figure}[h]
@@ -735,7 +737,6 @@ Any diagrams created afterwards are spawned underneath the existing ones and the
 
 
 \vfill
-\clearpage
 
 \begin{figure}[h]
 	\centering
@@ -761,6 +762,19 @@ Any diagrams created afterwards are spawned underneath the existing ones and the
 	\includegraphics[width=\textwidth]{Images/06MW.png}
 	\caption{Main window with more than four diagrams open, more diagrams can be shown using the scroll bar}
 	\label{fig:mainWindow4}
+\end{figure}
+
+Another activity the user will use frequently is the filtering system.
+\\
+int he previous section we took a look at the Main window and it's different sections, there we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when you want to create a filter that only affects one diagram?
+\\
+For that, the user would click on the Diagram filter (see previous section), an overlay would cover the whole window and a new set of containers, similar to the global filter, would appear. As seen on \autoref{fig:mainWindow6}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Images/09MW.png}
+	\caption{Main window with more than four diagrams open, more diagrams can be shown using the scroll bar}
+	\label{fig:mainWindow6}
 \end{figure}
 
 %added this to show all images on GUI section

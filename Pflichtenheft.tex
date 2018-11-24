@@ -441,7 +441,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The login screen shows an error message that the username or password is incorrect and the entry field for the password is cleared.
 	      \end{description}
 
-	    
+
 
 	\item[T200] Open second diagram.
 	      \begin{description}
@@ -455,8 +455,8 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The user presses the create button at the bottom left
 		      \item[Reaction]
 		            The browser opens a second diagram, splitting the diagram panel in to two.
- \end{description}
-	
+	      \end{description}
+
 
 
 	\item[T210] Open multiple diagrams
@@ -467,14 +467,14 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The user repeats [T200] two more times.
 		      \item[Reaction]
 		            The diagrams grid now displays four diagrams in a 2 x 2 formation.
- \end{description}
+	      \end{description}
 
 	\item[T220] Configure a diagram. (Concrete case: timeline diagram of packet size)
 	      \begin{description}
 		      \item[Precondition]
-			    The browser has been logged in to ADIN and shows the main screen with one u
+		            The browser has been logged in to ADIN and shows the main screen with one u
 		      \item[Action]
-			    The user selects "Timeline Diagram" from the Diagram selection box.
+		            The user selects "Timeline Diagram" from the Diagram selection box.
 		      \item[Reaction]
 		            The diagram changes to a timeline diagram. The x-axis is labeled with "time [s]".
 		      \item[Action]
@@ -635,14 +635,14 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[T630] Create a new diagram based on a selection, where the new diagram has a different type than the first diagram
 	      \begin{description}
 		      \item[Precondition]
-			    A diagram showing data points.
+		            A diagram showing data points.
 		      \item[Action]
 		            The user selects one or more data points. \\
 		            The user right-clicks the selection. \\
-			    In the pop-up menu the user selects "create new diagram from selection"
-				
+		            In the pop-up menu the user selects "create new diagram from selection"
+
 		      \item[Reaction]
-			    ADIN Inspector opens a new diagram.
+		            ADIN Inspector opens a new diagram.
 		      \item[Action]
 		            The user selects a diagram type.
 		      \item[Reaction]
@@ -825,42 +825,42 @@ These are examples and since the user has the ability to chose what part of the 
 
 
 \begin{figure*}[!h]
-        \centering
-        \begin{subfigure}[h]{0.475\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{Images/line_chart.png}
-            \caption[Line Chart]%
-            {{\small Line Chart}}    
-            \label{fig:Diagram types}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[h]{0.475\textwidth}  
-            \centering 
-            \includegraphics[width=\textwidth]{Images/net_diag.png}
-            \caption[]%
-            {{\small Net diagram}}    
-            \label{fig:Diagram types}
-        \end{subfigure}
-        \vskip\baselineskip
-        \begin{subfigure}[h]{0.475\textwidth}   
-            \centering 
-            \includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
-            \caption[]%
-            {{\small Scatterdiagram}}    
-            \label{fig:Diagram types}
-        \end{subfigure}
-        \quad
-        \begin{subfigure}[h]{0.475\textwidth}   
-            \centering 
-            \includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
-            \caption[]%
-            {{\small Spike raster plot}}    
-            \label{fig:mean and std of net44}
-        \end{subfigure}
-        \caption[ Diagram types ]
-        {\small Diagram types} 
-        \label{fig:Diagram types}
-    \end{figure*}
+	\centering
+	\begin{subfigure}[h]{0.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/line_chart.png}
+		\caption[Line Chart]%
+		{{\small Line Chart}}
+		\label{fig:Diagram types}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[h]{0.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/net_diag.png}
+		\caption[]%
+		{{\small Net diagram}}
+		\label{fig:Diagram types}
+	\end{subfigure}
+	\vskip\baselineskip
+	\begin{subfigure}[h]{0.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
+		\caption[]%
+		{{\small Scatterdiagram}}
+		\label{fig:Diagram types}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[h]{0.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
+		\caption[]%
+		{{\small Spike raster plot}}
+		\label{fig:mean and std of net44}
+	\end{subfigure}
+	\caption[ Diagram types ]
+	{\small Diagram types}
+	\label{fig:Diagram types}
+\end{figure*}
 \vfill
 
 \subsection{Scenario}
@@ -932,53 +932,53 @@ These are examples and since the user has the ability to chose what part of the 
 	\includegraphics[width=\textwidth]{Images/case_login.png}
 	\caption{User Login.}
 \end{figure}
-  
+
 \begin{description}
-\item[Use Case UC1: Login]
-\hfill
-\begin{description}
-\item[Scope:] ADIN Inspector and hub
-\item[Level:] user goal
-\item[Stakeholders and Interests:]
-\hfill
-\begin{itemize}
-\item{User: Wants to login quickly and easily}
-\item{System administrator: Wants to ensure that only authorized persons access the system. Wants few user support requests.}
-\item{Manager: Wants protection of data. Wants no obstacle to the user's work.}
-\end{itemize}
-\item[Preconditions:] An account for the user has been created.
-\item[Postconditions:] User is loged in.
-\item[Main Success Scenario:]
-\hfill
-\begin{enumerate}
-\item{Customer opens the ADIN website in the browser}
-\item{Customer enters his/her username and password}
-\item{The ADIN system checks the entered password and loads the access permissions for the user.}
-\item{The sytem presents the ADIN main screen.}
-\item{User begins to use the ADIN Inspector.}
-\end{enumerate}
+	\item[Use Case UC1: Login]
+	      \hfill
+	      \begin{description}
+		      \item[Scope:] ADIN Inspector and hub
+		      \item[Level:] user goal
+		      \item[Stakeholders and Interests:]
+		            \hfill
+		            \begin{itemize}
+			            \item{User: Wants to login quickly and easily}
+			            \item{System administrator: Wants to ensure that only authorized persons access the system. Wants few user support requests.}
+			            \item{Manager: Wants protection of data. Wants no obstacle to the user's work.}
+		            \end{itemize}
+		      \item[Preconditions:] An account for the user has been created.
+		      \item[Postconditions:] User is loged in.
+		      \item[Main Success Scenario:]
+		            \hfill
+		            \begin{enumerate}
+			            \item{Customer opens the ADIN website in the browser}
+			            \item{Customer enters his/her username and password}
+			            \item{The ADIN system checks the entered password and loads the access permissions for the user.}
+			            \item{The sytem presents the ADIN main screen.}
+			            \item{User begins to use the ADIN Inspector.}
+		            \end{enumerate}
 
-\item[Extensions:]
-\hfill
-\begin{itemize}
-\item[]*a. At any time, the network connection to the server fails or the server crashes:
-\begin{enumerate}
-\item{the user reloads the web site which takes him/her to the ADIN login screen}
-\end{enumerate}
+		      \item[Extensions:]
+		            \hfill
+		            \begin{itemize}
+			            \item[]*a. At any time, the network connection to the server fails or the server crashes:
+			                  \begin{enumerate}
+				                  \item{the user reloads the web site which takes him/her to the ADIN login screen}
+			                  \end{enumerate}
 
-\item[]3a. Wrong username or password:
-\begin{enumerate}
-\item{System produces an error message and stays on the login screen.}
-\end{enumerate}
+			            \item[]3a. Wrong username or password:
+			                  \begin{enumerate}
+				                  \item{System produces an error message and stays on the login screen.}
+			                  \end{enumerate}
 
-\end{itemize}
-\end{description}
+		            \end{itemize}
+	      \end{description}
 
 	      \begin{figure}[h]
 		      \centering
-	\includegraphics[width=\textwidth]{Images/image.PNG}
-	\caption{Examine Data.}
-\end{figure}
+		      \includegraphics[width=\textwidth]{Images/case_examine_data.png}
+		      \caption{Examine Data.}
+	      \end{figure}
 \end{description}
 
 
@@ -1003,9 +1003,9 @@ single data record), the intermediate level (showing summarised information abou
 The following diagram shows a high-level view of the components of the ADIN-Inspctor. The PSE group will develop the visualization component that runs in the web browser and a server side component called hub. The hub interfaces with the data sources and also implements the access control.
 
 \begin{center}
-\includegraphics[scale=0.8]{Images/adin-sys1d.eps}
-\captionof{figure}{General system layout. Components to be developed by the PSE group are marked blue.}
-\label{fig:adinsys1c}
+	\includegraphics[scale=0.8]{Images/adin-sys1d.eps}
+	\captionof{figure}{General system layout. Components to be developed by the PSE group are marked blue.}
+	\label{fig:adinsys1c}
 \end{center}
 
 

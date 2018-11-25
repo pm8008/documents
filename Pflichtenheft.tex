@@ -379,6 +379,14 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[NF700]
 	      The web UI should be accessible to all user groups, including people with conditions like color blindness.
 
+	\item[NF800]
+	      The web UI should be easily extendable with new diagram types.
+
+	\item[NF810]
+	      The web UI should be easily extendable with new filter and aggregation components.
+
+	\item[NF820]
+	      The web UI should be easily extendable with new input data types.
 
 \end{description}
 \subsection{Quality Requirements}
@@ -1000,7 +1008,7 @@ single data record), the intermediate level (showing summarised information abou
 
 \subsection{Object Modelling}
 
-The following diagram shows a high-level view of the components of the ADIN-Inspctor. The PSE group will develop the visualization component that runs in the web browser and a server side component called hub. The hub interfaces with the data sources and also implements the access control.
+The following diagram shows a high-level view of the components of the ADIN-Inspector. The PSE group will develop the visualization component that runs in the web browser and a server side component called hub. The hub interfaces with the data sources and also implements the access control.
 
 \begin{center}
 \includegraphics[scale=0.8]{Images/adin-sys1d.eps}
@@ -1010,6 +1018,14 @@ The following diagram shows a high-level view of the components of the ADIN-Insp
 
 
 \subsection{Dynamic Modelling}
+
+\autoref{fig:adin-login-seq} shows the actions of the Hub component during login.
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Images/adin-login-seq.png}
+\captionof{figure}{The activity of the Hub during login.}
+\label{fig:adin-login-seq}
+\end{center}
 
 \section{Glossary}
 \printglossary[title=,toctitle=]

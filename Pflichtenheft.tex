@@ -10,7 +10,7 @@
 %% Available page modes: oneside, twoside
 %% Available languages: english, ngerman
 %% Available modes: draft, final (see README)
-\documentclass[twoside, english, draft]{Pflichtenheft}
+\documentclass[twoside, english, final]{Pflichtenheft}
 
 %% ---------------------------------
 %% | Information about the thesis  |
@@ -153,7 +153,7 @@ This Document outlines the requirements (both functional and non-functional), en
 \hfill
 
 \begin{center}
-	\large{Version 0.5}
+	\large{Version 1.0}
 \end{center}
 
 
@@ -269,7 +269,7 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[FR800]
 	      Each drawn diagram can be connected to a different data stream.
 	\item[FR900]
-	      The amount of data can be limited via a slider, effectively setting a limited time window, to which all diagram must update to.
+	      The amount of data can be limited via a slider, effectively setting a limited time window, to which all diagrams must update to.
 	\item[FR910]
 	      Within the slider the user is able to scroll through the timeline and the diagrams need to react in real-time.
 	\item[FR1000]
@@ -289,24 +289,31 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[FR1310]
 	      The user should be able to enable one or more global filters and disable them again.
 
-	\item[FR1320]
-	      The user should be able to enable one or more per-diagram filters for each diagram and disable them again.
-
 	\item[FR1330]
 	      ADIN Inspector should provide at least these filter types:
 	      \begin{itemize}
 		      \item{Passing only packets with a specific value for a specific key}
 		      \item{Filtering according to one of these comparison operators: <, <=, >, >=}
 		      \item{Computing a moving average}
-		      \item{Computing a data rate or flow rate}
 	      \end{itemize}
 
 \end{description}
 
 \subsection{Should Have}
-\begin{itemize}
-	\item{The GUI should be able to support an undeterminate number of diagrams and scrollbar.}
-\end{itemize}
+\begin{description}
+	\item[FR1320]
+	      The user should be able to enable one or more per-diagram filters for each diagram and disable them again.
+
+	\item[FR1332]
+	      ADIN Inspector should provide this filter type:
+	      \begin{itemize}
+		\item[]Computing a data rate or flow rate
+	      \end{itemize}
+
+	\item[FR1400]
+	      The GUI should be able to support an undeterminate number of diagrams and scrollbar.
+\end{description}
+
 \subsection{Nice To Have}
 \begin{itemize}
 	\item{Interactive filter options (Sliders, drop down menus etc.)}
@@ -674,9 +681,6 @@ The environment of the project is a modern browser with LAN access. The project 
 
 %%A key issue in graph visualization is the size of the graph, i.e. the size of the data to visualize. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst's cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalization.
 
-The basic data structure needed for graphs are a given set of nodes and a given set of edges, as they are often drawn
-as node-link diagrams. In the postal data set, nodes could represent the origins and destinations of postal flows. Edges represent the flows between the respective origins and destinations.In intelligence analysis, investigators use semantic graphs to organise concepts and relationships as graph nodes and links in hopes of discovering key trends, patterns, and insights.” A key issue in graph visualisation is the size of the graph, i.e. the size of the data to visualise. With a growing amount of data to display, graphs can become too complex and overburdening for the analyst’s cognitive capacity. It thus becomes difficult for the user to conduct significant analysis. Because of the issues described above, research often focuses on ways to solve the problems of visual clutter, e.g. by aggregation or clustering techniques, which is also one of the main topics of cartographic generalisation.
-\\
 In this subsection we'll discuss the GUI, it's components and the workflow of a typical user.
 
 %%For example, Cui et al. (2008) investigate node-link diagrams for network visualisation.

@@ -20,7 +20,7 @@
 \author{PSE GRUPPE}
 
 %% Title (and possibly subtitle) of the thesis
-\title{Anomaly Detection in Industrial Networks}
+\title{Real-time visualization of analyzed industrial communication network traffic}
 
 %% Type of the thesis 
 % \thesistype{Seminar Thesis}
@@ -163,7 +163,7 @@ This Document outlines the requirements (both functional and non-functional), en
 \setcounter{page}{1}
 
 
-\section{Purpose}\label{sec:intro}
+\section{Motivation}\label{sec:intro}
 The goal of this project is to create a software visualization tool for industrial network traffic to simplify the analysis of anomalous behaviour, both in realtime and from captured stored data.
 \newline
 \newline
@@ -178,7 +178,7 @@ Within the Web view the user has the ability to zoom, select, highlight, and fil
 \newline
 To support this Web view a back-end messaging solution is needed. This allows the user to easily switch between multiple streams of captured data.
 \\
-\section{Overall Description}
+\section{Overview}
 
 While computers can analyze raw data easily, for humans it's easier to recognize behavior using visual aids.
 Visual analytics is utilizing graphics to enhance human cognition to understand a problem better or find 'a needle in the haystack' within a huge amount of data. Making it an invaluable tool for security analysis.
@@ -486,7 +486,7 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[T220] Configure a diagram. (Concrete case: timeline diagram of packet size)
 	      \begin{description}
 		      \item[Precondition]
-		            The browser has been logged in to ADIN and shows the main screen with one u
+		            The browser has been logged in to ADIN and shows the main screen with one empty diagram.
 		      \item[Action]
 		            The user selects "Timeline Diagram" from the Diagram selection box.
 		      \item[Reaction]
@@ -500,7 +500,7 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[T300] Filtering
 	      \begin{description}
 		      \item[Precondition]
-		            The browser has been logged in to ADIN and shows at least one diagram
+		            The browser has been logged in to ADIN and shows at least one diagram.
 		      \item[Action]
 		            The user enables a filter from the global filters section.
 		      \item[Reaction]
@@ -514,7 +514,7 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[T310] Filter chaining
 	      \begin{description}
 		      \item[Precondition]
-		            Logged in to ADIN and at least one diagram and one global filter is active
+		            Logged in to ADIN and at least one diagram and one global filter is active.
 		      \item[Action]
 		            The user enables another filter from the global filters section.
 		      \item[Reaction]
@@ -667,8 +667,8 @@ To discuss in depth this interface it has been divided into subsections labeled 
 \begin{enumerate}
 	\item The Data stream drop down menu allows the user to select which stream he is currently listening to. This dropdown menu shows the selected diagram's selected data stream and by default is set to real-time.
 	\item Here the user can set filters affecting all diagrams, namely limiting which layers and protocols are currently being shown. To add a new filter a user would click on the add filter button, select which part of the data stream is to be used in the filter, any optional comparators, and set a parameter in the text-box.
-	\item This button opens the diagram filter list, this list contains filters specific to each diagram.
-	\item By clicking this button the user can create a new diagram shown in number 5. The creation workflow is shown in \autoref{fig:mainWindow1} to \autoref{fig:mainWindow5}.
+	\item This button opens the diagram filter list. This list contains filters specific to each diagram.
+	\item By clicking this button the user can create a new diagram. The creation workflow is shown in \autoref{fig:mainWindow1} to \autoref{fig:mainWindow5}.
 	\item Here is the currently logged in user, by clicking the button to the right of his name the user can log out.
 	\item This is the \gls{diagram container}, inside are all diagrams the user has created with all the set constraints. At most 4 diagrams are shown in the container, and more can be made visible via the slider on the right of the container.
 	\item This is a diagram.
@@ -677,7 +677,9 @@ To discuss in depth this interface it has been divided into subsections labeled 
 	      \\
 	      Clicking on the button labeled "S" replaces the diagram with the Settings for this diagram like shown in \autoref{fig:mainWindow1}
 	\item The play button starts and stops auto scroll along the selected time frame
-	\item This timeline shows on the left and right bottom labels the beginning and end of all data streams. The labels on top show the currently selected time window and are movable to increasea nd decrease the time window. The middle shield icon shows the current time while being played, and is also movable to scroll by data manually.
+	\item This is a timeline represented as a slider. It shows on the left and right bottom labels the beginning and end of all data streams.
+\\ The labels on top show the currently selected time window and are movable to increasea nd decrease the time window.
+\\ The middle shield icon shows the current time while being played, and is also movable to scroll by data manually.
 
 \end{enumerate}
 
@@ -708,7 +710,7 @@ The user sets here the settings for the new diagram, these are:
 
 Afterwards, the screen looks like \autoref{fig:mainWindow2}, the \gls{diagram container} split in half. By going through this process two more times the diagram container fills up, containing four diagrams total (shown in \autoref{fig:mainWindow3}); at this point the diagrams have their minimum size.
 \\
-Any diagrams created afterwards are spawned underneath the existing ones and the user can scroll up and down to view all of them (shown in \autoref{fig:mainWindow4}) (TBD)
+Any diagrams created afterwards are spawned underneath the existing ones and the user can scroll up and down to view all of them (shown in \autoref{fig:mainWindow4}) 
 
 
 
@@ -752,9 +754,9 @@ Any diagrams created afterwards are spawned underneath the existing ones and the
 
 Another activity the user will use frequently is the filtering system.
 \\
-In the previous section we took a look at the Main window and its different sections, there we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when you want to create a filter that only affects one diagram?
+In the previous section we took a look at the Main window and its different sections. There we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when the user wants to create a filter that only affects one diagram?
 \\
-For that, the user would click on the Diagram filter (see previous section), an overlay would cover the whole window and a new set of containers, similar to the global filter, would appear. As seen on \autoref{fig:mainWindow6}
+For that, the user would click on the Diagram filter (see previous section), an overlay would cover the whole window and a new set of containers, similar to the global filter, would appear, as seen on \autoref{fig:mainWindow6}
 \\
 On the top we see the global filter list, below it we see the filter list corresponding to the first diagram (diagram numbering is done left to right and top to bottom).
 \\
@@ -773,16 +775,15 @@ In order to set a new filter that applies to only one diagram the user would ope
 Next we'll discuss the four basic diagram types that comprise the minimum scope of this project and their possible use cases.
 These are ~\autoref{fig:Diagram types}:
 
-\textbf{Line chart}: to easily compare ,linearly, two variables from a data stream.~\autoref{fig:Diagram types}(a)
-\\
-\textbf{Network Diagram}: provides a simple way to visualize the network topology. This diagram also gives the user the ability to inspect the nodes of the network and select data from a data point to be used as a filter in other diagrams (refer to last section for usage example).~\autoref{fig:Diagram types}(b)
-\textbf{Raster spike diagram}: this is useful to show the transmission window of each packet and it's corresponding partner.~\autoref{fig:Diagram types}(c)
-
-\textbf{Scatter plot}: a way to visualize up to 4 dimensions of the data stream.~\autoref{fig:Diagram types}(d)
+\begin{itemize}
+	\item[] \textbf{Line chart}: to easily compare, linearly, two variables from a data stream.
+~\autoref{fig:Diagram types}(a)
+	\item[]\textbf{Network Diagram}: provides a simple way to visualize the network topology. This diagram also gives the user the ability to inspect the nodes of the network and select data from a data point to be used as a filter in other diagrams (refer to last section for usage example).~\autoref{fig:Diagram types}(b)
+	\item[]\textbf{Raster spike diagram}: this is useful to show the transmission window of each packet and it's corresponding partner.~\autoref{fig:Diagram types}(c)
+	\item[]\textbf{Scatter plot}: a way to visualize up to 4 dimensions of the data stream.~\autoref{fig:Diagram types}(d)
+\end{itemize}
 
 These are examples and since the user has the ability to chose what part of the data stream is used for each axis it does not convey the full ability of these diagrams, that is left to the end user.
-
-
 \begin{figure*}[!h]
 	\centering
 	\begin{subfigure}[h]{0.475\textwidth}
@@ -821,7 +822,7 @@ These are examples and since the user has the ability to chose what part of the 
 	\label{fig:Diagram types}
 \end{figure*}
 \vfill
-
+\clearpage
 \subsection{Scenarios}
 
 \begin{description}
@@ -888,7 +889,7 @@ These are examples and since the user has the ability to chose what part of the 
 \subsection{Use cases}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{Images/case_login.png}
+	\includegraphics[width=\textwidth]{Images/case_login.PNG}
 	\caption{User Login.}
 \end{figure}
 
@@ -917,15 +918,15 @@ These are examples and since the user has the ability to chose what part of the 
 			            \item{User begins to use the ADIN Inspector.}
 		            \end{enumerate}
 
-		      \item[Extensions:]
+		      \item[Exception control flow]
 		            \hfill
 		            \begin{itemize}
-			            \item[]*a. At any time, the network connection to the server fails or the server crashes:
+			            \item[] Possible at any time: the network connection to the server fails or the server crashes:
 			                  \begin{enumerate}
 				                  \item{the user reloads the web site which takes him/her to the ADIN login screen}
 			                  \end{enumerate}
 
-			            \item[]3a. Wrong username or password:
+			            \item[]At step 3: Wrong username or password:
 			                  \begin{enumerate}
 				                  \item{System produces an error message and stays on the login screen.}
 			                  \end{enumerate}
@@ -949,7 +950,7 @@ of the data he or she wants to explore in more detail.
 
 A basic principle for visual data exploration was introduced by Shneiderman (1997) by what he called the “The Visual Information Seeking Mantra:
 
-Overview first, zoom and filter, then details-ondemand”.
+Overview first, zoom and filter, then details-analysis”.
 This lets the data analyst define to a certain level what he or she wants
 to see and visualise.
 

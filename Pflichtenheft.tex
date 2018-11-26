@@ -201,7 +201,7 @@ Supplemental to this, the ability of operators to run an analysis of past anomal
 \section{Interfaces}
 
 
-The environment of the project is a modern browser with LAN access. The project is OS-agnostic. Therefore the underlying Operating system is irrelevant on the users end.
+The environment of the project is a modern browser with LAN access. The project is OS-agnostic. Therefore the underlying Operating system is irrelevant on the user's end.
 
 
 \subsection{Software}
@@ -287,9 +287,12 @@ The environment of the project is a modern browser with LAN access. The project 
 	      ADIN Inspector has to offer a filter mechanism for global filters and per-diagram filters.
 
 	\item[FR1310]
-	      The user should be able to enable one or more global filters and one or more filters per diagram and disable them again.
+	      The user should be able to enable one or more global filters and disable them again.
 
 	\item[FR1320]
+	      The user should be able to enable one or more per-diagram filters for each diagram and disable them again.
+
+	\item[FR1330]
 	      ADIN Inspector should provide at least these filter types:
 	      \begin{itemize}
 		      \item{Passing only packets with a specific value for a specific key}
@@ -718,8 +721,8 @@ To discuss in depth this interface it has been divided into subsections labeled 
 	\item These buttons control whether a diagram is fullscreen and the diagram settings. By clicking the button labeled F the diagram grows to take on all available space in the container, like shown in \autoref{fig:mainWindow0}.
 	      \\
 	      Clicking on the button labeled "S" replaces the diagram with the Settings for this diagram like shown in \autoref{fig:mainWindow1}
-	\item The play button auto scroll along the selected time frame
-	\item This timeline shows on the left and right bottom labels the beginning and end of all data streams, the labels on top show the currently selected time window and are movable to increase,decrease the time window, the middle shield icon shows the current time while being played, and is also movable to scroll by data manually.
+	\item The play button starts and stops auto scroll along the selected time frame
+	\item This timeline shows on the left and right bottom labels the beginning and end of all data streams. The labels on top show the currently selected time window and are movable to increasea nd decrease the time window. The middle shield icon shows the current time while being played, and is also movable to scroll by data manually.
 
 \end{enumerate}
 
@@ -748,7 +751,7 @@ The user sets here the settings for the new diagram, these are:
 	\item{Any filters the user wants to apply at the start}
 \end{itemize}
 
-Afterwards, the screen looks like \autoref{fig:mainWindow2}, the \gls{diagram container} split, by going through this process two more times the diagram container fills up, containing four diagrams total (shown in \autoref{fig:mainWindow3}), at this point the diagrams have their minimum size.
+Afterwards, the screen looks like \autoref{fig:mainWindow2}, the \gls{diagram container} split in half. By going through this process two more times the diagram container fills up, containing four diagrams total (shown in \autoref{fig:mainWindow3}); at this point the diagrams have their minimum size.
 \\
 Any diagrams created afterwards are spawned underneath the existing ones and the user can scroll up and down to view all of them (shown in \autoref{fig:mainWindow4}) (TBD)
 
@@ -794,7 +797,7 @@ Any diagrams created afterwards are spawned underneath the existing ones and the
 
 Another activity the user will use frequently is the filtering system.
 \\
-In he previous section we took a look at the Main window and it's different sections, there we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when you want to create a filter that only affects one diagram?
+In the previous section we took a look at the Main window and its different sections, there we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when you want to create a filter that only affects one diagram?
 \\
 For that, the user would click on the Diagram filter (see previous section), an overlay would cover the whole window and a new set of containers, similar to the global filter, would appear. As seen on \autoref{fig:mainWindow6}
 \\
@@ -871,7 +874,7 @@ These are examples and since the user has the ability to chose what part of the 
 \end{figure*}
 \vfill
 
-\subsection{Scenario}
+\subsection{Scenarios}
 
 \begin{description}
 	\item[S100:] An operator wants to check manually/visually whether network nodes appeared or disappeared over the last day

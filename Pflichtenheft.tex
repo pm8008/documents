@@ -131,7 +131,7 @@
 %% ====================================
 %% ====================================
 \begin{document}
-\nocite{*}
+%\nocite{*}
 
 %% Set PDF metadata
 \setpdf
@@ -821,16 +821,16 @@ In order to set a new filter that applies to only one diagram the user would ope
 %https://commons.wikimedia.org/wiki/File:Scatter_diagram_for_quality_characteristic_XXX.svg
 
 Next we'll discuss the four basic diagram types that comprise the minimum scope of this project and their possible use cases.
-These are:
+These are ~\ref{fig:Diagram types}:
 
-Line chart: to easily compare ,linearly, two variables from a data stream.(\autoref{fig:linechart})
+Line chart: to easily compare ,linearly, two variables from a data stream.
 \\
 Network Diagram: provides a simple way to visualize the network topology. This diagram also gives the user the ability to inspect the nodes of the network and select data from a data point to be used as a filter in other diagrams (refer to last section for usage example).
-(\autoref{fig:netdiaram})
+
+~\\
+Raster spike diagram: this is useful to show the transmission window of each packet and it's corresponding partner.
 \\
-Raster spike diagram: this is useful to show the transmission window of each packet and it's corresponding partner.(\autoref{fig:rasterplot})
-\\
-Scatter plot: a way to visualize up to 4 dimensions of the data stream.(\autoref{fig:scatterplot})
+Scatter plot: a way to visualize up to 4 dimensions of the data stream.
 \\
 These are examples and since the user has the ability to chose what part of the data stream is used for each axis it does not convey the full ability of these diagrams, that is left to the end user.
 
@@ -841,7 +841,7 @@ These are examples and since the user has the ability to chose what part of the 
 		\centering
 		\includegraphics[width=\textwidth]{Images/line_chart.png}
 		\caption[Line Chart]%
-		{{\small Line Chart}}
+		{{\small Line Chart}} \cite{Firstarticle}
 		\label{fig:Diagram types}
 	\end{subfigure}
 	\hfill
@@ -849,7 +849,7 @@ These are examples and since the user has the ability to chose what part of the 
 		\centering
 		\includegraphics[width=\textwidth]{Images/net_diag.png}
 		\caption[]%
-		{{\small Net diagram}}
+		{{\small Net diagram}} \cite{Secondarticle}
 		\label{fig:Diagram types}
 	\end{subfigure}
 	\vskip\baselineskip
@@ -857,7 +857,7 @@ These are examples and since the user has the ability to chose what part of the 
 		\centering
 		\includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
 		\caption[]%
-		{{\small Scatterdiagram}}
+		{{\small Scatterdiagram}} \cite{Thirdarticle}
 		\label{fig:Diagram types}
 	\end{subfigure}
 	\quad
@@ -865,7 +865,7 @@ These are examples and since the user has the ability to chose what part of the 
 		\centering
 		\includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
 		\caption[]%
-		{{\small Spike raster plot}}
+		{{\small Spike raster plot}} \cite{Fourtharticle}
 		\label{fig:mean and std of net44}
 	\end{subfigure}
 	\caption[ Diagram types ]

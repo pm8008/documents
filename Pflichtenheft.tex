@@ -131,6 +131,7 @@
 %% ====================================
 %% ====================================
 \begin{document}
+\nocite{*}
 
 %% Set PDF metadata
 \setpdf
@@ -200,7 +201,7 @@ Supplemental to this, the ability of operators to run an analysis of past anomal
 \section{Interfaces}
 
 
-The environment of the project is a modern browser with LAN access. The project is OS-agnostic. Therefore the underlying Operating system is irrelevant on the users end.
+The environment of the project is a modern browser with LAN access. The project is OS-agnostic. Therefore the underlying Operating system is irrelevant on the user's end.
 
 
 \subsection{Software}
@@ -286,9 +287,12 @@ The environment of the project is a modern browser with LAN access. The project 
 	      ADIN Inspector has to offer a filter mechanism for global filters and per-diagram filters.
 
 	\item[FR1310]
-	      The user should be able to enable one or more global filters and one or more filters per diagram and disable them again.
+	      The user should be able to enable one or more global filters and disable them again.
 
 	\item[FR1320]
+	      The user should be able to enable one or more per-diagram filters for each diagram and disable them again.
+
+	\item[FR1330]
 	      ADIN Inspector should provide at least these filter types:
 	      \begin{itemize}
 		      \item{Passing only packets with a specific value for a specific key}
@@ -378,6 +382,14 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[NF700]
 	      The web UI should be accessible to all user groups, including people with conditions like color blindness.
 
+	\item[NF800]
+	      The web UI should be easily extendable with new diagram types.
+
+	\item[NF810]
+	      The web UI should be easily extendable with new filter and aggregation components.
+
+	\item[NF820]
+	      The web UI should be easily extendable with new input data types.
 
 \end{description}
 \subsection{Quality Requirements}
@@ -440,7 +452,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The login screen shows an error message that the username or password is incorrect and the entry field for the password is cleared.
 	      \end{description}
 
-	    
+
 
 	\item[T200] Open second diagram.
 	      \begin{description}
@@ -454,8 +466,8 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The user presses the create button at the bottom left
 		      \item[Reaction]
 		            The browser opens a second diagram, splitting the diagram panel in to two.
- \end{description}
-	
+	      \end{description}
+
 
 
 	\item[T210] Open multiple diagrams
@@ -466,14 +478,14 @@ The environment of the project is a modern browser with LAN access. The project 
 		            The user repeats [T200] two more times.
 		      \item[Reaction]
 		            The diagrams grid now displays four diagrams in a 2 x 2 formation.
- \end{description}
+	      \end{description}
 
 	\item[T220] Configure a diagram. (Concrete case: timeline diagram of packet size)
 	      \begin{description}
 		      \item[Precondition]
-			    The browser has been logged in to ADIN and shows the main screen with one u
+		            The browser has been logged in to ADIN and shows the main screen with one u
 		      \item[Action]
-			    The user selects "Timeline Diagram" from the Diagram selection box.
+		            The user selects "Timeline Diagram" from the Diagram selection box.
 		      \item[Reaction]
 		            The diagram changes to a timeline diagram. The x-axis is labeled with "time [s]".
 		      \item[Action]
@@ -634,14 +646,14 @@ The environment of the project is a modern browser with LAN access. The project 
 	\item[T630] Create a new diagram based on a selection, where the new diagram has a different type than the first diagram
 	      \begin{description}
 		      \item[Precondition]
-			    A diagram showing data points.
+		            A diagram showing data points.
 		      \item[Action]
 		            The user selects one or more data points. \\
 		            The user right-clicks the selection. \\
-			    In the pop-up menu the user selects "create new diagram from selection"
-				
+		            In the pop-up menu the user selects "create new diagram from selection"
+
 		      \item[Reaction]
-			    ADIN Inspector opens a new diagram.
+		            ADIN Inspector opens a new diagram.
 		      \item[Action]
 		            The user selects a diagram type.
 		      \item[Reaction]
@@ -709,8 +721,8 @@ To discuss in depth this interface it has been divided into subsections labeled 
 	\item These buttons control whether a diagram is fullscreen and the diagram settings. By clicking the button labeled F the diagram grows to take on all available space in the container, like shown in \autoref{fig:mainWindow0}.
 	      \\
 	      Clicking on the button labeled "S" replaces the diagram with the Settings for this diagram like shown in \autoref{fig:mainWindow1}
-	\item The play button auto scroll along the selected time frame
-	\item This timeline shows on the left and right bottom labels the beginning and end of all data streams, the labels on top show the currently selected time window and are movable to increase,decrease the time window, the middle shield icon shows the current time while being played, and is also movable to scroll by data manually.
+	\item The play button starts and stops auto scroll along the selected time frame
+	\item This timeline shows on the left and right bottom labels the beginning and end of all data streams. The labels on top show the currently selected time window and are movable to increasea nd decrease the time window. The middle shield icon shows the current time while being played, and is also movable to scroll by data manually.
 
 \end{enumerate}
 
@@ -739,7 +751,7 @@ The user sets here the settings for the new diagram, these are:
 	\item{Any filters the user wants to apply at the start}
 \end{itemize}
 
-Afterwards, the screen looks like \autoref{fig:mainWindow2}, the \gls{diagram container} split, by going through this process two more times the diagram container fills up, containing four diagrams total (shown in \autoref{fig:mainWindow3}), at this point the diagrams have their minimum size.
+Afterwards, the screen looks like \autoref{fig:mainWindow2}, the \gls{diagram container} split in half. By going through this process two more times the diagram container fills up, containing four diagrams total (shown in \autoref{fig:mainWindow3}); at this point the diagrams have their minimum size.
 \\
 Any diagrams created afterwards are spawned underneath the existing ones and the user can scroll up and down to view all of them (shown in \autoref{fig:mainWindow4}) (TBD)
 
@@ -785,7 +797,7 @@ Any diagrams created afterwards are spawned underneath the existing ones and the
 
 Another activity the user will use frequently is the filtering system.
 \\
-In he previous section we took a look at the Main window and it's different sections, there we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when you want to create a filter that only affects one diagram?
+In the previous section we took a look at the Main window and its different sections, there we described that filters that apply to every diagram are shown at all times shown as item 2. But what about when you want to create a filter that only affects one diagram?
 \\
 For that, the user would click on the Diagram filter (see previous section), an overlay would cover the whole window and a new set of containers, similar to the global filter, would appear. As seen on \autoref{fig:mainWindow6}
 \\
@@ -824,45 +836,45 @@ These are examples and since the user has the ability to chose what part of the 
 
 
 \begin{figure*}[!h]
-        \centering
-        \begin{subfigure}[h]{0.475\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{Images/line_chart.png}
-            \caption[Line Chart]%
-            {{\small Line Chart}}    
-            \label{fig:Diagram types}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[h]{0.475\textwidth}  
-            \centering 
-            \includegraphics[width=\textwidth]{Images/net_diag.png}
-            \caption[]%
-            {{\small Net diagram}}    
-            \label{fig:Diagram types}
-        \end{subfigure}
-        \vskip\baselineskip
-        \begin{subfigure}[h]{0.475\textwidth}   
-            \centering 
-            \includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
-            \caption[]%
-            {{\small Scatterdiagram}}    
-            \label{fig:Diagram types}
-        \end{subfigure}
-        \quad
-        \begin{subfigure}[h]{0.475\textwidth}   
-            \centering 
-            \includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
-            \caption[]%
-            {{\small Spike raster plot}}    
-            \label{fig:mean and std of net44}
-        \end{subfigure}
-        \caption[ Diagram types ]
-        {\small Diagram types} 
-        \label{fig:Diagram types}
-    \end{figure*}
+	\centering
+	\begin{subfigure}[h]{0.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/line_chart.png}
+		\caption[Line Chart]%
+		{{\small Line Chart}}
+		\label{fig:Diagram types}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[h]{0.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/net_diag.png}
+		\caption[]%
+		{{\small Net diagram}}
+		\label{fig:Diagram types}
+	\end{subfigure}
+	\vskip\baselineskip
+	\begin{subfigure}[h]{0.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/Scatter_diagram.png}
+		\caption[]%
+		{{\small Scatterdiagram}}
+		\label{fig:Diagram types}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[h]{0.475\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Images/spike_raster_plot.png}
+		\caption[]%
+		{{\small Spike raster plot}}
+		\label{fig:mean and std of net44}
+	\end{subfigure}
+	\caption[ Diagram types ]
+	{\small Diagram types}
+	\label{fig:Diagram types}
+\end{figure*}
 \vfill
 
-\subsection{Scenario}
+\subsection{Scenarios}
 
 \begin{description}
 	\item[S100:] An operator wants to check manually/visually whether network nodes appeared or disappeared over the last day
@@ -928,10 +940,58 @@ These are examples and since the user has the ability to chose what part of the 
 \subsection{Use cases}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{Images/login.PNG}
+	\includegraphics[width=\textwidth]{Images/case_login.png}
 	\caption{User Login.}
 \end{figure}
-  
+
+\begin{description}
+	\item[Use Case UC1: Login]
+	      \hfill
+	      \begin{description}
+		      \item[Scope:] ADIN Inspector and hub
+		      \item[Level:] user goal
+		      \item[Stakeholders and Interests:]
+		            \hfill
+		            \begin{itemize}
+			            \item{User: Wants to login quickly and easily}
+			            \item{System administrator: Wants to ensure that only authorized persons access the system. Wants few user support requests.}
+			            \item{Manager: Wants protection of data. Wants no obstacle to the user's work.}
+		            \end{itemize}
+		      \item[Preconditions:] An account for the user has been created.
+		      \item[Postconditions:] User is loged in.
+		      \item[Main Success Scenario:]
+		            \hfill
+		            \begin{enumerate}
+			            \item{Customer opens the ADIN website in the browser}
+			            \item{Customer enters his/her username and password}
+			            \item{The ADIN system checks the entered password and loads the access permissions for the user.}
+			            \item{The sytem presents the ADIN main screen.}
+			            \item{User begins to use the ADIN Inspector.}
+		            \end{enumerate}
+
+		      \item[Extensions:]
+		            \hfill
+		            \begin{itemize}
+			            \item[]*a. At any time, the network connection to the server fails or the server crashes:
+			                  \begin{enumerate}
+				                  \item{the user reloads the web site which takes him/her to the ADIN login screen}
+			                  \end{enumerate}
+
+			            \item[]3a. Wrong username or password:
+			                  \begin{enumerate}
+				                  \item{System produces an error message and stays on the login screen.}
+			                  \end{enumerate}
+
+		            \end{itemize}
+	      \end{description}
+
+	      \begin{figure}[h]
+		      \centering
+		      \includegraphics[width=\textwidth]{Images/case_examine_data.png}
+		      \caption{Examine Data.}
+	      \end{figure}
+\end{description}
+
 
 \subsubsection{Interactivity}
 
@@ -951,16 +1011,24 @@ single data record), the intermediate level (showing summarised information abou
 
 \subsection{Object Modelling}
 
-The following diagram shows a high-level view of the components of the ADIN-Inspctor. The PSE group will develop the visualization component that runs in the web browser and a server side component called hub. The hub interfaces with the data sources and also implements the access control.
+The following diagram shows a high-level view of the components of the ADIN-Inspector. The PSE group will develop the visualization component that runs in the web browser and a server side component called hub. The hub interfaces with the data sources and also implements the access control.
 
 \begin{center}
-\includegraphics[scale=0.8]{Images/adin-sys1d.eps}
-\captionof{figure}{General system layout. Components to be developed by the PSE group are marked blue.}
-\label{fig:adinsys1c}
+	\includegraphics[scale=0.8]{Images/adin-sys1d.eps}
+	\captionof{figure}{General system layout. Components to be developed by the PSE group are marked blue.}
+	\label{fig:adinsys1c}
 \end{center}
 
 
 \subsection{Dynamic Modelling}
+
+\autoref{fig:adin-login-seq} shows the actions of the Hub component during login.
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Images/adin-login-seq.png}
+\captionof{figure}{The activity of the Hub during login.}
+\label{fig:adin-login-seq}
+\end{center}
 
 \section{Glossary}
 \printglossary[title=,toctitle=]

@@ -554,7 +554,7 @@ The environment of the project is a modern browser with LAN access. The project 
 		      \item[Reaction]
 		            The play button turns into a stop button.
 		      \item[Reaction]
-		            The diagram updates according to the time shown at the play head.
+		            The diagram updates according to the time shown at the play head. This means the diagram displays data from the start time of the data unitl the time shown at the play head
 		      \item[Action]
 		            The user presses the stop button.
 		      \item[Reaction]
@@ -573,38 +573,6 @@ The environment of the project is a modern browser with LAN access. The project 
 		            User drags the right diagram time window key-frame to the right.
 		      \item[Reaction]
 		            The timestamp above the keyframe updates according to it's position
-	      \end{description}
-
-	\item[T511] Multiple Time windows
-	      \begin{description}
-		      \item[Precondition]
-		            Logged in to ADIN
-		            At least 2 diagram windows open
-		      \item[Action]
-		            User clicks on one of the diagrams
-		      \item[Reaction]
-		            Corresponding keyframes highlight in the timeline and display their timestamp on top of themselves
-		      \item[Reaction]
-		            All NOT corresponding keyframes gray out and hide their timestamps
-		      \item[Action]
-		            User now clicks on a different diagram
-		      \item[Reaction]
-		            Previously highlighted keyframes gray out and keyframes corresponding to selected diagram highlight and display their timestamp
-		      \item[Reaction]
-		            All NOT corresponding keyframes gray out and hide their timestamps
-	      \end{description}
-
-	\item[T512] Time Window dragging restriction
-	      \begin{description}
-		      \item[Precondition]
-		            Logged in to ADIN
-		            At least 2 diagram windows open
-		            Test case [T711] passed
-		            One diagram has been selected
-		      \item[Action]
-		            User tries to drag a not highlighted keyframe from the timeline
-		      \item[Reaction]
-		            Unable to drag and drop not highlighted keyframes
 	      \end{description}
 
 	\item[T600] Investigate a data point

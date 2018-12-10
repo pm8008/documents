@@ -1,6 +1,7 @@
 <h1>DESIGN DOCUMENT!
 
 <h2>Overview
+
 This Document outlines the construction of the "ADIN INSPECTOR" per the specifications of the requirements document.
 The system is split into two distinct packages ??, the Back-end and the Front-end.
 The Backend comprises of the Kafka messaging system, a mongoDB database and a mediator.
@@ -10,6 +11,7 @@ When the consumer recieves a message from a specific topic it checks the databse
 FRONT END STUFF
 <h2>Classes
 <h3>Back-end
+
 STUFF!
 Things!
 excitement!

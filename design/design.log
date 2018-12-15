@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.24)  13 DEC 2018 18:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.24)  15 DEC 2018 23:17
 entering extended mode
 **./design.tex
 (design.tex
@@ -1104,6 +1104,72 @@ Package caption Info: longtable package is loaded.
 .sty"
 Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
 ))
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pdfpages
+.sty"
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+\AM@pagewidth=\dimen146
+\AM@pageheight=\dimen147
+
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pppdftex
+.def"
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box37
+\AM@global@opts=\toks28
+\AM@toc@title=\toks29
+\c@AM@survey=\count141
+\AM@templatesizebox=\box38
+)
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\adjustb
+ox.sty"
+Package: adjustbox 2018/04/08 v1.1 Adjusting TeX boxes (trim, clip, ...)
+
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\adjcalc
+.sty"
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\trimcli
+p.sty"
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\collectbox\collec
+tbox.sty"
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box39
+)
+\tc@llx=\dimen148
+\tc@lly=\dimen149
+\tc@urx=\dimen150
+\tc@ury=\dimen151
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\tc-pdft
+ex.def"
+File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen152
+\adjbox@Height=\dimen153
+\adjbox@Depth=\dimen154
+\adjbox@Totalheight=\dimen155
+\adjbox@pwidth=\dimen156
+\adjbox@pheight=\dimen157
+\adjbox@pdepth=\dimen158
+\adjbox@ptotalheight=\dimen159
+
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpa
+ge.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count142
+)
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\varwidth\varwidth
+.sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box40
+\sift@deathcycles=\count143
+\@vwid@loff=\dimen160
+\@vwid@roff=\dimen161
+))
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex
 .sty"
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
@@ -1111,53 +1177,53 @@ Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.sty
 "
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count141
+\lrq@indent=\count144
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\logreq\logreq.def
 "
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count142
-\c@listtotal=\count143
-\c@listcount=\count144
-\c@liststart=\count145
-\c@liststop=\count146
-\c@citecount=\count147
-\c@citetotal=\count148
-\c@multicitecount=\count149
-\c@multicitetotal=\count150
-\c@instcount=\count151
-\c@maxnames=\count152
-\c@minnames=\count153
-\c@maxitems=\count154
-\c@minitems=\count155
-\c@citecounter=\count156
-\c@maxcitecounter=\count157
-\c@savedcitecounter=\count158
-\c@uniquelist=\count159
-\c@uniquename=\count160
-\c@refsection=\count161
-\c@refsegment=\count162
-\c@maxextratitle=\count163
-\c@maxextratitleyear=\count164
-\c@maxextraname=\count165
-\c@maxextradate=\count166
-\c@maxextraalpha=\count167
-\c@abbrvpenalty=\count168
-\c@highnamepenalty=\count169
-\c@lownamepenalty=\count170
-\c@maxparens=\count171
-\c@parenlevel=\count172
-\blx@tempcnta=\count173
-\blx@tempcntb=\count174
-\blx@tempcntc=\count175
-\blx@maxsection=\count176
-\blx@maxsegment@0=\count177
-\blx@notetype=\count178
-\blx@parenlevel@text=\count179
-\blx@parenlevel@foot=\count180
-\blx@sectionciteorder@0=\count181
-\blx@entrysetcounter=\count182
+\c@tabx@nest=\count145
+\c@listtotal=\count146
+\c@listcount=\count147
+\c@liststart=\count148
+\c@liststop=\count149
+\c@citecount=\count150
+\c@citetotal=\count151
+\c@multicitecount=\count152
+\c@multicitetotal=\count153
+\c@instcount=\count154
+\c@maxnames=\count155
+\c@minnames=\count156
+\c@maxitems=\count157
+\c@minitems=\count158
+\c@citecounter=\count159
+\c@maxcitecounter=\count160
+\c@savedcitecounter=\count161
+\c@uniquelist=\count162
+\c@uniquename=\count163
+\c@refsection=\count164
+\c@refsegment=\count165
+\c@maxextratitle=\count166
+\c@maxextratitleyear=\count167
+\c@maxextraname=\count168
+\c@maxextradate=\count169
+\c@maxextraalpha=\count170
+\c@abbrvpenalty=\count171
+\c@highnamepenalty=\count172
+\c@lownamepenalty=\count173
+\c@maxparens=\count174
+\c@parenlevel=\count175
+\blx@tempcnta=\count176
+\blx@tempcntb=\count177
+\blx@tempcntc=\count178
+\blx@maxsection=\count179
+\blx@maxsegment@0=\count180
+\blx@notetype=\count181
+\blx@parenlevel@text=\count182
+\blx@parenlevel@foot=\count183
+\blx@sectionciteorder@0=\count184
+\blx@entrysetcounter=\count185
 \labelnumberwidth=\skip80
 \labelalphawidth=\skip81
 \biblabelsep=\skip82
@@ -1168,9 +1234,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \bibhang=\skip87
 \blx@bcfin=\read1
 \blx@bcfout=\write3
-\c@mincomprange=\count183
-\c@maxcomprange=\count184
-\c@mincompwidth=\count185
+\c@mincomprange=\count186
+\c@maxcomprange=\count187
+\c@mincompwidth=\count188
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1182,74 +1248,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count186
-\c@savedafterword=\count187
-\c@annotator=\count188
-\c@savedannotator=\count189
-\c@author=\count190
-\c@savedauthor=\count191
-\c@bookauthor=\count192
-\c@savedbookauthor=\count193
-\c@commentator=\count194
-\c@savedcommentator=\count195
-\c@editor=\count196
-\c@savededitor=\count197
-\c@editora=\count198
-\c@savededitora=\count199
-\c@editorb=\count266
-\c@savededitorb=\count267
-\c@editorc=\count268
-\c@savededitorc=\count269
-\c@foreword=\count270
-\c@savedforeword=\count271
-\c@holder=\count272
-\c@savedholder=\count273
-\c@introduction=\count274
-\c@savedintroduction=\count275
-\c@namea=\count276
-\c@savednamea=\count277
-\c@nameb=\count278
-\c@savednameb=\count279
-\c@namec=\count280
-\c@savednamec=\count281
-\c@translator=\count282
-\c@savedtranslator=\count283
-\c@shortauthor=\count284
-\c@savedshortauthor=\count285
-\c@shorteditor=\count286
-\c@savedshorteditor=\count287
-\c@labelname=\count288
-\c@savedlabelname=\count289
-\c@institution=\count290
-\c@savedinstitution=\count291
-\c@lista=\count292
-\c@savedlista=\count293
-\c@listb=\count294
-\c@savedlistb=\count295
-\c@listc=\count296
-\c@savedlistc=\count297
-\c@listd=\count298
-\c@savedlistd=\count299
-\c@liste=\count300
-\c@savedliste=\count301
-\c@listf=\count302
-\c@savedlistf=\count303
-\c@location=\count304
-\c@savedlocation=\count305
-\c@organization=\count306
-\c@savedorganization=\count307
-\c@origlocation=\count308
-\c@savedoriglocation=\count309
-\c@origpublisher=\count310
-\c@savedorigpublisher=\count311
-\c@publisher=\count312
-\c@savedpublisher=\count313
-\c@language=\count314
-\c@savedlanguage=\count315
-\c@origlanguage=\count316
-\c@savedoriglanguage=\count317
-\c@pageref=\count318
-\c@savedpageref=\count319
+\c@afterword=\count189
+\c@savedafterword=\count190
+\c@annotator=\count191
+\c@savedannotator=\count192
+\c@author=\count193
+\c@savedauthor=\count194
+\c@bookauthor=\count195
+\c@savedbookauthor=\count196
+\c@commentator=\count197
+\c@savedcommentator=\count198
+\c@editor=\count199
+\c@savededitor=\count266
+\c@editora=\count267
+\c@savededitora=\count268
+\c@editorb=\count269
+\c@savededitorb=\count270
+\c@editorc=\count271
+\c@savededitorc=\count272
+\c@foreword=\count273
+\c@savedforeword=\count274
+\c@holder=\count275
+\c@savedholder=\count276
+\c@introduction=\count277
+\c@savedintroduction=\count278
+\c@namea=\count279
+\c@savednamea=\count280
+\c@nameb=\count281
+\c@savednameb=\count282
+\c@namec=\count283
+\c@savednamec=\count284
+\c@translator=\count285
+\c@savedtranslator=\count286
+\c@shortauthor=\count287
+\c@savedshortauthor=\count288
+\c@shorteditor=\count289
+\c@savedshorteditor=\count290
+\c@labelname=\count291
+\c@savedlabelname=\count292
+\c@institution=\count293
+\c@savedinstitution=\count294
+\c@lista=\count295
+\c@savedlista=\count296
+\c@listb=\count297
+\c@savedlistb=\count298
+\c@listc=\count299
+\c@savedlistc=\count300
+\c@listd=\count301
+\c@savedlistd=\count302
+\c@liste=\count303
+\c@savedliste=\count304
+\c@listf=\count305
+\c@savedlistf=\count306
+\c@location=\count307
+\c@savedlocation=\count308
+\c@organization=\count309
+\c@savedorganization=\count310
+\c@origlocation=\count311
+\c@savedoriglocation=\count312
+\c@origpublisher=\count313
+\c@savedorigpublisher=\count314
+\c@publisher=\count315
+\c@savedpublisher=\count316
+\c@language=\count317
+\c@savedlanguage=\count318
+\c@origlanguage=\count319
+\c@savedoriglanguage=\count320
+\c@pageref=\count321
+\c@savedpageref=\count322
 \shorthandwidth=\skip88
 \shortjournalwidth=\skip89
 \shortserieswidth=\skip90
@@ -1277,13 +1343,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\biblatex
 .def"
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
-\c@textcitecount=\count320
-\c@textcitetotal=\count321
-\c@textcitemaxnames=\count322
-\c@biburlnumpenalty=\count323
-\c@biburlucpenalty=\count324
-\c@biburllcpenalty=\count325
-\c@smartand=\count326
+\c@textcitecount=\count323
+\c@textcitetotal=\count324
+\c@textcitemaxnames=\count325
+\c@biburlnumpenalty=\count326
+\c@biburlucpenalty=\count327
+\c@biburllcpenalty=\count328
+\c@smartand=\count329
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1297,8 +1363,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\stan
 dard.bbx"
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count327
-\c@bbx:relatedtotal=\count328
+\c@bbx:relatedcount=\count330
+\c@bbx:relatedtotal=\count331
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1356,70 +1422,70 @@ File: german.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count329
-\@quotereset=\count330
+\@quotelevel=\count332
+\@quotereset=\count333
 (design.aux)
 \openout1 = `design.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 72.
-LaTeX Font Info:    Try loading font information for OML+nxlmi on input line 72
+LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 74.
+LaTeX Font Info:    Try loading font information for OML+nxlmi on input line 74
 .
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\newtx\omlnxlmi.fd
 "
 File: omlnxlmi.fd 2013/11/19 Fontinst v1.933 font definitions for OML/nxlmi.
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 72.
-LaTeX Font Info:    Try loading font information for U+ntxexa on input line 72.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 74.
+LaTeX Font Info:    Try loading font information for U+ntxexa on input line 74.
 
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\newtx\untxexa.fd"
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 72.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 74.
  ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 72.
-LaTeX Font Info:    Try loading font information for LMS+ntxsy on input line 72
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 74.
+LaTeX Font Info:    Try loading font information for LMS+ntxsy on input line 74
 .
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\newtx\lmsntxsy.fd
 "
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 74.
 LaTeX Font Info:    Try loading font information for LMX+ntxexx on input line 7
-2.
+4.
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\newtx\lmxntxexx.f
 d"
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 72.
-LaTeX Font Info:    Try loading font information for LY1+ptm on input line 72.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 74.
+LaTeX Font Info:    Try loading font information for LY1+ptm on input line 74.
  ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ly1\ly1ptm.fd"
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
 LaTeX Font Info:    Try loading font information for T1+LinuxLibertineT-TLF on 
-input line 72.
+input line 74.
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\libertine\t1linux
 libertinet-tlf.fd"
@@ -1427,7 +1493,7 @@ File: T1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/Li
 nuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 72.
+(Font)              scaled to size 12.0pt on input line 74.
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translations\dict
 s\translations-basic-dictionary-english.trsl"
@@ -1435,32 +1501,32 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 72.
-\c@mv@tabular=\count331
-\c@mv@boldtabular=\count332
-LaTeX Info: Redefining \microtypecontext on input line 72.
+or `english'. on input line 74.
+\c@mv@tabular=\count334
+\c@mv@boldtabular=\count335
+LaTeX Info: Redefining \microtypecontext on input line 74.
 
 
 Package microtype Warning: `draft' option active.
 (microtype)                Disabling all micro-typographic extensions.
 (microtype)                This might lead to different line and page breaks.
 
-\AtBeginShipoutBox=\box37
+\AtBeginShipoutBox=\box41
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.m
 kii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
-\scratchdimen=\dimen146
-\scratchbox=\box38
-\nofMPsegments=\count334
-\nofMParguments=\count335
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count336
-\MPscratchDim=\dimen147
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count336
+\scratchdimen=\dimen162
+\scratchbox=\box42
+\nofMPsegments=\count337
+\nofMParguments=\count338
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count339
+\MPscratchDim=\dimen163
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
+\everyMPtoPDFconversion=\toks31
 )
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf
 -base.sty"
@@ -1480,7 +1546,7 @@ G,.JBIG2,.JB2,.eps]
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring OFF on input line 72.
+Package hyperref Info: Link coloring OFF on input line 74.
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.
 sty"
@@ -1490,13 +1556,24 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 lestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count339
+\c@section@level=\count342
 )
-LaTeX Info: Redefining \ref on input line 72.
-LaTeX Info: Redefining \pageref on input line 72.
-LaTeX Info: Redefining \nameref on input line 72.
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\pdflscap
+e.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\lscape.s
+ty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1505,10 +1582,10 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'design.bbl' found.
  (design.bbl)
-Package biblatex Info: Reference section=0 on input line 72.
-Package biblatex Info: Reference segment=0 on input line 72.
+Package biblatex Info: Reference section=0 on input line 74.
+Package biblatex Info: Reference segment=0 on input line 74.
 LaTeX Font Info:    Try loading font information for T1+SourceSansPro-LF on inp
-ut line 80.
+ut line 82.
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sourcesanspro\t1s
 ourcesanspro-lf.fd"
@@ -1516,17 +1593,17 @@ File: T1SourceSansPro-LF.fd 2016/12/03 (autoinst) Font definitions for T1/Sourc
 eSansPro-LF.
 )
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 80.
+(Font)              scaled to size 11.03998pt on input line 82.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 11.03998pt on input line 80.
+(Font)              scaled to size 11.03998pt on input line 82.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 22.88956pt on input line 80.
+(Font)              scaled to size 22.88956pt on input line 82.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 13.24796pt on input line 80.
+(Font)              scaled to size 13.24796pt on input line 82.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 80.
+(Font)              scaled to size 17.28pt on input line 82.
 LaTeX Font Info:    Try loading font information for OT1+LinuxLibertineT-TLF on
- input line 80.
+ input line 82.
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\libertine\ot1linu
 xlibertinet-tlf.fd"
@@ -1534,24 +1611,24 @@ File: OT1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for OT1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 80.
+(Font)              scaled to size 17.28pt on input line 82.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.5pt on input line 80.
+(Font)              scaled to size 12.5pt on input line 82.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.4pt on input line 80.
-LaTeX Font Info:    Try loading font information for U+ntxmia on input line 80.
+(Font)              scaled to size 9.4pt on input line 82.
+LaTeX Font Info:    Try loading font information for U+ntxmia on input line 82.
 
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\newtx\untxmia.fd"
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsym on input line 80.
+LaTeX Font Info:    Try loading font information for U+ntxsym on input line 82.
 
  ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\newtx\untxsym.fd
 "
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 80.
+LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 82.
 
 
 ("C:\Users\USER.1\AppData\Local\Programs\MiKTeX 2.9\tex\latex\newtx\untxsyc.fd"
@@ -1561,9 +1638,9 @@ File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 
 {C:/Users/USER.1/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 15.89755pt on input line 98.
-Package tocbasic Info: character protrusion at toc deactivated on input line 98
-.
+(Font)              scaled to size 15.89755pt on input line 100.
+Package tocbasic Info: character protrusion at toc deactivated on input line 10
+0.
 
 (design.toc
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
@@ -1578,24 +1655,94 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 
  [2]
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
-(Font)              scaled to size 13.24796pt on input line 104.
+(Font)              scaled to size 13.24796pt on input line 106.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
-(Font)              scaled to size 11.03998pt on input line 105.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
+(Font)              scaled to size 11.03998pt on input line 107.
+<login1.pdf, id=10, 693.59125pt x 456.70625pt>
+File: login1.pdf Graphic file (type pdf)
+<use login1.pdf>
+Package pdftex.def Info: login1.pdf  used on input line 111.
+(pdftex.def)             Requested size: 693.58955pt x 456.70512pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sl' in size <12> not a
 vailable
 (Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on i
-nput line 114.
+nput line 112.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 114.
+(Font)              scaled to size 12.0pt on input line 112.
  [1
 
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
+ <./login1.pdf
+
+pdfTeX warning: pdflatex (file ./login1.pdf): PDF inclusion: invalid other reso
+urce which is no dict (key 'ProcSets', type <array>); ignored.
+>]
+<filterchain.pdf, id=29, 432.65637pt x 420.61137pt>
+File: filterchain.pdf Graphic file (type pdf)
+<use filterchain.pdf>
+Package pdftex.def Info: filterchain.pdf  used on input line 113.
+(pdftex.def)             Requested size: 432.65532pt x 420.61035pt.
+
+Overfull \hbox (12.02812pt too wide) in paragraph at lines 113--114
+[][] 
+ []
+
+[2 <./filterchain.pdf>]
+<option.pdf, id=43, 334.3692pt x 406.3983pt>
+File: option.pdf Graphic file (type pdf)
+<use option.pdf>
+Package pdftex.def Info: option.pdf  used on input line 115.
+(pdftex.def)             Requested size: 334.36838pt x 406.39731pt.
+ [3 <./option.pdf>]
+<filterclassdiagram.pdf, id=61, 593.21625pt x 766.865pt>
+File: filterclassdiagram.pdf Graphic file (type pdf)
+<use filterclassdiagram.pdf>
+Package pdftex.def Info: filterclassdiagram.pdf  used on input line 120.
+(pdftex.def)             Requested size: 593.2148pt x 766.86314pt.
+
+Overfull \hbox (12.01921pt too wide) in paragraph at lines 120--121
+[][] 
+ []
+
+[4 <./filterclassdiagram.pdf
+
+pdfTeX warning: pdflatex (file ./filterclassdiagram.pdf): PDF inclusion: invali
+d other resource which is no dict (key 'ProcSets', type <array>); ignored.
+>]
+<frame.pdf, id=99, 939.51pt x 766.78468pt>
+File: frame.pdf Graphic file (type pdf)
+<use frame.pdf>
+Package pdftex.def Info: frame.pdf  used on input line 122.
+(pdftex.def)             Requested size: 939.5077pt x 766.7828pt.
+
+Overfull \hbox (11.99895pt too wide) in paragraph at lines 122--123
+[][] 
+ []
+
+[5 <./frame.pdf>]
+<login2.pdf, id=123, 593.21625pt x 766.865pt>
+File: login2.pdf Graphic file (type pdf)
+<use login2.pdf>
+Package pdftex.def Info: login2.pdf  used on input line 124.
+(pdftex.def)             Requested size: 593.2148pt x 766.86314pt.
+
+Overfull \hbox (12.01921pt too wide) in paragraph at lines 124--125
+[][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 132.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./login2.pdf
+
+pdfTeX warning: pdflatex (file ./login2.pdf): PDF inclusion: invalid other reso
+urce which is no dict (key 'ProcSets', type <array>); ignored.
+>] [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 132.
  (design.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 114.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 132.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 132.
 
 
 LaTeX Warning: There were undefined references.
@@ -1610,23 +1757,25 @@ Package logreq Info: Writing requests to 'design.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24315 strings out of 492969
- 461284 string characters out of 3126141
- 1046276 words of memory out of 3000000
- 27837 multiletter control sequences out of 15000+200000
- 114164 words of font info for 83 fonts, out of 3000000 for 9000
+ 25617 strings out of 492969
+ 483701 string characters out of 3126141
+ 1068363 words of memory out of 3000000
+ 29095 multiletter control sequences out of 15000+200000
+ 114623 words of font info for 84 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  57i,19n,100p,9088b,2280s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/USER.1/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/sourcesans
-pro/a_ggs4wk.enc}{C:/Users/USER.1/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/d
-vips/libertine/lbtn_76gpa5.enc}<C:/Users/USER.1/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/USER.1/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb><C
-:/Users/USER.1/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/sourcesanspr
-o/SourceSansPro-Semibold.pfb>
-Output written on design.pdf (3 pages, 178252 bytes).
+{C:/Users/USER.1/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/
+lbtn_7grukw.enc}{C:/Users/USER.1/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dv
+ips/sourcesanspro/a_ggs4wk.enc}{C:/Users/USER.1/AppData/Local/Programs/MiKTeX 2
+.9/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}<C:/Users/USER.1/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/USER.
+1/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineTI
+.pfb><C:/Users/USER.1/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/sourc
+esanspro/SourceSansPro-Bold.pfb><C:/Users/USER.1/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/adobe/sourcesanspro/SourceSansPro-Semibold.pfb>
+Output written on design.pdf (9 pages, 543727 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 181 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

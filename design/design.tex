@@ -12,10 +12,6 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{pdfpages}
-\usepackage{wrapfig}
-\usepackage{lscape}
-\usepackage{rotating}
-\usepackage{epstopdf}
 \usepackage[export]{adjustbox}
 
 %usepackage{lipsum}
@@ -120,9 +116,10 @@ Design}
 \newpage
 
 \subsubsection{UI Structure Diagram}
-\begin{sidewaysfigure}[ht]
-	\includegraphics{UI_tree.png}
-\end{sidewaysfigure}
+\begin{figure}
+	\includegraphics[angle=90,origin=c,max size={\textheight}{\textwidth}]{UI_tree.png}
+
+\end{figure}
 \newpage
 
 \subsubsection{Class Diagram}

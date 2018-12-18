@@ -12,6 +12,10 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{pdfpages}
+\usepackage{wrapfig}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{epstopdf}
 \usepackage[export]{adjustbox}
 
 %usepackage{lipsum}
@@ -88,7 +92,7 @@ Design}
 %% - sections/abstract
 \thispagestyle{empty}
 \begin{abstract}
-\thispagestyle{empty}
+	\thispagestyle{empty}
 \end{abstract}
 
 %% -----------------
@@ -113,8 +117,15 @@ Design}
 \includegraphics[max size={\textwidth}{\textheight}]{option.pdf}
 
 \subsubsection{Activity Diagram}
-\subsubsection{Class Diagram}
 \newpage
+
+\subsubsection{UI Structure Diagram}
+\begin{sidewaysfigure}[ht]
+	\includegraphics{UI_tree.png}
+\end{sidewaysfigure}
+\newpage
+
+\subsubsection{Class Diagram}
 \includegraphics[max size={\textwidth}{\textheight}]{filterclassdiagram.pdf}
 \newpage
 \includegraphics[max size={\textwidth}{\textheight}]{frame.pdf}
@@ -130,199 +141,199 @@ Next we'll look at each class and method in detail
 
 \begin{itemize}
 
-	\item[•] Config properties file 
-	\\The config file is stored alongside the built application .jar file and contains the path to the Kafka installation folder, the user name and password of a mongoDB account with the highest level of access and the name of the database.
-	
-	\item[•]Initializer
-		\\Methods:
-		\begin{itemize}
-			\item[-]main
-				\\ parameters: String of arguments from the console
-				\\ returns: void
-			 	\\ App entry point.
-   			 	\\ We load the config.properties life and use the path provided to start the zookeper, kafka and mongodb services
-		\end{itemize}
-		
-		
-	\item[•]MongoConsumer
-	\\The Mongo Consumer, as the name implies, consumes all messages from all topics in the Kafka messaging system. Once a message is found it is passed along to the Mongo Client for further processing.
-	\\Variables
-	\begin{itemize}
-			\item[-]clientMediator
-			\\Type : MongoClientMediator
-			\\ An instance of the Mongo Client Mediator, created with the credentials from the config file.
-	\end{itemize}
-	Methods
-	\begin{itemize}
-			\item[-]MongoConsumer constructor
-			\\parameters: user name and password of a mongoDB account with the highest level of access. 
-			\\returns: void
-			\\ Initializes the MongoClient variable and calls listenForRecords();
-			\item[-]getAllTopics
-			\\parameters: none
-			\\returns: an array of strings containing all the available kafka records
-			\\Asks the kafka server service which topics exists.
-			\item[-]listenForRecords
-			\\parameters: none
-			\\returns: void
-			\\This Method first calls getAllTopics and uses the array of topics to poll the kafka server for new messages.
-			\\If new messages are found then the messages are passed to the Mongo Mediator for adding them to the Database.
-			\\If no new messages are found for a topic notify the Mongo Mediator that the collection tied to the topic is ready for pre-processing.
-	\end{itemize}
-	
-	
-	\item[•]MongoClientMediator
-	This object serves as a nexus between the users who want to get data out of the database and the consumer, and dataProcessor who want to add data into the database.
-	\\Variables
-	\begin{itemize}
-			\item[-] client
-			\\type: MongoClient
-			\\ An instance of the Mongo Client from the official java API.
-	\end{itemize}
-	Methods
-	\begin{itemize}
-			\item[-]MongoClientMediator constructor
-			\\parameters: Username and password
-			\\returns: void
-			\\Initializes the client variable, throws an error if the user is not found.
-			\item[-]addRecordToCollection
-			\\parameters: String representation of a record in json format
-			\\String name of the collection it should be added to.
-			\\returns: void
-			\\Converts the json string into a java object, then to a bson document and uses the mongoAPI to insert it into the database.
-			
-			\item[-]addRecordsToCollection
-			\\parameters: String Array of records to be added to a collection
-			\\String name of the collection it should be added to.
-			\\returns: void
-			\\for each oneof the members of the array call addRecordToCollection
-			
-			\item[-]ProcessCollection QUESTIONS FOR ANKUSH
-			\\parameters: String, name of a collection
-			\\returns: void
+	\item[•] Config properties file
+	      \\The config file is stored alongside the built application .jar file and contains the path to the Kafka installation folder, the user name and password of a mongoDB account with the highest level of access and the name of the database.
 
-			\item[-]getCollection 
-			\\parameters: String, name of a collection
-			\\returns: String array containing all entries of the collection
-			
-			\item[-]getStartRecord
-			\\parameters: String, name of a collection
-			\\returns: the first entry of the collection as a String.
-						
-			\item[-]getEndRecord 
-			\\parameters: String, name of a collection
-			\\returns: the last entry of the collection as a String.
-			
-			\item[-]getCollectionSize
-			\\parameters: String, name of a collection
-			\\returns: the number of entries in the collectoin as int
-			
-			\item[-]getCollectionInRange
-			\\parameters: String, key of the parameter used for filtering
-			\\String start and end ranges for the filtering
-			\\returns: String array containing all entries of the collection within that range
-			\\this Method is very general to allow for flexibility.For example by letting the key be, SourceIPaddresses, or a timeStamp.
-				
-			\item[-]getCollectionInRange
-			\\parameters: String, key of the parameter used for filtering
-			\\String start and end ranges for the filtering
-			\\returns: number of elements matching the range as int
-			\\this Method is very general to allow for flexibility.For example by letting the key be, SourceIPaddresses, or a timeStamp.		
-			
-	\end{itemize}
-	
+	\item[•]Initializer
+	      \\Methods:
+	      \begin{itemize}
+		      \item[-]main
+		            \\ parameters: String of arguments from the console
+		            \\ returns: void
+		            \\ App entry point.
+		            \\ We load the config.properties life and use the path provided to start the zookeper, kafka and mongodb services
+	      \end{itemize}
+
+
+	\item[•]MongoConsumer
+	      \\The Mongo Consumer, as the name implies, consumes all messages from all topics in the Kafka messaging system. Once a message is found it is passed along to the Mongo Client for further processing.
+	      \\Variables
+	      \begin{itemize}
+		      \item[-]clientMediator
+		            \\Type : MongoClientMediator
+		            \\ An instance of the Mongo Client Mediator, created with the credentials from the config file.
+	      \end{itemize}
+	      Methods
+	      \begin{itemize}
+		      \item[-]MongoConsumer constructor
+		            \\parameters: user name and password of a mongoDB account with the highest level of access.
+		            \\returns: void
+		            \\ Initializes the MongoClient variable and calls listenForRecords();
+		      \item[-]getAllTopics
+		            \\parameters: none
+		            \\returns: an array of strings containing all the available kafka records
+		            \\Asks the kafka server service which topics exists.
+		      \item[-]listenForRecords
+		            \\parameters: none
+		            \\returns: void
+		            \\This Method first calls getAllTopics and uses the array of topics to poll the kafka server for new messages.
+		            \\If new messages are found then the messages are passed to the Mongo Mediator for adding them to the Database.
+		            \\If no new messages are found for a topic notify the Mongo Mediator that the collection tied to the topic is ready for pre-processing.
+	      \end{itemize}
+
+
+	\item[•]MongoClientMediator
+	      This object serves as a nexus between the users who want to get data out of the database and the consumer, and dataProcessor who want to add data into the database.
+	      \\Variables
+	      \begin{itemize}
+		      \item[-] client
+		            \\type: MongoClient
+		            \\ An instance of the Mongo Client from the official java API.
+	      \end{itemize}
+	      Methods
+	      \begin{itemize}
+		      \item[-]MongoClientMediator constructor
+		            \\parameters: Username and password
+		            \\returns: void
+		            \\Initializes the client variable, throws an error if the user is not found.
+		      \item[-]addRecordToCollection
+		            \\parameters: String representation of a record in json format
+		            \\String name of the collection it should be added to.
+		            \\returns: void
+		            \\Converts the json string into a java object, then to a bson document and uses the mongoAPI to insert it into the database.
+
+		      \item[-]addRecordsToCollection
+		            \\parameters: String Array of records to be added to a collection
+		            \\String name of the collection it should be added to.
+		            \\returns: void
+		            \\for each oneof the members of the array call addRecordToCollection
+
+		      \item[-]ProcessCollection QUESTIONS FOR ANKUSH
+		            \\parameters: String, name of a collection
+		            \\returns: void
+
+		      \item[-]getCollection
+		            \\parameters: String, name of a collection
+		            \\returns: String array containing all entries of the collection
+
+		      \item[-]getStartRecord
+		            \\parameters: String, name of a collection
+		            \\returns: the first entry of the collection as a String.
+
+		      \item[-]getEndRecord
+		            \\parameters: String, name of a collection
+		            \\returns: the last entry of the collection as a String.
+
+		      \item[-]getCollectionSize
+		            \\parameters: String, name of a collection
+		            \\returns: the number of entries in the collectoin as int
+
+		      \item[-]getCollectionInRange
+		            \\parameters: String, key of the parameter used for filtering
+		            \\String start and end ranges for the filtering
+		            \\returns: String array containing all entries of the collection within that range
+		            \\this Method is very general to allow for flexibility.For example by letting the key be, SourceIPaddresses, or a timeStamp.
+
+		      \item[-]getCollectionInRange
+		            \\parameters: String, key of the parameter used for filtering
+		            \\String start and end ranges for the filtering
+		            \\returns: number of elements matching the range as int
+		            \\this Method is very general to allow for flexibility.For example by letting the key be, SourceIPaddresses, or a timeStamp.
+
+	      \end{itemize}
+
 	\item[•]Record
-	\\Every message that comes from kafka and needs to be added to the database has it's own Record class that inherit from this one.
-	\\Every single class that inherits needs to be able to, using reflection, convert itself into a Bson Document where every variable is a key Value pair of the name of the variable and it's associated value.
-	\\Variables
-	\begin{itemize}
-			\item[-] id
-			\\type: String
-	\end{itemize}
-	Methods
-	\begin{itemize}
-			\item[-]getAsDocument()
-			\\parameters: none
-			\\returns: A Document, containing every variable of any class inheriting from this one.
-			\\This function checks for every variable, gets it's name and value as a string and adds it to the document that it eventually returns.
-	\end{itemize}
-	
+	      \\Every message that comes from kafka and needs to be added to the database has it's own Record class that inherit from this one.
+	      \\Every single class that inherits needs to be able to, using reflection, convert itself into a Bson Document where every variable is a key Value pair of the name of the variable and it's associated value.
+	      \\Variables
+	      \begin{itemize}
+		      \item[-] id
+		            \\type: String
+	      \end{itemize}
+	      Methods
+	      \begin{itemize}
+		      \item[-]getAsDocument()
+		            \\parameters: none
+		            \\returns: A Document, containing every variable of any class inheriting from this one.
+		            \\This function checks for every variable, gets it's name and value as a string and adds it to the document that it eventually returns.
+	      \end{itemize}
+
 	\item[•]PacketRecord
-	\\Inheriting from Record, this class contains the variables that match the json string obtained from kafka.
-	\\Variables
-	\begin{itemize}
-			\item[-] id
-			\\type: String
-			\\this id is used for determining the ordering when saving to mongoDB, it's the offset of the message in the kafka messaging queue. inherited from Record
-			\item[-] client
-			\\type: String
-			\item[-] L2Protocol
-			\\type: String
-			\item[-] SourceMACAddress
-			\\type: String
-			\item[-] L4Protocol
-			\\type: String
-			\item[-] SourceIPAddress
-			\\type: String
-			\item[-] PacketSummary
-			\\type: String
-			\item[-] DestinationIPAddress
-			\\type: String
-			\item[-] Timestamp
-			\\type: String
-			\item[-] DestinationPort
-			\\type: String
-			\item[-] SourcePort
-			\\type: String
-			\item[-] DestinationMACAddress
-			\\type: String
-			
-	\end{itemize}
-	
-	Methods
-	\begin{itemize}
-			\item[-]getters / setters
-			\\parameters: none
-			\\returns: variable type
-			\\Each variable has it's getters and setter methods.
-	\end{itemize}
-	
+	      \\Inheriting from Record, this class contains the variables that match the json string obtained from kafka.
+	      \\Variables
+	      \begin{itemize}
+		      \item[-] id
+		            \\type: String
+		            \\this id is used for determining the ordering when saving to mongoDB, it's the offset of the message in the kafka messaging queue. inherited from Record
+		      \item[-] client
+		            \\type: String
+		      \item[-] L2Protocol
+		            \\type: String
+		      \item[-] SourceMACAddress
+		            \\type: String
+		      \item[-] L4Protocol
+		            \\type: String
+		      \item[-] SourceIPAddress
+		            \\type: String
+		      \item[-] PacketSummary
+		            \\type: String
+		      \item[-] DestinationIPAddress
+		            \\type: String
+		      \item[-] Timestamp
+		            \\type: String
+		      \item[-] DestinationPort
+		            \\type: String
+		      \item[-] SourcePort
+		            \\type: String
+		      \item[-] DestinationMACAddress
+		            \\type: String
+
+	      \end{itemize}
+
+	      Methods
+	      \begin{itemize}
+		      \item[-]getters / setters
+		            \\parameters: none
+		            \\returns: variable type
+		            \\Each variable has it's getters and setter methods.
+	      \end{itemize}
+
 	\item[•]AlarmRecord
-	\\Variables
-	\begin{itemize}
-			\item[-] method
-			\\ An instance of the Mongo Client from the java API
-	\end{itemize}
-	Methods
-	\begin{itemize}
-			\item[-]getters / setters
-			\\parameters: none
-			\\returns: variable type
-			\\Each variable has it's getters and setter methods.
-	\end{itemize}
+	      \\Variables
+	      \begin{itemize}
+		      \item[-] method
+		            \\ An instance of the Mongo Client from the java API
+	      \end{itemize}
+	      Methods
+	      \begin{itemize}
+		      \item[-]getters / setters
+		            \\parameters: none
+		            \\returns: variable type
+		            \\Each variable has it's getters and setter methods.
+	      \end{itemize}
 
 	\item[•]AggregatedRecord
-	\\Variables
-	\begin{itemize}
-			\item[-] method
-			\\ An instance of the Mongo Client from the java API
-	\end{itemize}
-	Methods
-	\begin{itemize}
-			\item[-]getters / setters
-			\\parameters: none
-			\\returns: variable type
-			\\Each variable has it's getters and setter methods.
-	\end{itemize}
-	
-	
-	
+	      \\Variables
+	      \begin{itemize}
+		      \item[-] method
+		            \\ An instance of the Mongo Client from the java API
+	      \end{itemize}
+	      Methods
+	      \begin{itemize}
+		      \item[-]getters / setters
+		            \\parameters: none
+		            \\returns: variable type
+		            \\Each variable has it's getters and setter methods.
+	      \end{itemize}
+
+
+
 \end{itemize}
 
 \begin{figure}
-\includegraphics[angle=90,origin=c,max size={\textwidth}{\textheight}]{class_back_end.png}
-\caption{This is the class diagram for the whole back-end system}
-\label{fig:class_back_end}
+	\includegraphics[angle=90,origin=c,max size={\textwidth}{\textheight}]{class_back_end.png}
+	\caption{This is the class diagram for the whole back-end system}
+	\label{fig:class_back_end}
 \end{figure}
 \newpage
 

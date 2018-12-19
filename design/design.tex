@@ -131,25 +131,59 @@ Design}
 \newpage
 \includegraphics[max size={\textwidth}{\textheight}]{login2.pdf}
 
-\subsection{Client-server-protocol}
+\subsection{Client-server protocol}
 
-Messages between client and server are exchanged as strings.
+Messages between client and server are exchanged as strings in JSON format.
 \\
-Requests from client to server:
+In the following list words in angle brackets ("<>") are placeholders.
+\\
+
+\subsubsection{Requests from client to server:}
 \begin{itemize}
 \item{getAvailableCollections}
+\\
+syntax: \{"cmd": "GETAVCOLL"\} \\
+expected reply: list of collections
+
 \item{getCollectionSize(collection)}
+\\
+syntax: \{"cmd": "GETCOLLSIZE", "par": "<collection>"\} \\
+where <collection> is the name of a collection\\
+expected reply: collection size
        
-\item{getCollection(String coll)}
-\item{getCollectionInRange(key, start, end)}
-\item{getCollectionInRangeSize(key, start, end)}
+\item{getCollection(collection)}
+\\
+syntax: \{"cmd": "GETCOLL", "par": "<collection>"\} \\
+expected reply: data set
+
+\item{getCollectionInRange(collection, key, start, end)}
+\\
+syntax: \{"cmd": "GETCOLLRANGE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
+where <key> is the name of a key in the given collection and <startvalue> and <endvalue> are valid values for this key\\
+expected reply: data set
+
+\item{getCollectionInRangeSize(collection, key, start, end)}
+\\
+syntax: \{"cmd": "GETCOLLRANGESIZE", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
+expected reply: collection size
+
 \end{itemize}
 
-Messages from server to client:
+\subsubsection{Messages from server to client:}
 \begin{itemize}
-\item{ist of collections: String[]}
-\item{collection size: long}
-\item{data set: String[]  // array of json records}
+\item{list of collections}
+\\
+syntax: \{"cmd": "LISTCOL", "par": ["<collection>"]\} \\
+where <collection> is the name of a collection\\
+
+\item{collection size}
+\\
+syntax: \{"cmd": "COLLSIZE", "par": "<size>"\} \\
+where <size> is the number of records in this collection\\
+\item{data set}
+\\
+syntax: \{"cmd": "DATA", "par": [<record>]\} \\
+where each record is a JSON object
 \end{itemize}
 
 

@@ -131,6 +131,28 @@ Design}
 \newpage
 \includegraphics[max size={\textwidth}{\textheight}]{login2.pdf}
 
+\subsection{Client-server-protocol}
+
+Messages between client and server are exchanged as strings.
+\\
+Requests from client to server:
+\begin{itemize}
+\item{getAvailableCollections}
+\item{getCollectionSize(collection)}
+       
+\item{getCollection(String coll)}
+\item{getCollectionInRange(key, start, end)}
+\item{getCollectionInRangeSize(key, start, end)}
+\end{itemize}
+
+Messages from server to client:
+\begin{itemize}
+\item{ist of collections: String[]}
+\item{collection size: long}
+\item{data set: String[]  // array of json records}
+\end{itemize}
+
+
 \subsection{Back-End}
 This subsection deals with the back-end of the ADIN INSPECTOR. How the system deals with client http calls, and how kafka interacts with the system.
 An overview of the system can be seen in \autoref{fig:class_back_end}

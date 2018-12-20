@@ -226,7 +226,7 @@ Next we'll look at each class and method in detail
 		            \\ Initializes the MongoClient variable and calls listenForRecords();
 		      \item[-]getAllTopics
 		            \\parameters: none
-		            \\returns: an array of strings containing all the available kafka records
+		            \\returns: an array of strings containing all the available kafka Topics.
 		            \\Asks the kafka server service which topics exists.
 		      \item[-]listenForRecords
 		            \\parameters: none
@@ -238,12 +238,14 @@ Next we'll look at each class and method in detail
 
 
 	\item[•]MongoClientMediator
-	      This object serves as a nexus between the users who want to get data out of the database and the consumer, and dataProcessor who want to add data into the database.
+	      This object serves as a nexus between the users who want to get data out of the database and the consumer and dataProcessor who want to add data into the database. This class encapsulates the mongo client from the mongo API.
 	      \\Variables
 	      \begin{itemize}
 		      \item[-] client
 		            \\type: MongoClient
 		            \\ An instance of the Mongo Client from the official java API.
+		      \item[-] dataProc
+		      \\ A reference to the data processor class for this client.
 	      \end{itemize}
 	      Methods
 	      \begin{itemize}
@@ -251,6 +253,7 @@ Next we'll look at each class and method in detail
 		            \\parameters: Username and password
 		            \\returns: void
 		            \\Initializes the client variable, throws an error if the user is not found.
+		      
 		      \item[-]addRecordToCollection
 		            \\parameters: String representation of a record in json format
 		            \\String name of the collection it should be added to.
@@ -263,9 +266,10 @@ Next we'll look at each class and method in detail
 		            \\returns: void
 		            \\for each oneof the members of the array call addRecordToCollection
 
-		      \item[-]ProcessCollection QUESTIONS FOR ANKUSH
+		      \item[-]ProcessCollection 
 		            \\parameters: String, name of a collection
 		            \\returns: void
+		            \\signal the data processor to start the processing of a collection
 
 		      \item[-]getCollection
 		            \\parameters: String, name of a collection
@@ -283,17 +287,17 @@ Next we'll look at each class and method in detail
 		            \\parameters: String, name of a collection
 		            \\returns: the number of entries in the collectoin as int
 
-		      \item[-]getCollectionInRange
+		      \item[-]getRecordInRange
 		            \\parameters: String, key of the parameter used for filtering
 		            \\String start and end ranges for the filtering
 		            \\returns: String array containing all entries of the collection within that range
 		            \\this Method is very general to allow for flexibility.For example by letting the key be, SourceIPaddresses, or a timeStamp.
 
-		      \item[-]getCollectionInRange
+		      \item[-]getCollectionInRangeSize
 		            \\parameters: String, key of the parameter used for filtering
 		            \\String start and end ranges for the filtering
 		            \\returns: number of elements matching the range as int
-		            \\this Method is very general to allow for flexibility.For example by letting the key be, SourceIPaddresses, or a timeStamp.
+		            
 
 	      \end{itemize}
 
@@ -348,16 +352,48 @@ Next we'll look at each class and method in detail
 	      Methods
 	      \begin{itemize}
 		      \item[-]getters / setters
-		            \\parameters: none
+		            \\parameters: variable
 		            \\returns: variable type
 		            \\Each variable has it's getters and setter methods.
 	      \end{itemize}
 
 	\item[•]AlarmRecord
+		  \\Inheriting from Record, this class contains the variables that match the json string obtained from kafka.
 	      \\Variables
 	      \begin{itemize}
-		      \item[-] method
-		            \\ An instance of the Mongo Client from the java API
+		       	\item[-] id
+		            \\type: String
+ 				\item[-] AlarmID
+		            \\type: String
+ 				\item[-] AlarmType
+		            \\type: String
+		        \item[-] AlarmOccurrenceTime
+		            \\type: String
+		        \item[-] AlarmCategory
+		            \\type: String
+		        \item[-] AlarmScore
+		            \\type: String
+		        \item[-] AlarmDescription
+		            \\type: String
+		        \item[-] PacketSummary
+		            \\type: String		            
+		            
+	      \end{itemize}
+	      Methods
+	      \begin{itemize}
+		      \item[-]getters / setters
+		            \\parameters: variable
+		            \\returns: variable type
+		            \\Each variable has it's getters and setter methods.
+	      \end{itemize}
+
+	\item[•]MiscRecord 
+	\\Inheriting from Record, this class is used by the data processor as an 'in-between' state before saving to the database. As well as an extension point for adding more types of records into the database programatically in the future.
+	\\Refer to the data processor class for further data on the key value pairs.
+	      \\Variables
+	      \begin{itemize}
+		      \item[-] pairs
+		            \\ A Map of strings to Objects to store any 1 to many relationships
 	      \end{itemize}
 	      Methods
 	      \begin{itemize}
@@ -367,178 +403,87 @@ Next we'll look at each class and method in detail
 		            \\Each variable has it's getters and setter methods.
 	      \end{itemize}
 
-	\item[•]AggregatedRecord
-	      \\Variables
+	\item[•]DataProcessor
+	\\This class is a mediator for each one of our data aggregators used for extraciton of features from the raw data stored in mongoDB.
+	\\ We might want to hve multiple data processors for chaining different aggregators together or to split up the work into mutliple threads. This is dependant on further performance testing.	 
+	 \\Variables
 	      \begin{itemize}
-		      \item[-] method
-		            \\ An instance of the Mongo Client from the java API
+		      \item[-] client
+		      \\ an instance of the associated mongoClient that requested the data aggregation
+		      \item[-] aggregators
+		      \\ A Arraylist containing all the aggregators to be applied on a collection.
 	      \end{itemize}
 	      Methods
 	      \begin{itemize}
 		      \item[-]getters / setters
-		            \\parameters: none
-		            \\returns: variable type
-		            \\Each variable has it's getters and setter methods.
+		      \item[-]processData
+		       \\parameters: variable
+		       \\returns: variable type
 	      \end{itemize}
-
-	\item[•]Hub
-		\\
-		This class implements the network handlers for the websocket connection to the client and access methods for a database connection.
-	      \\Variables
-	      \begin{itemize}
-		      \item[-]requestHandler
-		            \\Type : ClientProtocolHandler
-		            \\ The strategy object we call for the actual parsing of the client requests.
-	      \end{itemize}
-	      \begin{itemize}
-		      \item[-]database
-		            \\Type : IUserSession
-		            \\ The database we use during a user session.
-	      \end{itemize}
+	\item[•] IAggregator
+	\\This interface is the building block for every aggregator to be applied to data
+	 \\Variables
 	      Methods
 	      \begin{itemize}
-		      \item[-]handleOpen
-		            \\parameters: Session session - the current session
-			    \\returns: void
-		            \\Event handler for the start of websocket connection.
-		      \item[-]handleClose
-		            \\parameters: Session session - the current session
-			    \\returns: void
-		            \\Event handler for closing a connection.
-
-		      \item[-]handleMessage
-		            \\parameters: String message - the message that we received from the client
-			    \\Session session - the current session
-			    \\returns: String - the response to be sent to the client
-		            \\Event handler for receiving a message. The message is passed to the ClientProtocolHandler.
-
-		      \item[-]handleError
-		            \\parameters: Session session - the current session
-			    \\Throwable t - the exception that occurred
-			    \\returns: void
-		            \\Event handler for errors/exceptions during communication.
+		      \item[-]processData
+		      \\parameters: Records array of the records to be processed
 	      \end{itemize}
-
-
-	\item[•]IUserSession
-		\\An IUserSession object encapsulates a data base session.
-		On instantiation an IUserSession connects to a database using
-		the given user id and password and uses this connection for
-		all following data base access.
-	      \\Methods
+	      
+	      \item[•] FlowRatePerSecond
+		  \\Implements IAggregator. This calculates, per port, the outgoing and ingoing connections.
+		  A record processed by this aggregator is stored in a collection as follows:
+	      \begin{verbatim} 
+		  Name of collection: collectionName\_FlowratePerSec
+		  structure of record as json:
+		   {
+		  "date" : \{" date" " Unix_Timestamp  } 
+		  rounded down to the second this record points to.
+		  Connections : [
+		  { Port: "portNumer", "InOut" : " In/Out ", count : "Number" }
+		  { Port: "portNumer", "InOut" : " In/Out ", count : "Number" }
+		  ...
+		  
+		  ] This array has an entry per port if the port communicated that second. 
+		  Precomputing this allows us to stream whenever the client needs the information 
+		  for a specific node.
+		}
+	      \end{verbatim}
+	      Methods
 	      \begin{itemize}
-		      \item[-]UserSession
-		            \\parameters: String username - the user id to login with
-			    \\String password - the password
-			    \\returns: void
-			
-Instantiate a new UserSession and log in into the database  using the given credentials.
-
-		      \item[-]getAvailableCollections
-		            \\parameters: -
-		            \\returns: String array with collection names
-		            \\Returns an array with the names of the collections available to the current user.
-
-		      \item[-]getCollectionSize
-		            \\parameters: String collection - the collection to query
-		            \\returns: long - the number of records
-		            \\Returns the number of records in the specified collection.
-
-		      \item[-]getCollection
-		            \\parameters: String - name of a collection
-		            \\returns: String array containing all entries of the collection
-
-		      \item[-]getCollectionInRange
-		            \\parameters: String key - the parameter used for filtering
-		            \\String start and end - range for the filtering
-		            \\returns: String array containing all entries of the collection within the filter range
-			    \\ Returns an array containing all records of this
-				collection for which the value of the
-				specified key is in the range [start, end).
-				The records will be in the same order as
-				they are in the collection.
-
-		      \item[-]getCollectionInRangeSize
-		            \\parameters: String key - the parameter used for filtering
-		            \\String start and end - range for the filtering
-		            \\returns: number of elements matching the range as int
-		            \\Returns the number of records in the specified
-				collection for which the value of the specified
-				key is within the range [start, end).
+		      \item[-]processData
+		      \\parameters: Records array of the records to be processed
+		      \\ specific imlpementation left to the classes implementing this interface
 	      \end{itemize}
 
-
-
-	\item[•]MongoDBUserSession
-		\\Encapsulates a user session for a connection to a MongoDB database.
-		\\Methods
+   \item[•] NumberOfConnectionsPerNodePerSecond
+		  \\Implements IAggregator. This calculates the outgoing and ingoing connections.
+		  A record processed by this aggregator is stored in a collection as follows:
+	      \begin{verbatim} 
+		  Name of collection: collectionName\_FlowratePerSec
+		  structure of record as json:
+		   {
+		  "date" : \{" date" " Unix_Timestamp  } 
+		  rounded down to the second this record points to.
+		  Connections : [
+		  { Port: "portNumer", count : "Number" }
+		  { Port: "portNumer", count : "Number" }
+		  ...
+		  
+		  ] This array has an entry per port if the port communicated that second. 
+		  Precomputing this allows us to stream whenever the client needs the information 
+		  for a specific node.
+		}
+	      \end{verbatim}
+	      Methods
 	      \begin{itemize}
-		      \item[-]MongoDBUserSession
-		            \\parameters: -
-			    \\returns: void
-		            \\Creates a new MongoDB session.
-
-		      \item[-]UserSession
-		            \\parameters: String username - the user id to login with
-			    \\String password - the password
-			    \\returns: void
-		            \\Instantiate a new UserSession and log in into the database  using the given credentials.
-
-		      \item[-]getAvailableCollections
-		            \\parameters: -
-		            \\returns: String array with collection names
-		            \\Returns an array with the names of the collections available to the current user.
-
-		      \item[-]getCollectionSize
-		            \\parameters: String collection - the collection to query
-		            \\returns: long - the number of records
-		            \\Returns the number of records in the specified collection.
-
-		      \item[-]getCollection
-		            \\parameters: String - name of a collection
-		            \\returns: String array containing all entries of the collection
-
-		      \item[-]getCollectionInRange
-		            \\parameters: String key - the parameter used for filtering
-		            \\String start and end - range for the filtering
-		            \\returns: String array containing all entries of the collection within the filter range
-			    \\ Returns an array containing all records of this
-				collection for which the value of the
-				specified key is in the range [start, end).
-				The records will be in the same order as
-				they are in the collection.
-
-		      \item[-]getCollectionInRangeSize
-		            \\parameters: String key - the parameter used for filtering
-		            \\String start and end - range for the filtering
-		            \\returns: number of elements matching the range as int
-		            \\Returns the number of records in the specified
-				collection for which the value of the specified
-				key is within the range [start, end).
-
+		      \item[-]processData
+		      \\parameters: Records array of the records to be processed
 	      \end{itemize}
-
-\newpage
-
-	\item[•]ClientRequestHandler
-		\\This class handles client requests by parsing them, executing
-		the requested action and producing responses.
-		The requested actions are typically executed by calls to the database session object.
-		\\Methods
-	      \begin{itemize}
-		      \item[-]handleRequest
-		            \\parameters: \\IUserSession  dbSession - the current database session
-		            \\Session session - the current client session
-		            \\String message - the client request to process
-		            \\returns: String - the response to be sent to the client
-		            \\Parse the message from the client, execute the requested action (typically a database query)  and construct the response message.
-	      \end{itemize}
-
 
 \end{itemize}
 
 \begin{figure}
-	\includegraphics[angle=90,origin=c,max size={\textwidth}{\textheight}]{class_back_end.png}
+	\includegraphics[angle=90,origin=c,max size={\textwidth}{\textheight}]{class_back-end.png}
 	\caption{This is the class diagram for the whole back-end system}
 	\label{fig:class_back_end}
 \end{figure}

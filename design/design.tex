@@ -288,13 +288,15 @@ Next we'll look at each class and method in detail
 		            \\returns: the number of entries in the collectoin as int
 
 		      \item[-]getRecordsInRange
-		            \\parameters: String, key of the parameter used for filtering
+		            \\parameters: String, name of the collection to query
+		            \\String, key of the parameter used for filtering
 		            \\String start and end ranges for the filtering
 		            \\returns: String array containing all entries of the collection within that range
 		            \\this Method is very general to allow for flexibility.For example by letting the key be, SourceIPaddresses, or a timeStamp.
 
 		      \item[-]getRecordsInRangeSize
-		            \\parameters: String, key of the parameter used for filtering
+		            \\parameters: String, name of the collection to query
+		            \\String, key of the parameter used for filtering
 		            \\String start and end ranges for the filtering
 		            \\returns: number of elements matching the range as int
 		            
@@ -548,7 +550,8 @@ Instantiate a new UserSession and log in into the database  using the given cred
 		            \\returns: String array containing all entries of the collection
 
 		      \item[-]getRecordsInRange
-		            \\parameters: String key - the parameter used for filtering
+		            \\parameters: String - name of the collection to query
+		            \\String key - the parameter used for filtering
 		            \\String start and end - range for the filtering
 		            \\returns: String array containing all entries of the collection within the filter range
 			    \\ Returns an array containing all records of this
@@ -558,7 +561,8 @@ Instantiate a new UserSession and log in into the database  using the given cred
 				they are in the collection.
 
 		      \item[-]getRecordsInRangeSize
-		            \\parameters: String key - the parameter used for filtering
+		            \\parameters: String - name of the collection to query
+		            \\String key - the parameter used for filtering
 		            \\String start and end - range for the filtering
 		            \\returns: number of elements matching the range as int
 		            \\Returns the number of records in the specified
@@ -598,7 +602,8 @@ Instantiate a new UserSession and log in into the database  using the given cred
 		            \\returns: String array containing all entries of the collection
 
 		      \item[-]getRecordsInRange
-		            \\parameters: String key - the parameter used for filtering
+		            \\parameters: String - name of the collection to query
+		            \\String key - the parameter used for filtering
 		            \\String start and end - range for the filtering
 		            \\returns: String array containing all entries of the collection within the filter range
 			    \\ Returns an array containing all records of this
@@ -608,7 +613,8 @@ Instantiate a new UserSession and log in into the database  using the given cred
 				they are in the collection.
 
 		      \item[-]getRecordsInRangeSize
-		            \\parameters: String key - the parameter used for filtering
+		            \\parameters: String - name of the collection to query
+		            \\String key - the parameter used for filtering
 		            \\String start and end - range for the filtering
 		            \\returns: number of elements matching the range as int
 		            \\Returns the number of records in the specified

@@ -421,16 +421,18 @@ Next we'll look at each class and method in detail
 
 
 	\item[•]IUserSession
-		An IUserSession object encapsulates a data base session.
+		\\An IUserSession object encapsulates a data base session.
 		On instantiation an IUserSession connects to a database using
 		the given user id and password and uses this connection for
 		all following data base access.
+	      \\Methods
+	      \begin{itemize}
 		      \item[-]UserSession
 		            \\parameters: String username - the user id to login with
 			    \\String password - the password
 			    \\returns: void
 			
-		            \\Instantiate a new UserSession and log in into the database  using the given credentials.
+Instantiate a new UserSession and log in into the database  using the given credentials.
 
 		      \item[-]getAvailableCollections
 		            \\parameters: -
@@ -463,11 +465,14 @@ Next we'll look at each class and method in detail
 		            \\Returns the number of records in the specified
 				collection for which the value of the specified
 				key is within the range [start, end).
+	      \end{itemize}
 
 
 
 	\item[•]MongoDBUserSession
-		Encapsulates a user session for a connection to a MongoDB database.
+		\\Encapsulates a user session for a connection to a MongoDB database.
+		\\Methods
+	      \begin{itemize}
 		      \item[-]MongoDBUserSession
 		            \\parameters: -
 			    \\returns: void
@@ -511,18 +516,23 @@ Next we'll look at each class and method in detail
 				collection for which the value of the specified
 				key is within the range [start, end).
 
+	      \end{itemize}
 
+\newpage
 
 	\item[•]ClientRequestHandler
 		\\This class handles client requests by parsing them, executing
 		the requested action and producing responses.
-		The requested action are typically executed by calls to the database session object.
+		The requested actions are typically executed by calls to the database session object.
+		\\Methods
+	      \begin{itemize}
 		      \item[-]handleRequest
 		            \\parameters: \\IUserSession  dbSession - the current database session
 		            \\Session session - the current client session
 		            \\String message - the client request to process
 		            \\returns: String - the response to be sent to the client
 		            \\Parse the message from the client, execute the requested action (typically a database query)  and construct the response message.
+	      \end{itemize}
 
 
 \end{itemize}

@@ -222,7 +222,6 @@ Next we'll look at each class and method in detail
 	      \begin{itemize}
 		      \item[-]MongoConsumer constructor
 		            \\parameters: user name and password of a mongoDB account with the highest level of access.
-		            \\returns: void
 		            \\ Initializes the MongoClient variable and calls listenForRecords();
 		      \item[-]getAllTopics
 		            \\parameters: none
@@ -251,7 +250,6 @@ Next we'll look at each class and method in detail
 	      \begin{itemize}
 		      \item[-]MongoClientMediator constructor
 		            \\parameters: Username and password
-		            \\returns: void
 		            \\Initializes the client variable, throws an error if the user is not found.
 		      
 		      \item[-]addRecordToCollection
@@ -576,9 +574,8 @@ Instantiate a new UserSession and log in into the database  using the given cred
 		\\Encapsulates a user session for a connection to a MongoDB database.
 		\\Methods
 	      \begin{itemize}
-		      \item[-]MongoDBUserSession
+		      \item[-]MongoDBUserSession constructor
 		            \\parameters: -
-			    \\returns: void
 		            \\Creates a new MongoDB session.
 
 		      \item[-]UserSession

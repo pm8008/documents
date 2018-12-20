@@ -131,6 +131,7 @@ Design}
 \newpage
 \includegraphics[max size={\textwidth}{\textheight}]{login2.pdf}
 
+
 \subsection{Client-server protocol}
 
 Messages between client and server are exchanged as strings in JSON format.
@@ -156,15 +157,15 @@ expected reply: collection size
 syntax: \{"cmd": "GETCOLL", "par": "<collection>"\} \\
 expected reply: data set
 
-\item{getCollectionInRange(collection, key, start, end)}
+\item{getRecordsInRange(collection, key, start, end)}
 \\
-syntax: \{"cmd": "GETCOLLRANGE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
+syntax: \{"cmd": "GETRECORDSRANGE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
 where <key> is the name of a key in the given collection and <startvalue> and <endvalue> are valid values for this key\\
 expected reply: data set
 
-\item{getCollectionInRangeSize(collection, key, start, end)}
+\item{getRecordsInRangeSize(collection, key, start, end)}
 \\
-syntax: \{"cmd": "GETCOLLRANGESIZE", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
+syntax: \{"cmd": "GETRECORDSRANGESIZE", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
 expected reply: collection size
 
 \end{itemize}
@@ -185,7 +186,6 @@ where <size> is the number of records in this collection\\
 syntax: \{"cmd": "DATA", "par": [<record>]\} \\
 where each record is a JSON object
 \end{itemize}
-
 
 \subsection{Back-End}
 This subsection deals with the back-end of the ADIN INSPECTOR. How the system deals with client http calls, and how kafka interacts with the system.
@@ -287,13 +287,13 @@ Next we'll look at each class and method in detail
 		            \\parameters: String, name of a collection
 		            \\returns: the number of entries in the collectoin as int
 
-		      \item[-]getRecordInRange
+		      \item[-]getRecordsInRange
 		            \\parameters: String, key of the parameter used for filtering
 		            \\String start and end ranges for the filtering
 		            \\returns: String array containing all entries of the collection within that range
 		            \\this Method is very general to allow for flexibility.For example by letting the key be, SourceIPaddresses, or a timeStamp.
 
-		      \item[-]getCollectionInRangeSize
+		      \item[-]getRecordsInRangeSize
 		            \\parameters: String, key of the parameter used for filtering
 		            \\String start and end ranges for the filtering
 		            \\returns: number of elements matching the range as int
@@ -479,6 +479,160 @@ Next we'll look at each class and method in detail
 		      \item[-]processData
 		      \\parameters: Records array of the records to be processed
 	      \end{itemize}
+
+\item[•]Hub
+		\\
+		This class implements the network handlers for the websocket connection to the client and access methods for a database connection.
+	      \\Variables
+	      \begin{itemize}
+		      \item[-]requestHandler
+		            \\Type : ClientProtocolHandler
+		            \\ The strategy object we call for the actual parsing of the client requests.
+	      \end{itemize}
+	      \begin{itemize}
+		      \item[-]database
+		            \\Type : IUserSession
+		            \\ The database we use during a user session.
+	      \end{itemize}
+	      Methods
+	      \begin{itemize}
+		      \item[-]handleOpen
+		            \\parameters: Session session - the current session
+			    \\returns: void
+		            \\Event handler for the start of websocket connection.
+		      \item[-]handleClose
+		            \\parameters: Session session - the current session
+			    \\returns: void
+		            \\Event handler for closing a connection.
+
+		      \item[-]handleMessage
+		            \\parameters: String message - the message that we received from the client
+			    \\Session session - the current session
+			    \\returns: String - the response to be sent to the client
+		            \\Event handler for receiving a message. The message is passed to the ClientProtocolHandler.
+
+		      \item[-]handleError
+		            \\parameters: Session session - the current session
+			    \\Throwable t - the exception that occurred
+			    \\returns: void
+		            \\Event handler for errors/exceptions during communication.
+	      \end{itemize}
+
+
+	\item[•]IUserSession
+		\\An IUserSession object encapsulates a data base session.
+		On instantiation an IUserSession connects to a database using
+		the given user id and password and uses this connection for
+		all following data base access.
+	      \\Methods
+	      \begin{itemize}
+		      \item[-]UserSession
+		            \\parameters: String username - the user id to login with
+			    \\String password - the password
+			    \\returns: void
+			
+Instantiate a new UserSession and log in into the database  using the given credentials.
+
+		      \item[-]getAvailableCollections
+		            \\parameters: -
+		            \\returns: String array with collection names
+		            \\Returns an array with the names of the collections available to the current user.
+
+		      \item[-]getCollectionSize
+		            \\parameters: String collection - the collection to query
+		            \\returns: long - the number of records
+		            \\Returns the number of records in the specified collection.
+
+		      \item[-]getCollection
+		            \\parameters: String - name of a collection
+		            \\returns: String array containing all entries of the collection
+
+		      \item[-]getRecordsInRange
+		            \\parameters: String key - the parameter used for filtering
+		            \\String start and end - range for the filtering
+		            \\returns: String array containing all entries of the collection within the filter range
+			    \\ Returns an array containing all records of this
+				collection for which the value of the
+				specified key is in the range [start, end).
+				The records will be in the same order as
+				they are in the collection.
+
+		      \item[-]getRecordsInRangeSize
+		            \\parameters: String key - the parameter used for filtering
+		            \\String start and end - range for the filtering
+		            \\returns: number of elements matching the range as int
+		            \\Returns the number of records in the specified
+				collection for which the value of the specified
+				key is within the range [start, end).
+	      \end{itemize}
+
+
+
+	\item[•]MongoDBUserSession
+		\\Encapsulates a user session for a connection to a MongoDB database.
+		\\Methods
+	      \begin{itemize}
+		      \item[-]MongoDBUserSession
+		            \\parameters: -
+			    \\returns: void
+		            \\Creates a new MongoDB session.
+
+		      \item[-]UserSession
+		            \\parameters: String username - the user id to login with
+			    \\String password - the password
+			    \\returns: void
+		            \\Instantiate a new UserSession and log in into the database  using the given credentials.
+
+		      \item[-]getAvailableCollections
+		            \\parameters: -
+		            \\returns: String array with collection names
+		            \\Returns an array with the names of the collections available to the current user.
+
+		      \item[-]getCollectionSize
+		            \\parameters: String collection - the collection to query
+		            \\returns: long - the number of records
+		            \\Returns the number of records in the specified collection.
+
+		      \item[-]getCollection
+		            \\parameters: String - name of a collection
+		            \\returns: String array containing all entries of the collection
+
+		      \item[-]getRecordsInRange
+		            \\parameters: String key - the parameter used for filtering
+		            \\String start and end - range for the filtering
+		            \\returns: String array containing all entries of the collection within the filter range
+			    \\ Returns an array containing all records of this
+				collection for which the value of the
+				specified key is in the range [start, end).
+				The records will be in the same order as
+				they are in the collection.
+
+		      \item[-]getRecordsInRangeSize
+		            \\parameters: String key - the parameter used for filtering
+		            \\String start and end - range for the filtering
+		            \\returns: number of elements matching the range as int
+		            \\Returns the number of records in the specified
+				collection for which the value of the specified
+				key is within the range [start, end).
+
+	      \end{itemize}
+
+\newpage
+
+	\item[•]ClientRequestHandler
+		\\This class handles client requests by parsing them, executing
+		the requested action and producing responses.
+		The requested actions are typically executed by calls to the database session object.
+		\\Methods
+	      \begin{itemize}
+		      \item[-]handleRequest
+		            \\parameters: \\IUserSession  dbSession - the current database session
+		            \\Session session - the current client session
+		            \\String message - the client request to process
+		            \\returns: String - the response to be sent to the client
+		            \\Parse the message from the client, execute the requested action (typically a database query)  and construct the response message.
+	      \end{itemize}
+
 
 \end{itemize}
 

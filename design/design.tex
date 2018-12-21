@@ -111,15 +111,68 @@ Design}
 
 \section{Design}\label{sec:intro}
 \subsection{Front-End}
-\subsubsection{Class Diagram}
+This subsection deals with the front-end of the ADIN INSPECTOR - the UI elements the GUI consists of, and how states are handled. A series of final UI design mockups are presented under UI Design Mockups subsection, whereas an overview of the GUI can be seen in \autoref{fig:gui_overview}.\\
+\\
+An interactive early stage demo is available at \url{https://adin-frontend.netlify.com}
 
+\subsubsection{UI Design Mockups}
+
+\begin{figure}[hp]
+	\begin{adjustbox}
+		{addcode={\begin{minipage}{\width}}
+						{\caption{%
+							Login screen
+						}
+						\label{fig:mockup_login}
+					\end{minipage}}
+			,center}
+		\fbox{\includegraphics[max size={\textwidth}{\textheight}]{images/ui_design/login_screen.png}}
+	\end{adjustbox}
+\end{figure}
+\newpage
+
+\begin{figure}
+	\begin{adjustbox}
+		{addcode={\begin{minipage}{\width}}
+						{\caption{%
+							Initial empty screen
+						}
+						\label{fig:mockup_empty}
+					\end{minipage}}
+			,center}
+		\fbox{\includegraphics[max size={\textwidth}{\textheight}]{images/ui_design/Main/0.png}}
+	\end{adjustbox}
+\end{figure}
+
+\newpage
+
+\begin{figure}
+	\begin{adjustbox}
+		{addcode={\begin{minipage}{\width}}
+						{\caption{%
+							Add/configure diagram screen
+						}
+						\label{fig:mockup_config}
+					\end{minipage}}
+			,center}
+		\fbox{\includegraphics[max size={\textwidth}{\textheight}]{images/ui_design/Main/1.png}}
+	\end{adjustbox}
+\end{figure}
+\newpage
+
+\subsubsection{Class Diagrams}
+
+\autoref{fig:gui_overview} illustrates the whole GUI structure of the application after the user has successfully logged in.
+\\
 \begin{figure}
 	\begin{adjustbox}
 		{addcode={\begin{minipage}{\width}}
 						{\caption{%
 							This diagram shows an overview of GUI elements and their relationships inside the main application, when the user has successfully logged in.
 						}
-					\end{minipage}},rotate=90,center}
+						\label{fig:gui_overview}
+					\end{minipage}}
+			,rotate=90,center}
 		\includegraphics[max size={\textheight}{\textwidth}]{images/overview.png}%
 	\end{adjustbox}
 \end{figure}
@@ -132,6 +185,7 @@ Design}
 							{\caption{%
 								This diagram shows the definitions of all representational elements.
 							}
+							\label{fig:component_defs}
 						\end{minipage}},center}
 			\includegraphics[max size={\textheight}{1.5\linewidth}]{images/componentDefs.png}%
 		\end{adjustbox}
@@ -144,6 +198,7 @@ Design}
 						{\caption{%
 							This diagram shows the design of the MobX state store objects and predefined actions to mutate the states.
 						}
+						\label{fig:state_action_store}
 					\end{minipage}}}
 		\includegraphics[max size={\textwidth}{\textheight}]{images/stateStoresAndActions.png}%
 	\end{adjustbox}
@@ -155,6 +210,7 @@ Design}
 						{\caption{%
 							This diagram shows the definitions of custom types that are used in the MobX state stores.
 						}
+						\label{fig:type_defs}
 					\end{minipage}}}
 		\includegraphics[max size={\textwidth}{\textheight}]{images/typeDefs.png}%
 	\end{adjustbox}
@@ -175,24 +231,32 @@ Design}
 \newpage
 
 \subsubsection{Sequence Diagram}
-\includegraphics[max size={\textwidth}{\textheight}]{login1.pdf}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{login1.pdf}
+\end{figure}
 \newpage
 The following diagram shows an alternative view of the login sequence:
 \\
-\includegraphics[max size={\textwidth}{\textheight}]{images/ADIN_Inspector_Client-Server-Communication-login.png}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/ADIN_Inspector_Client-Server-Communication-login.png}
+\end{figure}
 \newpage
+\begin{figure}
 \includegraphics[max size={\textwidth}{\textheight}]{filterchain.pdf}
+\end{figure}
 \newpage
+\begin{figure}
 \includegraphics[max size={\textwidth}{\textheight}]{option.pdf}
+\end{figure}
 
 \newpage
 This diagram shows the control flow for handling a movement of the slider by the user.\\
 \begin{center}
-\begin{figure}
-\includegraphics[width=\textwidth]{images/sd_frontend_comm-slider_movement.png}
-\caption{Sequence diagram for slider movement}
-\label{fig:sd_slider_movement}
-\end{figure}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{images/sd_frontend_comm-slider_movement.png}
+		\caption{Sequence diagram for slider movement}
+		\label{fig:sd_slider_movement}
+	\end{figure}
 \end{center}
 
 

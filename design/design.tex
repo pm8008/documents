@@ -143,30 +143,30 @@ In the following list words in angle brackets ("<>") are placeholders.
 \begin{itemize}
 \item{getAvailableCollections}
 \\
-syntax: \{"cmd": "GET_AV_COLL"\} \\
-expected reply: list of collections
+syntax: \{"cmd": "GET\_AV\_COLL"\} \\
+expected response: list of collections
 
 \item{getCollectionSize(collection)}
 \\
-syntax: \{"cmd": "GET_COL_LSIZE", "par": "<collection>"\} \\
+syntax: \{"cmd": "GET\_COLL\_SIZE", "par": "<collection>"\} \\
 where <collection> is the name of a collection\\
-expected reply: collection size
+expected response: collection size
        
 \item{getCollection(collection)}
 \\
-syntax: \{"cmd": "GET_COLL", "par": "<collection>"\} \\
-expected reply: data set
+syntax: \{"cmd": "GET\_COLL", "par": "<collection>"\} \\
+expected response: data set
 
 \item{getRecordsInRange(collection, key, start, end)}
 \\
-syntax: \{"cmd": "GET_RECORDS_RANGE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
+syntax: \{"cmd": "GET\_RECORDS\_RANGE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
 where <key> is the name of a key in the given collection and <startvalue> and <endvalue> are valid values for this key\\
-expected reply: data set
+expected response: data set
 
 \item{getRecordsInRangeSize(collection, key, start, end)}
 \\
-syntax: \{"cmd": "GET_RECORDS_RANGE_SIZE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
-expected reply: collection size
+syntax: \{"cmd": "GET\_RECORDS\_RANGE\_SIZE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
+expected response: collection size
 
 \end{itemize}
 
@@ -174,12 +174,12 @@ expected reply: collection size
 \begin{itemize}
 \item{list of collections}
 \\
-syntax: \{"cmd": "LISTCOL", "par": ["<collection>"]\} \\
+syntax: \{"cmd": "LIST\_COL", "par": ["<collection>"]\} \\
 where <collection> is the name of a collection\\
 
 \item{collection size}
 \\
-syntax: \{"cmd": "COLLSIZE", "par": "<size>"\} \\
+syntax: \{"cmd": "COLL\_SIZE", "par": "<size>"\} \\
 where <size> is the number of records in this collection\\
 \item{data set}
 \\

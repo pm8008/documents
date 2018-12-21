@@ -805,10 +805,13 @@ The overview in  \autoref{fig:class_back_end} shows a number of classes and it's
 \newpage
 
 \subsubsection{Sequence Diagram}
+The following diagram show the initalization sequence order, the correspoding class diagram is \autoref{fig:class_back_end_init}, the program dependes on a couple of services namely (in order),the zookeper serivce, the kafka server service and the mongoDB service. Once all services are up and running the MongoConsumer is created and can start consuming messages and the Hub can start listening to client logins, requests, etc.
 \begin{figure}
 	\includegraphics[max size={\textwidth}{\textheight}]{images/sequence_server_init.png}
 	\caption{Initialization sequence and message consumption}
 \end{figure}
+\newpage
+
 \subsubsection{Activity Diagram}
 \begin{figure}
 	\includegraphics[max size={\textwidth}{\textheight}]{images/activity_MongoConsumer.png}

@@ -259,6 +259,10 @@ In the following list words in angle brackets ("<>") are placeholders.
 This subsection deals with the back-end of the ADIN INSPECTOR. How the system deals with client http calls, and how kafka interacts with the system.
 An overview of the system can be seen in \autoref{fig:class_back_end}. Smaller subsections have been expanded in \autoref{fig:class_back_end_init}, \autoref{fig:class_back_end_mongo}, \autoref{fig:class_back_end_hub}.
 
+The connection to the client is handled in the class Hub which contains handlers for the network interface. This class uses a separate class (ClientProtocolHandler) to parse and handle requests from the handler. This setup is according to the strategy design pattern and allows easily modifying or even replacing the client server-protocol.
+The Hub class and the ClientProtocolHandler access the database via an object that implements the IUserSession interface and encapsulates the database session. Currently there is only an implementation for MongoDB access (MongoDBUserSession), but the abstraction via the IUserSession interface allows to add classes that offer access to Kafka or other databases.
+Classes that implement IUserSession are instantiated with a factory Method (UserSession()) which guarantees that the returned object represents a successfully logged in database session.\\
+
 \subsubsection{Class Diagram}
 The overview in  \autoref{fig:class_back_end} shows a number of classes and it's interaction with eachother. What follows is a more in-depth view of what each component of this diagram does, what data it's stored and how it fits into the overarching architecture.
 

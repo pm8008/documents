@@ -235,7 +235,7 @@ An interactive early stage demo is available at \url{https://adin-frontend.netli
 \newpage
 The following diagram shows an alternative view of the login sequence:
 \\
-\includegraphics[max size={\textwidth}{\textheight}]{ADIN_Inspector_Client-Server-Communication-login.png}
+\includegraphics[max size={\textwidth}{\textheight}]{images/ADIN_Inspector_Client-Server-Communication-login.png}
 \newpage
 \includegraphics[max size={\textwidth}{\textheight}]{filterchain.pdf}
 \newpage
@@ -313,10 +313,21 @@ In the following list words in angle brackets ("<>") are placeholders.
 
 \subsection{Back-End}
 This subsection deals with the back-end of the ADIN INSPECTOR. How the system deals with client http calls, and how kafka interacts with the system.
-An overview of the system can be seen in \autoref{fig:class_back_end}
+An overview of the system can be seen in \autoref{fig:class_back_end}. Smaller subsections have been expanded in \autoref{fig:class_back_end_init}, \autoref{fig:class_back_end_mongo}, \autoref{fig:class_back_end_hub}.
+
+The connection to the client is handled in the class Hub which contains handlers for the network interface. This class uses a separate class (ClientProtocolHandler) to parse and handle requests from the handler. This setup is according to the strategy design pattern and allows easily modifying or even replacing the client server-protocol.
+The Hub class and the ClientProtocolHandler access the database via an object that implements the IUserSession interface and encapsulates the database session. Currently there is only an implementation for MongoDB access (MongoDBUserSession), but the abstraction via the IUserSession interface allows to add classes that offer access to Kafka or other databases.
+Classes that implement IUserSession are instantiated with a factory Method (UserSession()) which guarantees that the returned object represents a successfully logged in database session.\\
 
 \subsubsection{Class Diagram}
-Next we'll look at each class and method in detail
+The overview in  \autoref{fig:class_back_end} shows a number of classes and it's interaction with eachother. What follows is a more in-depth view of what each component of this diagram does, what data it's stored and how it fits into the overarching architecture.
+
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/class_back-end_init.png}
+		\label{fig:class_back_end_init}
+		\caption{The classes involed in the initialization setup}
+\end{figure}
+
 
 \begin{itemize}
 
@@ -359,6 +370,13 @@ Next we'll look at each class and method in detail
 		            \\If no new messages are found for a topic notify the Mongo Mediator that the collection tied to the topic is ready for pre-processing.
 	      \end{itemize}
 
+
+
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/class_back-end_mongo.png}
+		\label{fig:class_back_end_mongo}
+		\caption{The classes involed in reading and writing data into the database}
+\end{figure}
 
 	\item[•]MongoClientMediator
 	      This object serves as a nexus between the users who want to get data out of the database and the consumer and dataProcessor who want to add data into the database. This class encapsulates the mongo client from the mongo API.
@@ -604,6 +622,12 @@ Next we'll look at each class and method in detail
 		            \\parameters: Records array of the records to be processed
 	      \end{itemize}
 
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/class_back-end_hub.png}
+		\label{fig:class_back_end_hub}
+		\caption{The classes involed in the communication between the server and the client}
+\end{figure}
+
 	\item[•]Hub
 	      \\
 	      This class implements the network handlers for the websocket connection to the client and access methods for a database connection.
@@ -770,11 +794,33 @@ Next we'll look at each class and method in detail
 \newpage
 
 \subsubsection{Sequence Diagram}
-\includegraphics[max size={\textwidth}{\textheight}]{images/sequence_server_init.png}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/sequence_server_init.png}
+		\caption{Initialization sequence and message consumption}
+\end{figure}
 \subsubsection{Activity Diagram}
-\includegraphics[max size={\textwidth}{\textheight}]{images/activity_MongoConsumer.png}
-\includegraphics[max size={\textwidth}{\textheight}]{images/activity_ProcessData.png}
-\includegraphics[max size={\textwidth}{\textheight}]{images/activity_User-Management.png}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/activity_MongoConsumer.png}
+	\caption{Message consumption workflow}
+\end{figure}
+\newpage
 
+\begin{figure}
+	\includegraphics[angle=90,origin=c,max size={\textheight}{\textwidth}]{images/activity_ProcessData.png}
+	\caption{Processing Collection/Records workflow}
+\end{figure}
+\newpage
+
+For user access control the built-in UAC system in MongoDB is used, whereas every user can have roles assign to them.
+\\
+A Role determines what can be done and seen within a database. For the purposes of the ADIN INSPECTOR there are three basic roles,
+Admin, Operator and Analyst. 
+The admin role can create and destroy users as well as assign specific roles to them. An analyst can see all collectoins on the database and an Operator can only see part of them.
+The following Diagram workflow shows the user/role creation workflow an Administrator can use.
+
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/activity_User-Management.png}
+	\caption{User Management workflow}
+\end{figure}
 
 \end{document}

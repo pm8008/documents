@@ -719,13 +719,33 @@ The overview in  \autoref{fig:class_back_end} shows a number of classes and it's
 \newpage
 
 \subsubsection{Sequence Diagram}
-\includegraphics[max size={\textwidth}{\textheight}]{images/sequence_server_init.png}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/sequence_server_init.png}
+		\caption{Initialization sequence and message consumption}
+\end{figure}
 \subsubsection{Activity Diagram}
-\includegraphics[max size={\textwidth}{\textheight}]{images/activity_MongoConsumer.png}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/activity_MongoConsumer.png}
+	\caption{Message consumption workflow}
+\end{figure}
 \newpage
-\includegraphics[angle=90,origin=c,max size={\textheight}{\textwidth}]{images/activity_ProcessData.png}
-\newpage
-\includegraphics[max size={\textwidth}{\textheight}]{images/activity_User-Management.png}
 
+\begin{figure}
+	\includegraphics[angle=90,origin=c,max size={\textheight}{\textwidth}]{images/activity_ProcessData.png}
+	\caption{Processing Collection/Records workflow}
+\end{figure}
+\newpage
+
+For user access control the built-in UAC system in MongoDB is used, whereas every user can have roles assign to them.
+\\
+A Role determines what can be done and seen within a database. For the purposes of the ADIN INSPECTOR there are three basic roles,
+Admin, Operator and Analyst. 
+The admin role can create and destroy users as well as assign specific roles to them. An analyst can see all collectoins on the database and an Operator can only see part of them.
+The following Diagram workflow shows the user/role creation workflow an Administrator can use.
+
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/activity_User-Management.png}
+	\caption{User Management workflow}
+\end{figure}
 
 \end{document}

@@ -125,11 +125,15 @@ This diagram shows the control flow for handling a movement of the slider by the
 
 \subsubsection{Class Diagram}
 
-The diagram on the next page shows an overview of GUI elements of the main application, when the user has successfully logged in.
-\newpage
-
 \begin{figure}
-	\includegraphics[angle=90,origin=c,max size={\textheight}{\textwidth}]{frontend/overview.png}
+	\begin{adjustbox}
+		{addcode={\begin{minipage}{\width}}
+						{\caption{%
+							This diagram shows an overview of GUI elements of the main application, when the user has successfully logged in.
+						}
+					\end{minipage}},rotate=90,center}
+		\includegraphics[max size={\textheight}{\textwidth}]{frontend/overview.png}%
+	\end{adjustbox}
 \end{figure}
 
 \newpage
@@ -140,8 +144,9 @@ The diagram on the next page shows an overview of GUI elements of the main appli
 % \newpage
 % \includegraphics[max size={\textwidth}{\textheight}]{frame.pdf}
 \newpage
-\includegraphics[max size={\textwidth}{\textheight}]{login2.pdf}
-
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{login2.pdf}
+\end{figure}
 
 
 \subsection{Client-server protocol}

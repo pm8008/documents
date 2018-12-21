@@ -111,15 +111,71 @@ Design}
 
 \section{Design}\label{sec:intro}
 \subsection{Front-End}
-\subsubsection{Class Diagram}
+This subsection deals with the front-end of the ADIN INSPECTOR - the UI elements the GUI consists of, and how states are handled. A series of final UI design mockups are presented under UI Design Mockups subsection, whereas an overview of the GUI can be seen in \autoref{fig:gui_overview}.\\
+\\
+An interactive early stage demo is available at \url{https://adin-frontend.netlify.com}
 
+\subsubsection{UI Design Mockups}
+
+\begin{figure}[hp]
+	\begin{adjustbox}
+		{addcode={\begin{minipage}{\width}}
+						{\caption{%
+							Login screen
+						}
+						\label{fig:mockup_login}
+					\end{minipage}}
+			,center}
+		\fbox{\includegraphics[max size={\textwidth}{\textheight}]{images/ui_design/login_screen.png}}
+	\end{adjustbox}
+\end{figure}
+\newpage
+
+\begin{center}
+	\begin{figure}
+		\begin{adjustbox}
+			{addcode={\begin{minipage}{\width}}
+							{\caption{%
+								Initial empty screen
+							}
+							\label{fig:mockup_empty}
+						\end{minipage}}
+				,center}
+			\fbox{\includegraphics[max size={\textwidth}{\textheight}]{images/ui_design/Main/0.png}}
+		\end{adjustbox}
+	\end{figure}
+\end{center}
+\newpage
+
+\begin{center}
+	\begin{figure}
+		\begin{adjustbox}
+			{addcode={\begin{minipage}{\width}}
+							{\caption{%
+								Add/configure diagram screen
+							}
+							\label{fig:mockup_config}
+						\end{minipage}}
+				,center}
+			\fbox{\includegraphics[max size={\textwidth}{\textheight}]{images/ui_design/Main/1.png}}
+		\end{adjustbox}
+	\end{figure}
+\end{center}
+\newpage
+
+\subsubsection{Class Diagrams}
+
+\autoref{fig:gui_overview} illustrates the whole GUI structure of the application after the user has successfully logged in.
+\\
 \begin{figure}
 	\begin{adjustbox}
 		{addcode={\begin{minipage}{\width}}
 						{\caption{%
 							This diagram shows an overview of GUI elements and their relationships inside the main application, when the user has successfully logged in.
 						}
-					\end{minipage}},rotate=90,center}
+						\label{fig:gui_overview}
+					\end{minipage}}
+			,rotate=90,center}
 		\includegraphics[max size={\textheight}{\textwidth}]{images/overview.png}%
 	\end{adjustbox}
 \end{figure}
@@ -132,6 +188,7 @@ Design}
 							{\caption{%
 								This diagram shows the definitions of all representational elements.
 							}
+							\label{fig:component_defs}
 						\end{minipage}},center}
 			\includegraphics[max size={\textheight}{1.5\linewidth}]{images/componentDefs.png}%
 		\end{adjustbox}
@@ -144,6 +201,7 @@ Design}
 						{\caption{%
 							This diagram shows the design of the MobX state store objects and predefined actions to mutate the states.
 						}
+						\label{fig:state_action_store}
 					\end{minipage}}}
 		\includegraphics[max size={\textwidth}{\textheight}]{images/stateStoresAndActions.png}%
 	\end{adjustbox}
@@ -155,6 +213,7 @@ Design}
 						{\caption{%
 							This diagram shows the definitions of custom types that are used in the MobX state stores.
 						}
+						\label{fig:type_defs}
 					\end{minipage}}}
 		\includegraphics[max size={\textwidth}{\textheight}]{images/typeDefs.png}%
 	\end{adjustbox}
@@ -175,28 +234,34 @@ Design}
 \newpage
 
 \subsubsection{Sequence Diagram}
-\includegraphics[max size={\textwidth}{\textheight}]{login1.pdf}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{login1.pdf}
+\end{figure}
 \newpage
-The following diagram shows an alternative view of the login sequence:
-\\
-\includegraphics[max size={\textwidth}{\textheight}]{images/ADIN_Inspector_Client-Server-Communication-login.png}
+
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/ADIN_Inspector_Client-Server-Communication-login.png}
+	\caption{This diagram shows an alternative view of the login sequence}
+\end{figure}
 \newpage
-\includegraphics[max size={\textwidth}{\textheight}]{filterchain.pdf}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{filterchain.pdf}
+\end{figure}
 \newpage
-\includegraphics[max size={\textwidth}{\textheight}]{option.pdf}
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{option.pdf}
+\end{figure}
 
 \newpage
 This diagram shows the control flow for handling a movement of the slider by the user.\\
 \begin{center}
-\begin{figure}
-\includegraphics[width=\textwidth]{images/sd_frontend_comm-slider_movement.png}
-\caption{Sequence diagram for slider movement}
-\label{fig:sd_slider_movement}
-\end{figure}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{images/sd_frontend_comm-slider_movement.png}
+		\caption{Sequence diagram for slider movement}
+		\label{fig:sd_slider_movement}
+	\end{figure}
 \end{center}
 
-
-\subsubsection{Activity Diagram}
 \newpage
 
 
@@ -256,8 +321,8 @@ In the following list words in angle brackets ("<>") are placeholders.
 \end{itemize}
 
 \subsection{Back-End}
-This subsection describes the the back-end of the ADIN INSPECTOR. This comprises the communication with the client and how kafka interacts with the system.
-An overview of the system can be seen in \autoref{fig:class_back_end}.
+This subsection deals with the back-end of the ADIN INSPECTOR. How the system deals with client http calls, and how kafka interacts with the system.
+An overview of the system can be seen in \autoref{fig:class_back_end}. Smaller subsections have been expanded in \autoref{fig:class_back_end_init}, \autoref{fig:class_back_end_mongo}, \autoref{fig:class_back_end_hub}.
 
 The connection to the client is handled in the class Hub which contains handlers for the network interface. This class uses a separate class (ClientProtocolHandler) to parse and handle requests from the handler. This setup is according to the strategy design pattern and allows easily modifying or even replacing the client server-protocol.
 The Hub class and the ClientProtocolHandler access the database via an object that implements the IUserSession interface and encapsulates the database session. Currently there is only an implementation for MongoDB access (MongoDBUserSession), but the abstraction via the IUserSession interface allows to add classes that offer access to Kafka or other databases.
@@ -266,6 +331,13 @@ Classes that implement IUserSession are instantiated with a factory Method (User
 
 \subsubsection{Class Diagram}
 The overview in  \autoref{fig:class_back_end} shows a number of classes and it's interaction with eachother. What follows is a more in-depth view of what each component of this diagram does, what data it's stored and how it fits into the overarching architecture.
+
+\begin{figure}
+	\includegraphics[max size={\textwidth}{\textheight}]{images/class_back-end_init.png}
+	\caption{The classes involed in the initialization setup}
+	\label{fig:class_back_end_init}
+\end{figure}
+
 
 \begin{itemize}
 
@@ -308,6 +380,13 @@ The overview in  \autoref{fig:class_back_end} shows a number of classes and it's
 		            \\If no new messages are found for a topic notify the Mongo Mediator that the collection tied to the topic is ready for pre-processing.
 	      \end{itemize}
 
+
+
+	      \begin{figure}
+		      \includegraphics[max size={\textwidth}{\textheight}]{images/class_back-end_mongo.png}
+		      \caption{The classes involed in reading and writing data into the database}
+		      \label{fig:class_back_end_mongo}
+	      \end{figure}
 
 	\item[•]MongoClientMediator
 	      This object serves as a nexus between the users who want to get data out of the database and the consumer and dataProcessor who want to add data into the database. This class encapsulates the mongo client from the mongo API.
@@ -553,6 +632,12 @@ The overview in  \autoref{fig:class_back_end} shows a number of classes and it's
 		            \\parameters: Records array of the records to be processed
 	      \end{itemize}
 
+	      \begin{figure}
+		      \includegraphics[max size={\textwidth}{\textheight}]{images/class_back-end_hub.png}
+		      \caption{The classes involed in the communication between the server and the client}
+		      \label{fig:class_back_end_hub}
+	      \end{figure}
+
 	\item[•]Hub
 	      \\
 	      This class implements the network handlers for the websocket connection to the client and access methods for a database connection.
@@ -719,10 +804,13 @@ The overview in  \autoref{fig:class_back_end} shows a number of classes and it's
 \newpage
 
 \subsubsection{Sequence Diagram}
+The following diagram show the initalization sequence order, the correspoding class diagram is \autoref{fig:class_back_end_init}, the program dependes on a couple of services namely (in order),the zookeper serivce, the kafka server service and the mongoDB service. Once all services are up and running the MongoConsumer is created and can start consuming messages and the Hub can start listening to client logins, requests, etc.
 \begin{figure}
 	\includegraphics[max size={\textwidth}{\textheight}]{images/sequence_server_init.png}
-		\caption{Initialization sequence and message consumption}
+	\caption{Initialization sequence and message consumption}
 \end{figure}
+\newpage
+
 \subsubsection{Activity Diagram}
 \begin{figure}
 	\includegraphics[max size={\textwidth}{\textheight}]{images/activity_MongoConsumer.png}
@@ -739,7 +827,7 @@ The overview in  \autoref{fig:class_back_end} shows a number of classes and it's
 For user access control the built-in UAC system in MongoDB is used, whereas every user can have roles assign to them.
 \\
 A Role determines what can be done and seen within a database. For the purposes of the ADIN INSPECTOR there are three basic roles,
-Admin, Operator and Analyst. 
+Admin, Operator and Analyst.
 The admin role can create and destroy users as well as assign specific roles to them. An analyst can see all collectoins on the database and an Operator can only see part of them.
 The following Diagram workflow shows the user/role creation workflow an Administrator can use.
 

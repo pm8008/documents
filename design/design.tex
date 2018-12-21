@@ -529,9 +529,8 @@ Next we'll look at each class and method in detail
 		      \item[-]UserSession
 		            \\parameters: String username - the user id to login with
 			    \\String password - the password
-			    \\returns: void
-			
-Instantiate a new UserSession and log in into the database  using the given credentials.
+			    \\returns: IUserSession
+		            \\Factory method to instantiate a new UserSession and log in into the database using the given credentials.
 
 		      \item[-]getAvailableCollections
 		            \\parameters: -
@@ -576,13 +575,13 @@ Instantiate a new UserSession and log in into the database  using the given cred
 	      \begin{itemize}
 		      \item[-]MongoDBUserSession constructor
 		            \\parameters: -
-		            \\Creates a new MongoDB session.
+		            \\Private constructor to create a new MongoDB session.
 
 		      \item[-]UserSession
 		            \\parameters: String username - the user id to login with
 			    \\String password - the password
-			    \\returns: void
-		            \\Instantiate a new UserSession and log in into the database  using the given credentials.
+			    \\returns: a new MongoDBUserSession object
+		            \\Factory method to instantiate a new MongoDBUserSession and log in into the database using the given credentials.
 
 		      \item[-]getAvailableCollections
 		            \\parameters: -

@@ -87,7 +87,7 @@ Design}
 \hfill
 
 \begin{center}
-        \large{Version 1.0}
+	\large{Version 1.0}
 \end{center}
 
 
@@ -126,9 +126,9 @@ The following diagram shows an alternative view of the login sequence:
 \newpage
 This diagram shows the control flow for handling a movement of the slider by the user.\\
 \begin{center}
-\includegraphics[width=\textwidth]{sd_frontend_comm-slider_movement.png}
-\captionof{figure}{Sequence diagram for slider movement}
-\label{fig:sd_slider_movement}
+	\includegraphics[width=\textwidth]{sd_frontend_comm-slider_movement.png}
+	\captionof{figure}{Sequence diagram for slider movement}
+	\label{fig:sd_slider_movement}
 \end{center}
 
 
@@ -148,15 +148,18 @@ This diagram shows the control flow for handling a movement of the slider by the
 	\end{adjustbox}
 \end{figure}
 
-\begin{figure}
-	\begin{adjustbox}
-		{addcode={\begin{minipage}{\width}}
-						{\caption{%
-							This diagram shows the definitions of all representational elements.
-						}
-					\end{minipage}},rotate=90,center}
-		\includegraphics[max size={\textheight}{\textwidth}]{images/componentDefs.png}%
-	\end{adjustbox}
+\begin{figure}[p]
+	\vspace*{-2cm}
+	\makebox[\linewidth]{
+		\begin{adjustbox}
+			{addcode={\begin{minipage}{\width}}
+							{\caption{%
+								This diagram shows the definitions of all representational elements.
+							}
+						\end{minipage}},center}
+			\includegraphics[max size={\textheight}{1.5\linewidth}]{images/componentDefs.png}%
+		\end{adjustbox}
+	}
 \end{figure}
 
 \begin{figure}

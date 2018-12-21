@@ -143,29 +143,29 @@ In the following list words in angle brackets ("<>") are placeholders.
 \begin{itemize}
 \item{getAvailableCollections}
 \\
-syntax: \{"cmd": "GETAVCOLL"\} \\
+syntax: \{"cmd": "GET_AV_COLL"\} \\
 expected reply: list of collections
 
 \item{getCollectionSize(collection)}
 \\
-syntax: \{"cmd": "GETCOLLSIZE", "par": "<collection>"\} \\
+syntax: \{"cmd": "GET_COL_LSIZE", "par": "<collection>"\} \\
 where <collection> is the name of a collection\\
 expected reply: collection size
        
 \item{getCollection(collection)}
 \\
-syntax: \{"cmd": "GETCOLL", "par": "<collection>"\} \\
+syntax: \{"cmd": "GET_COLL", "par": "<collection>"\} \\
 expected reply: data set
 
 \item{getRecordsInRange(collection, key, start, end)}
 \\
-syntax: \{"cmd": "GETRECORDSRANGE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
+syntax: \{"cmd": "GET_RECORDS_RANGE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
 where <key> is the name of a key in the given collection and <startvalue> and <endvalue> are valid values for this key\\
 expected reply: data set
 
 \item{getRecordsInRangeSize(collection, key, start, end)}
 \\
-syntax: \{"cmd": "GETRECORDSRANGESIZE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
+syntax: \{"cmd": "GET_RECORDS_RANGE_SIZE", "par": "<collection>", "key": "<keyvalue>", "start": "<startvalue>", "end:", "<endvalue>"\} \\
 expected reply: collection size
 
 \end{itemize}
